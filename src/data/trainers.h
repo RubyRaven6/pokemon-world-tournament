@@ -42364,8 +42364,8 @@ F_TRAINER_FEMALE |
 #line 16963
                 MOVE_EARTHQUAKE,
                 MOVE_STONE_EDGE,
-                MOVE_KNOCK_OFF,
-                MOVE_CRUNCH,
+                MOVE_IRON_TAIL,
+                MOVE_GIGATON_HAMMER,
             },
             },
             {
