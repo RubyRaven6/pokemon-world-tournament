@@ -1,0 +1,10 @@
+mapscripts NewMap1_MapScripts {
+    
+}
+
+script NewMap_BrockBattle {
+    trainerbattle_single (TRAINER_BROCK, "Intro!", "Defeat!", "Post-textbox defeat!")
+    msgbox ("OW textbox!", MSGBOX_DEFAULT)
+	release
+	end
+}

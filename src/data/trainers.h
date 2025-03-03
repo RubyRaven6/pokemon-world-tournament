@@ -25,38 +25,6 @@
         {
         },
     },
-#line 84
-    [DIFFICULTY_NORMAL][TRAINER_SAWYER_1] =
-    {
-#line 85
-        .trainerName = _("SAWYER"),
-#line 86
-        .trainerClass = TRAINER_CLASS_HIKER,
-#line 87
-        .trainerPic = TRAINER_PIC_HIKER,
-        .encounterMusic_gender =
-#line 89
-            TRAINER_ENCOUNTER_MUSIC_HIKER,
-#line 90
-        .doubleBattle = FALSE,
-#line 91
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
-        .partySize = 1,
-        .party = (const struct TrainerMon[])
-        {
-            {
-#line 93
-            .species = SPECIES_GEODUDE,
-            .gender = TRAINER_MON_RANDOM_GENDER,
-#line 95
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-#line 94
-            .lvl = 21,
-            .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            },
-        },
-    },
 #line 97
     [DIFFICULTY_NORMAL][TRAINER_GRUNT_AQUA_HIDEOUT_1] =
     {
@@ -42175,6 +42143,257 @@ F_TRAINER_FEMALE |
             .lvl = 5,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+        },
+    },
+#line 16877
+    [DIFFICULTY_NORMAL][TRAINER_BROCK] =
+    {
+#line 16878
+        .trainerName = _("BROCK"),
+#line 16879
+        .trainerClass = TRAINER_CLASS_HIKER,
+#line 16880
+        .trainerPic = TRAINER_PIC_HIKER,
+        .encounterMusic_gender =
+#line 16882
+            TRAINER_ENCOUNTER_MUSIC_HIKER,
+#line 16883
+        .doubleBattle = FALSE,
+#line 16884
+        .aiFlags = AI_FLAG_SMART_TRAINER,
+#line 16885
+        .partySize = 6,
+        .poolSize = 9,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 16887
+            .species = SPECIES_KLEAVOR,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16887
+            .heldItem = ITEM_SALAC_BERRY,
+#line 16890
+            .ev = TRAINER_PARTY_EVS(4, 252, 252, 0, 0, 0),
+#line 16893
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 16888
+            .ability = ABILITY_SHARPNESS,
+#line 16889
+            .lvl = 50,
+#line 16892
+            .nature = NATURE_ADAMANT,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+#line 16891
+            .tags = MON_POOL_TAG_LEAD,
+            .moves = {
+#line 16893
+                MOVE_STONE_AXE,
+                MOVE_LUNGE,
+                MOVE_SWORDS_DANCE,
+                MOVE_ENDURE,
+            },
+            },
+            {
+#line 16898
+            .species = SPECIES_GOLEM_ALOLA,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16898
+            .heldItem = ITEM_AIR_BALLOON,
+#line 16901
+            .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
+#line 16903
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 16899
+            .ability = ABILITY_GALVANIZE,
+#line 16900
+            .lvl = 50,
+#line 16902
+            .nature = NATURE_ADAMANT,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 16903
+                MOVE_EXPLOSION,
+                MOVE_HEAVY_SLAM,
+                MOVE_STONE_EDGE,
+                MOVE_DOUBLE_EDGE,
+            },
+            },
+            {
+#line 16908
+            .species = SPECIES_KLAWF,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16908
+            .heldItem = ITEM_LEFTOVERS,
+#line 16911
+            .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
+#line 16913
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 16909
+            .ability = ABILITY_ANGER_SHELL,
+#line 16910
+            .lvl = 50,
+#line 16912
+            .nature = NATURE_IMPISH,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 16913
+                MOVE_TEMPER_FLARE,
+                MOVE_STONE_EDGE,
+                MOVE_SUBSTITUTE,
+                MOVE_PROTECT,
+            },
+            },
+            {
+#line 16918
+            .species = SPECIES_GARGANACL,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16918
+            .heldItem = ITEM_LEFTOVERS,
+#line 16921
+            .ev = TRAINER_PARTY_EVS(252, 4, 252, 0, 0, 0),
+#line 16923
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 16919
+            .ability = ABILITY_PURIFYING_SALT,
+#line 16920
+            .lvl = 50,
+#line 16922
+            .nature = NATURE_IMPISH,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 16923
+                MOVE_BODY_PRESS,
+                MOVE_CURSE,
+                MOVE_SALT_CURE,
+                MOVE_RECOVER,
+            },
+            },
+            {
+#line 16928
+            .species = SPECIES_ARCHEOPS,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16931
+            .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+#line 16933
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 16929
+            .ability = ABILITY_KLUTZ,
+#line 16930
+            .lvl = 50,
+#line 16932
+            .nature = NATURE_JOLLY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 16933
+                MOVE_ACROBATICS,
+                MOVE_STONE_EDGE,
+                MOVE_CRUNCH,
+                MOVE_U_TURN,
+            },
+            },
+            {
+#line 16938
+            .species = SPECIES_CRADILY,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16938
+            .heldItem = ITEM_LEFTOVERS,
+#line 16941
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
+#line 16943
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 16939
+            .ability = ABILITY_STORM_DRAIN,
+#line 16940
+            .lvl = 50,
+#line 16942
+            .nature = NATURE_CAREFUL,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 16943
+                MOVE_INGRAIN,
+                MOVE_LEECH_SEED,
+                MOVE_IVY_CUDGEL,
+                MOVE_PROTECT,
+            },
+            },
+            {
+#line 16948
+            .species = SPECIES_TYRANTRUM,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16948
+            .heldItem = ITEM_FOCUS_SASH,
+#line 16951
+            .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
+#line 16952
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 16949
+            .ability = ABILITY_ROCK_HEAD,
+#line 16950
+            .lvl = 50,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 16952
+                MOVE_HEAD_SMASH,
+                MOVE_DRAGON_CLAW,
+                MOVE_IRON_HEAD,
+                MOVE_HIGH_HORSEPOWER,
+            },
+            },
+            {
+#line 16957
+            .species = SPECIES_STEELIX,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16957
+            .heldItem = ITEM_STEELIXITE,
+#line 16960
+            .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 0, 4),
+#line 16963
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 16958
+            .ability = ABILITY_SAND_STREAM,
+#line 16959
+            .lvl = 50,
+#line 16962
+            .nature = NATURE_ADAMANT,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+#line 16961
+            .tags = MON_POOL_TAG_ACE,
+            .moves = {
+#line 16963
+                MOVE_EARTHQUAKE,
+                MOVE_STONE_EDGE,
+                MOVE_KNOCK_OFF,
+                MOVE_CRUNCH,
+            },
+            },
+            {
+#line 16968
+            .species = SPECIES_ARCANINE_HISUI,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16968
+            .heldItem = ITEM_LIFE_ORB,
+#line 16972
+            .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+#line 16974
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 16969
+            .ability = ABILITY_ROCK_HEAD,
+#line 16970
+            .lvl = 50,
+#line 16973
+            .nature = NATURE_JOLLY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+#line 16971
+            .teraType = TYPE_ELECTRIC,
+            .moves = {
+#line 16974
+                MOVE_WILD_CHARGE,
+                MOVE_PSYCHIC_FANGS,
+                MOVE_EXTREME_SPEED,
+                MOVE_FLARE_BLITZ,
+            },
             },
         },
     },

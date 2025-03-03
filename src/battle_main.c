@@ -5968,6 +5968,8 @@ u32 GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, u8 *ateBoost)
     case EFFECT_IVY_CUDGEL:
         switch (species)
         {
+        case SPECIES_CRADILY:
+            return type1;
         case SPECIES_OGERPON_WELLSPRING:
         case SPECIES_OGERPON_HEARTHFLAME:
         case SPECIES_OGERPON_CORNERSTONE:

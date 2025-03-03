@@ -4,7 +4,7 @@
 #include "constants/battle_partner.h"
 
 #define TRAINER_NONE                          0
-#define TRAINER_SAWYER_1                      1
+#define TRAINER_BROCK                         1 //originally TRAINER_SAWYER_1
 #define TRAINER_GRUNT_AQUA_HIDEOUT_1          2
 #define TRAINER_GRUNT_AQUA_HIDEOUT_2          3
 #define TRAINER_GRUNT_AQUA_HIDEOUT_3          4
