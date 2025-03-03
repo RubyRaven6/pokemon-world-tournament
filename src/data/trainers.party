@@ -106,7 +106,7 @@ AI: Check Bad Move
 Poochyena
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-*/
+
 === TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
 Name: GRUNT
 Class: Team Aqua
@@ -123,7 +123,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Carvanha
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
+*/
 === TRAINER_GRUNT_AQUA_HIDEOUT_3 ===
 Name: GRUNT
 Class: Team Aqua
@@ -17083,3 +17083,111 @@ Modest Nature
 - Flash Cannon
 - Surf
 - Power Gem
+
+=== TRAINER_SURGE ===
+Name: SURGE
+Class: Guitarist
+Pic: Guitarist
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Smart Trainer / Prediction / Ace Pokemon
+Party Size: 6
+Pool Rules: Setup Exploit
+
+Electrode-Hisui @ Assault Vest
+Ability: Aftermath
+Level: 50
+EVs: 252 Spe / 252 Def / 4 Atk
+Tags: Lead
+Hasty Nature
+- Energy Ball
+- Electro Ball
+- Volt Switch
+- Will-o-Wisp
+
+Pawmot @ Focus Sash
+Ability: Iron Fist
+Level: 50
+EVs: 252 Atk / 252 Spe / 4 HP
+Tera Type: Electric
+Adamant Nature
+- Revival Blessing
+- Double Shock
+- Close Combat
+- Seed Bomb
+
+Iron Hands @ Booster Energy
+Ability: Quark Drive
+Level: 50
+EVs: 252 HP / 252 Atk / 4 Def
+Adamant Nature
+- Fake Out
+- Heavy Slam
+- Supercell Slam
+- Close Combat
+
+Rotom-Wash @ Electric Gem
+Ability: Levitate
+Level: 50
+EVs: 252 SpA / 200 Def / 56 HP
+Modest Nature
+- Scald
+- Discharge
+- Volt Switch
+- Protect
+
+Magnezone @ Air Balloon
+Ability: Analytic
+Level: 50
+EVs: 252 Def / 200 SpD / 56 SpA
+Tags: Support
+Tera Type: 
+Bold Nature
+- Flash Cannon
+- Gravity
+- Volt Switch
+- Tri-Attack
+
+Kilowattrel @ Choice Specs
+Ability: Competitive
+Level: 50
+EVs: 252 SpA / 252 Spe / 4 HP
+Adamant Nature
+- Tailwind
+- Air Slash
+- Electro Ball
+- Uproar
+
+Jolteon @ Flame Orb
+Ability: Quick Feet
+Level: 50
+EVs: 252 SpA / 252 Spe / 4 SpD
+Modest Nature
+- Electro Ball
+- Protect
+- Alluring Voice
+- Energy Ball
+
+Dracozolt @ Choice Scarf
+Ability: Hustle
+Level: 50
+EVs: 252 Atk / 252 Spe / 4 Def
+Tags: Exploiter
+Jolly Nature
+- Bolt Beak
+- Dragon Rush
+- High Horsepower
+- Drill Peck
+
+Raichu-Alola @ Life Orb
+Ability: Levitate
+Level: 50
+EVs: 252 SpA / 200 SpD / 56 Spe
+Tags: Ace
+Tera Type: Water
+Modest Nature
+- Surf
+- Psychic Noise
+- Thunderbolt
+- Tera Blast

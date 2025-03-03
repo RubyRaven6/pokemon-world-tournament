@@ -18,6 +18,14 @@ NewMap_MistyBattle::
 	end
 
 
+NewMap_SurgeBattle::
+# 18 "data//maps/NewMap1/scripts.pory"
+	applymovement 0, NewMap_BrockBattle_Movement_0
+# 19 "data//maps/NewMap1/scripts.pory"
+	trainerbattle_single TRAINER_SURGE, NewMap_BrockBattle_Text_0, NewMap_BrockBattle_Text_1, NewMap_BrockBattle_Text_2
+	end
+
+
 # 6 "data//maps/NewMap1/scripts.pory"
 NewMap_BrockBattle_Movement_0:
 # 6 "data//maps/NewMap1/scripts.pory"

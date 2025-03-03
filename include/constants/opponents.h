@@ -6,7 +6,7 @@
 #define TRAINER_NONE                          0
 #define TRAINER_BROCK                         1 //originally TRAINER_SAWYER_1
 #define TRAINER_MISTY                         2
-#define TRAINER_GRUNT_AQUA_HIDEOUT_2          3
+#define TRAINER_SURGE          3
 #define TRAINER_GRUNT_AQUA_HIDEOUT_3          4
 #define TRAINER_GRUNT_AQUA_HIDEOUT_4          5
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_1       6
