@@ -93,7 +93,7 @@ AI: Basic Trainer
 Geodude
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-*/
+
 === TRAINER_GRUNT_AQUA_HIDEOUT_1 ===
 Name: GRUNT
 Class: Team Aqua
@@ -106,7 +106,7 @@ AI: Check Bad Move
 Poochyena
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
+*/
 === TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
 Name: GRUNT
 Class: Team Aqua
@@ -16874,14 +16874,14 @@ Kyogre
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_BROCK === /* Status: No team */
+=== TRAINER_BROCK ===
 Name: BROCK
 Class: Hiker
 Pic: Hiker
 Gender: Male
 Music: Hiker
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Ace Pokemon
 Party Size: 6
 
 Kleavor @ Salac Berry  
@@ -16976,3 +16976,110 @@ Jolly Nature
 - Extreme Speed  
 - Flare Blitz  
 
+=== TRAINER_MISTY ===
+Name: MISTY
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer / Ace Pokemon
+Party Size: 6
+Pool Rules: Weather Singles
+
+Pelipper @ Damp Rock
+Ability: Drizzle
+Level: 50
+EVs: 248 HP / 28 Def / 232 SpD
+Tags: Lead / Weather Setter
+Sassy Nature
+- Hurricane
+- U-Turn
+- Roost
+- Knock Off
+
+Togekiss @ Heavy-Duty Boots
+Ability: Serene Grace
+Level: 50
+EVs: 248 HP / 8 Def / 252 Spe
+Tags: Ace
+Timid Nature
+- Nasty Plot
+- Air Slash
+- Flamethrower
+- Roost
+
+Dondozo @ Leftovers
+Ability: Water Veil
+Level: 50
+EVs: 252 HP / 252 Def / 4 Atk
+Modest Nature
+- Body Press
+- Wave Crash
+- Avalanche
+- Curse
+
+Seaking @ Choice Band
+Ability: Swift Swim
+Level: 50
+EVs: 252 Atk / 252 Spe / 4 Def
+Tera Type: Water
+Tags: Weather Abuser
+Jolly Nature
+- Smart Strike
+- Horn Drill
+- Waterfall
+- Megahorn
+
+Slowbro @ Slowbronite
+Ability: Unaware
+Level: 50
+EVs: 252 HP / 200 Def / 56 SpA
+Tags: Ace
+Docile Nature
+- Surf
+- Slack Off
+- Future Sight
+- Curse
+
+Omastar @ White Herb
+Ability: Shell Armor
+Level: 50
+EVs: 252 SpA / 120 Def / 136 SpD
+Tera Type: Flying
+Modest Nature
+- Shell Smash
+- Surf
+- Ice Beam
+- Tera Blast
+
+Politoed @ Damp Rock
+Ability: Drizzle
+Level: 50
+EVs: 156 HP / 252 SpA / 100 SpD
+Modest Nature
+- Surf
+- Ice Beam
+- Earth Power
+- Amnesia
+
+Octillery @ Wide Lens
+Ability: Sniper
+Level: 50
+EVs: 252 SpA / 128 Def / 128 HP
+Modest Nature
+- Snipe Shot
+- Energy Ball
+- Flash Cannon
+- Fire Blast
+
+Starmie @ Waterium Z
+Ability: Natural Cure
+Level: 50
+EVs: 252 SpA / 252 Spe / 6 SpD
+Tags: Ace
+Modest Nature
+- Psychic
+- Flash Cannon
+- Surf
+- Power Gem

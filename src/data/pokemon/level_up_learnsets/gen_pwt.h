@@ -3428,6 +3428,7 @@ static const struct LevelUpMove sSeakingLevelUpLearnset[] = {
     LEVEL_UP_MOVE(44, MOVE_SOAK),
     LEVEL_UP_MOVE(51, MOVE_MEGAHORN),
     LEVEL_UP_MOVE(58, MOVE_HORN_DRILL),
+    LEVEL_UP_MOVE(61, MOVE_SMART_STRIKE),
     LEVEL_UP_END
 };
 #endif //P_FAMILY_GOLDEEN

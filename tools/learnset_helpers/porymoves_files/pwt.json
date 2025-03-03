@@ -120,5 +120,104 @@
     "TutorMoves": [
       "MOVE_METEOR_BEAM"
     ]
+  },
+  "WUGTRIO": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_WRAP"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_WATER_GUN"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_MUD_SLAP"
+      },
+      {
+        "Level": 12,
+        "Move": "MOVE_AQUA_JET"
+      },
+      {
+        "Level": 16,
+        "Move": "MOVE_SLAM"
+      },
+      {
+        "Level": 20,
+        "Move": "MOVE_WATER_PULSE"
+      },
+      {
+        "Level": 24,
+        "Move": "MOVE_HEADBUTT"
+      },
+      {
+        "Level": 30,
+        "Move": "MOVE_TRIPLE_DIVE"
+      },
+      {
+        "Level": 36,
+        "Move": "MOVE_DIG"
+      },
+      {
+        "Level": 42,
+        "Move": "MOVE_SUCKER_PUNCH"
+      },
+      {
+        "Level": 48,
+        "Move": "MOVE_THROAT_CHOP"
+      },
+      {
+        "Level": 54,
+        "Move": "MOVE_LIQUIDATION"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_TAKE_DOWN",
+      "MOVE_AGILITY",
+      "MOVE_MUD_SLAP",
+      "MOVE_PROTECT",
+      "MOVE_WATER_PULSE",
+      "MOVE_CHILLING_WATER",
+      "MOVE_FACADE",
+      "MOVE_BULLDOZE",
+      "MOVE_SWIFT",
+      "MOVE_MUD_SHOT",
+      "MOVE_ENDURE",
+      "MOVE_RAIN_DANCE",
+      "MOVE_SANDSTORM",
+      "MOVE_DIG",
+      "MOVE_FOUL_PLAY",
+      "MOVE_SLEEP_TALK",
+      "MOVE_STOMPING_TANTRUM",
+      "MOVE_REST",
+      "MOVE_SUBSTITUTE",
+      "MOVE_LIQUIDATION",
+      "MOVE_SURF",
+      "MOVE_HELPING_HAND",
+      "MOVE_EARTH_POWER",
+      "MOVE_ICE_BEAM",
+      "MOVE_HYDRO_PUMP",
+      "MOVE_BLIZZARD",
+      "MOVE_GIGA_IMPACT",
+      "MOVE_HYPER_BEAM",
+      "MOVE_TERA_BLAST",
+      "MOVE_PAIN_SPLIT",
+      "MOVE_WHIRLPOOL",
+      "MOVE_MUDDY_WATER",
+      "MOVE_THROAT_CHOP"
+    ],
+    "EggMoves": [
+      "MOVE_FINAL_GAMBIT",
+      "MOVE_MEMENTO"
+    ],
+    "TutorMoves": [
+        "MOVE_TRIPLE_AXEL"
+    ]
   }
 }

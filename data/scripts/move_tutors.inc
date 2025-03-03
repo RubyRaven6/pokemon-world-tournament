@@ -268,3 +268,6 @@ MoveTutor_EventScript_OpenPartyMenu::
 MoveTutor_EventScript_CanOnlyBeLearnedOnce::
 	msgbox MoveTutor_Text_ThisMoveCanOnlyBeLearnedOnce, MSGBOX_YESNO
 	return
+
+ForEnablingLearnsets::
+	setvar VAR_0x8005, MOVE_TRIPLE_AXEL

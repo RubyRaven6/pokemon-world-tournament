@@ -3,8 +3,13 @@ mapscripts NewMap1_MapScripts {
 }
 
 script NewMap_BrockBattle {
+    applymovement(0, moves(face_player))
     trainerbattle_single (TRAINER_BROCK, "Intro!", "Defeat!", "Post-textbox defeat!")
-    msgbox ("OW textbox!", MSGBOX_DEFAULT)
-	release
-	end
+    end
+}
+
+script NewMap_MistyBattle {
+    applymovement(0, moves(face_player))
+    trainerbattle_single (TRAINER_MISTY, "Intro!", "Defeat!", "Post-textbox defeat!")
+    end
 }
