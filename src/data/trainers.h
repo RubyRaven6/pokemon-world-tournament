@@ -42607,7 +42607,7 @@ F_TRAINER_FEMALE |
 #line 17096
         .poolRuleIndex = POOL_RULESET_SETUP_EXPLOIT,
 #line 17095
-        .partySize = 6,
+        .partySize = 1,
         .poolSize = 9,
         .party = (const struct TrainerMon[])
         {
