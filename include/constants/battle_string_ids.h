@@ -730,7 +730,11 @@
 #define STRINGID_SENDCAUGHTMONPARTYORBOX              728
 #define STRINGID_PKMNSENTTOPCAFTERCATCH               729
 
-#define BATTLESTRINGS_COUNT                           730
+//  Ruby moves
+#define STRINGID_GIPHANT_CAPTURE_FAIL                 730
+#define STRINGID_GIPHANT_CAPTURE_SUCCESS              731
+
+#define BATTLESTRINGS_COUNT                           732
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,

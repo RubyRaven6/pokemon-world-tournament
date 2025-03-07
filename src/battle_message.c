@@ -893,6 +893,8 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_ITDOESNTAFFECTTWOFOES]                = COMPOUND_STRING("It doesn't affect {B_DEF_NAME_WITH_PREFIX2} and {B_DEF_PARTNER_NAME}…"),
     [STRINGID_SENDCAUGHTMONPARTYORBOX]              = COMPOUND_STRING("Add {B_DEF_NAME} to your party?"),
     [STRINGID_PKMNSENTTOPCAFTERCATCH]               = gText_PkmnSentToPCAfterCatch,
+    [STRINGID_GIPHANT_CAPTURE_FAIL]                 = COMPOUND_STRING("But Giphant Capture couldn't seal any move!"),
+    [STRINGID_GIPHANT_CAPTURE_SUCCESS]              = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} sealed {B_BUFF1} for {B_DEF_TEAM2} team!"),
 };
 
 const u16 gTrainerUsedItemStringIds[] =
