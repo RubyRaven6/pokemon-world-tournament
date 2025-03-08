@@ -3651,30 +3651,6 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                     }
                 }
                 break;
-            case MOVE_EFFECT_INFATUATED:
-                if (GetBattlerAbility(gBattlerTarget) == ABILITY_OBLIVIOUS)
-                {
-                    gBattlescriptCurrInstr = BattleScript_NotAffectedAbilityPopUp;
-                    gLastUsedAbility = ABILITY_OBLIVIOUS;
-                    RecordAbilityBattle(gBattlerTarget, ABILITY_OBLIVIOUS);
-                }
-                else
-                {
-                    
-                    CMD_ARGS(const u8 *failInstr);
-
-                    if (gBattleMons[gBattlerTarget].status2 & STATUS2_INFATUATION
-                        || !AreBattlersOfOppositeGender(gBattlerAttacker, gBattlerTarget))
-                    {
-                        gBattlescriptCurrInstr = cmd->failInstr;
-                    }
-                    else
-                    {
-                        gBattleMons[gBattlerTarget].status2 |= STATUS2_INFATUATED_WITH(gBattlerAttacker);
-                        gBattlescriptCurrInstr = cmd->nextInstr;
-                    }
-                }
-                break;
             case MOVE_EFFECT_ATK_PLUS_1:
             case MOVE_EFFECT_DEF_PLUS_1:
             case MOVE_EFFECT_SPD_PLUS_1:
@@ -4592,6 +4568,26 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                 }
                 break;
             }
+            case MOVE_EFFECT_INFATUATED:
+                if (battlerAbility == ABILITY_OBLIVIOUS)
+                {
+                    gBattlescriptCurrInstr = BattleScript_NotAffectedAbilityPopUp;
+                    gLastUsedAbility = ABILITY_OBLIVIOUS;
+                    RecordAbilityBattle(gBattlerTarget, ABILITY_OBLIVIOUS);
+                }
+                else
+                {
+                    if (gBattleMons[gBattlerTarget].status2 & STATUS2_INFATUATION)
+                    {
+                        gBattlescriptCurrInstr++;
+                    }
+                    else
+                    {
+                        gBattleMons[gBattlerTarget].status2 |= STATUS2_INFATUATED_WITH(gBattlerAttacker);
+                        gBattlescriptCurrInstr++;
+                    }
+                }
+                break;
             }
         }
     }
