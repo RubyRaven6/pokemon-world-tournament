@@ -10105,3 +10105,20 @@ BattleScript_SleepClausePreventsEnd::
 	printstring STRINGID_BLOCKEDBYSLEEPCLAUSE
 	waitmessage B_WAIT_TIME_LONG
 	end2
+
+BattleScript_EffectGiphantCapture::
+	attackcanceler
+	attackstring
+	ppreduce
+	dogiphantcapture GiphantCaptureFailed
+	attackanimation
+	waitanimation
+	printstring STRINGID_GIPHANT_CAPTURE_SUCCESS
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+GiphantCaptureFailed:
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_GIPHANT_CAPTURE_FAIL
+	waitmessage B_WAIT_TIME_LONG
+	end2

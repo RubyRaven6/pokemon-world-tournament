@@ -910,7 +910,13 @@
 
 #define MOVES_COUNT_GEN9 848
 
-#define MOVES_COUNT         MOVES_COUNT_GEN9
+//  Ruby moves
+#define MOVE_GIPHANT_CAPTURE 848
+
+#define MOVES_COUNT_RUBY 849
+
+
+#define MOVES_COUNT         MOVES_COUNT_RUBY
 
 // Z Moves
 #define MOVE_BREAKNECK_BLITZ (MOVES_COUNT + 0)
