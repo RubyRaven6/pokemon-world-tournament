@@ -21007,6 +21007,30 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_MalignantChain,
     },
 
+    
+    //GYM LEADERS SPECIALS
+    [MOVE_ROCK_HEART] =
+    {
+        .name = COMPOUND_STRING("Rock Heart"),
+        .description = COMPOUND_STRING(
+            "A hardened heart which\n"
+            "may infatuate the target."),
+        .effect = EFFECT_HIT,
+        .power = 100,
+        .type = TYPE_POISON,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_INFATUATED,
+            .chance = 30,
+            .sheerForceBoost = SHEER_FORCE_BOOST,
+        }),
+        .battleAnimScript = gBattleAnimMove_RockBlast,
+    },
+    
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

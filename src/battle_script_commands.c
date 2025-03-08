@@ -898,6 +898,7 @@ static const u32 sStatusFlagsForMoveEffects[NUM_MOVE_EFFECTS] =
     [MOVE_EFFECT_PREVENT_ESCAPE] = STATUS2_ESCAPE_PREVENTION,
     [MOVE_EFFECT_NIGHTMARE]      = STATUS2_NIGHTMARE,
     [MOVE_EFFECT_THRASH]         = STATUS2_LOCK_CONFUSE,
+    [MOVE_EFFECT_INFATUATED]     = STATUS2_INFATUATION,
 };
 
 static const u8 *const sMoveEffectBS_Ptrs[] =
@@ -3647,6 +3648,30 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                     {
                         if (sTrappingMoves[gBattleCommunication[MULTISTRING_CHOOSER]] == gCurrentMove)
                             break;
+                    }
+                }
+                break;
+            case MOVE_EFFECT_INFATUATED:
+                if (GetBattlerAbility(gBattlerTarget) == ABILITY_OBLIVIOUS)
+                {
+                    gBattlescriptCurrInstr = BattleScript_NotAffectedAbilityPopUp;
+                    gLastUsedAbility = ABILITY_OBLIVIOUS;
+                    RecordAbilityBattle(gBattlerTarget, ABILITY_OBLIVIOUS);
+                }
+                else
+                {
+                    
+                    CMD_ARGS(const u8 *failInstr);
+
+                    if (gBattleMons[gBattlerTarget].status2 & STATUS2_INFATUATION
+                        || !AreBattlersOfOppositeGender(gBattlerAttacker, gBattlerTarget))
+                    {
+                        gBattlescriptCurrInstr = cmd->failInstr;
+                    }
+                    else
+                    {
+                        gBattleMons[gBattlerTarget].status2 |= STATUS2_INFATUATED_WITH(gBattlerAttacker);
+                        gBattlescriptCurrInstr = cmd->nextInstr;
                     }
                 }
                 break;
