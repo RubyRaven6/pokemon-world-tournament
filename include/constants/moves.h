@@ -909,9 +909,11 @@
 #define MOVE_MALIGNANT_CHAIN 847
 
 //Gym Leader Specials
-#define MOVE_ROCK_HEART 848
 
-#define MOVES_COUNT_GEN9 849
+#define MOVE_ROCK_HEART 848
+#define MOVE_RIPTIDE 849
+
+#define MOVES_COUNT_GEN9 850
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

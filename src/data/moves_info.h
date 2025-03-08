@@ -21016,8 +21016,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "A hardened heart which\n"
             "may infatuate the target."),
         .effect = EFFECT_HIT,
-        .power = 100,
-        .type = TYPE_POISON,
+        .power = 80,
+        .type = TYPE_ROCK,
         .accuracy = 100,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
@@ -21029,6 +21029,28 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .sheerForceBoost = SHEER_FORCE_BOOST,
         }),
         .battleAnimScript = gBattleAnimMove_RockBlast,
+    },
+
+    [MOVE_RIPTIDE] =
+    {
+        .name = COMPOUND_STRING("Riptide"),
+        .description = COMPOUND_STRING(
+            "Rapidly splits water.\n"
+            "Ups the user's Speed."),
+        .effect = EFFECT_HIT,
+        .power = 75,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SPD_PLUS_2,
+            .self = TRUE,
+            .chance = 100,
+        }),
+        .battleAnimScript = gBattleAnimMove_Waterfall,
     },
     
     // Z-Moves
