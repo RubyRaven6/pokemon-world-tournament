@@ -21009,6 +21009,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     
     //GYM LEADERS SPECIALS
+    
+    //Brock
     [MOVE_ROCK_HEART] =
     {
         .name = COMPOUND_STRING("Rock Heart"),
@@ -21031,6 +21033,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_RockBlast,
     },
 
+    //Misty
     [MOVE_RIPTIDE] =
     {
         .name = COMPOUND_STRING("Riptide"),
@@ -21051,6 +21054,30 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .chance = 100,
         }),
         .battleAnimScript = gBattleAnimMove_Waterfall,
+    },
+
+    //Lt. Surge
+    [MOVE_ARC_FAULT] =
+    {
+        .name = COMPOUND_STRING("Arc Fault"),
+        .description = COMPOUND_STRING(
+            "Inflicts severe damage but\n"
+            "makes the user faint."),
+        .effect = EFFECT_EXPLOSION,
+        .power = 200,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_ELECTRIC_TERRAIN,
+            .chance = 100,
+            .sheerForceBoost = SHEER_FORCE_NO_BOOST,
+        }),
+        .parentalBondBanned = TRUE,
+        .battleAnimScript = gBattleAnimMove_Explosion,
     },
     
     // Z-Moves
