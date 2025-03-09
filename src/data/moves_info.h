@@ -21080,6 +21080,29 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_Explosion,
     },
     
+    //Lt. Surge
+    [MOVE_GRASSPIERCER] =
+    {
+        .name = COMPOUND_STRING("Grasspiercer"),
+        .description = COMPOUND_STRING(
+            "High critical hit chance. May\n"
+            "paralyze, badly poison or drowse."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_GRASSPIERCER,
+            .chance = 50,
+        }),
+        .battleAnimScript = gBattleAnimMove_VineWhip,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {
