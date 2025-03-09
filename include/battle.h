@@ -836,6 +836,7 @@ struct BattleStruct
     struct MessageStatus slideMessageStatus;
     u8 trainerSlideSpriteIds[MAX_BATTLERS_COUNT];
     u8 embodyAspectBoost[NUM_BATTLE_SIDES];
+    u16 savedMove; // backup current move for mid-turn switching, e.g. Red Card
     u16 giphantSealedMoves[NUM_BATTLE_SIDES];
 };
 

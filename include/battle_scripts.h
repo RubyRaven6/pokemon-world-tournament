@@ -645,6 +645,7 @@ extern const u8 BattleScript_EffectSpite[];
 extern const u8 BattleScript_EffectHealBell[];
 extern const u8 BattleScript_EffectHealBell_FromHeal[];
 extern const u8 BattleScript_EffectMeanLook[];
+extern const u8 BattleScript_EffectPsycheLock[];
 extern const u8 BattleScript_EffectNightmare[];
 extern const u8 BattleScript_EffectMinimize[];
 extern const u8 BattleScript_EffectCurse[];
