@@ -21080,7 +21080,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_Explosion,
     },
     
-    //Lt. Surge
+    //Erika
     [MOVE_GRASSPIERCER] =
     {
         .name = COMPOUND_STRING("Grasspiercer"),
