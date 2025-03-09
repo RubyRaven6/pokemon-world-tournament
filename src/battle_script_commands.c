@@ -899,6 +899,7 @@ static const u32 sStatusFlagsForMoveEffects[NUM_MOVE_EFFECTS] =
     [MOVE_EFFECT_NIGHTMARE]      = STATUS2_NIGHTMARE,
     [MOVE_EFFECT_THRASH]         = STATUS2_LOCK_CONFUSE,
     [MOVE_EFFECT_INFATUATED]     = STATUS2_INFATUATION,
+    [MOVE_EFFECT_PSYCHE_LOCK]    = STATUS4_PSYCHE_LOCK,
 };
 
 static const u8 *const sMoveEffectBS_Ptrs[] =
@@ -3797,6 +3798,11 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                 break;
             case MOVE_EFFECT_PREVENT_ESCAPE:
                 gBattleMons[gBattlerTarget].status2 |= STATUS2_ESCAPE_PREVENTION;
+                gDisableStructs[gBattlerTarget].battlerPreventingEscape = gBattlerAttacker;
+                gBattlescriptCurrInstr++;
+                break;
+            case MOVE_EFFECT_PSYCHE_LOCK:
+                gStatuses4[gBattlerTarget] |= STATUS4_PSYCHE_LOCK;
                 gDisableStructs[gBattlerTarget].battlerPreventingEscape = gBattlerAttacker;
                 gBattlescriptCurrInstr++;
                 break;
@@ -17767,6 +17773,20 @@ void BS_RunStatChangeItems(void)
     // Change instruction before calling ItemBattleEffects.
     gBattlescriptCurrInstr = cmd->nextInstr;
     ItemBattleEffects(ITEMEFFECT_STATS_CHANGED, GetBattlerForBattleScript(cmd->battler), FALSE);
+}
+
+void BS_JumpIfStatus4(void)
+{
+    NATIVE_ARGS(u8 battler, u32 flags, const u8 *jumpInstr);
+
+    u8 battler = GetBattlerForBattleScript(cmd->battler);
+    u32 flags = cmd->flags;
+    const u8 *jumpInstr = cmd->jumpInstr;
+
+    if (gStatuses4[battler] & flags && IsBattlerAlive(battler))
+        gBattlescriptCurrInstr = jumpInstr;
+    else
+        gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
 static void TryUpdateEvolutionTracker(u32 evolutionMethod, u32 upAmount, u16 usedMove)
