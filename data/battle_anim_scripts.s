@@ -18261,6 +18261,52 @@ SaltCureEffect:
 	playsewithpan SE_M_ICY_WIND, SOUND_PAN_TARGET
 	return
 
+gBattleAnimMove_GiphantCapture::
+	playsewithpan SE_M_LEER, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_Flash, 2
+	loadspritegfx ANIM_TAG_CONVERSION
+	monbg ANIM_DEF_PARTNER
+	splitbgprio_foes ANIM_TARGET
+	setalpha 0, 16
+	delay 0
+	createsprite gConversion2SpriteTemplate, ANIM_ATTACKER, 2, -24, -24, 60
+	createsprite gConversion2SpriteTemplate, ANIM_ATTACKER, 2, -8, -24, 65
+	createsprite gConversion2SpriteTemplate, ANIM_ATTACKER, 2, 8, -24, 70
+	createsprite gConversion2SpriteTemplate, ANIM_ATTACKER, 2, 24, -24, 75
+	createsprite gConversion2SpriteTemplate, ANIM_ATTACKER, 2, -24, -8, 80
+	createsprite gConversion2SpriteTemplate, ANIM_ATTACKER, 2, -8, -8, 85
+	createsprite gConversion2SpriteTemplate, ANIM_ATTACKER, 2, 8, -8, 90
+	createsprite gConversion2SpriteTemplate, ANIM_ATTACKER, 2, 24, -8, 95
+	createsprite gConversion2SpriteTemplate, ANIM_ATTACKER, 2, -24, 8, 100
+	createsprite gConversion2SpriteTemplate, ANIM_ATTACKER, 2, -8, 8, 105
+	createsprite gConversion2SpriteTemplate, ANIM_ATTACKER, 2, 8, 8, 110
+	createsprite gConversion2SpriteTemplate, ANIM_ATTACKER, 2, 24, 8, 115
+	createsprite gConversion2SpriteTemplate, ANIM_ATTACKER, 2, -24, 24, 120
+	createsprite gConversion2SpriteTemplate, ANIM_ATTACKER, 2, -8, 24, 125
+	createsprite gConversion2SpriteTemplate, ANIM_ATTACKER, 2, 8, 24, 130
+	createsprite gConversion2SpriteTemplate, ANIM_ATTACKER, 2, 24, 24, 135
+	createvisualtask AnimTask_Conversion2AlphaBlend, 5
+	delay 60
+	playsewithpan SE_M_SWIFT, SOUND_PAN_TARGET
+	delay 10
+	playsewithpan SE_M_SWIFT, SOUND_PAN_TARGET
+	delay 10
+	playsewithpan SE_M_SWIFT, SOUND_PAN_TARGET
+	delay 10
+	playsewithpan SE_M_SWIFT, SOUND_PAN_TARGET
+	delay 10
+	playsewithpan SE_M_SWIFT, SOUND_PAN_TARGET
+	delay 10
+	playsewithpan SE_M_SWIFT, SOUND_PAN_TARGET
+	delay 10
+	playsewithpan SE_M_SWIFT, SOUND_PAN_TARGET
+	delay 10
+	playsewithpan SE_M_SWIFT, SOUND_PAN_TARGET
+	waitforvisualfinish
+	clearmonbg ANIM_DEF_PARTNER
+	blendoff
+	end
+
 gBattleAnimMove_TeraBlast::
 gBattleAnimMove_OrderUp::
 gBattleAnimMove_GlaiveRush::

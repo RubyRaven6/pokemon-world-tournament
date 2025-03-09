@@ -1240,7 +1240,7 @@ u32 TrySetCantSelectMoveBattleScript(u32 battler)
     u16 *choicedMove = &gBattleStruct->choicedMove[battler];
     u32 moveEffect = GetMoveEffect(move);
 
-    if (DYNAMAX_BYPASS_CHECK && GetActiveGimmick(battler) != GIMMICK_Z_MOVE && gDisableStructs[battler].disabledMove == move && move != MOVE_NONE)
+    if (DYNAMAX_BYPASS_CHECK && GetActiveGimmick(battler) != GIMMICK_Z_MOVE && (gDisableStructs[battler].disabledMove == move || gBattleStruct->giphantSealedMoves[GetBattlerSide(battler)]) && move != MOVE_NONE)
     {
         gBattleScripting.battler = battler;
         gCurrentMove = move;
@@ -1500,6 +1500,9 @@ u8 CheckMoveLimitations(u32 battler, u8 unusableMoves, u16 check)
             unusableMoves |= 1u << i;
         // Disable
         else if (check & MOVE_LIMITATION_DISABLED && move == gDisableStructs[battler].disabledMove)
+            unusableMoves |= 1u << i;
+        // Giphant Capture
+        else if (check & MOVE_LIMITATION_DISABLED && move == gBattleStruct->giphantSealedMoves[GetBattlerSide(battler)])
             unusableMoves |= 1u << i;
         // Torment
         else if (check & MOVE_LIMITATION_TORMENTED && move == gLastMoves[battler] && gBattleMons[battler].status2 & STATUS2_TORMENT)
@@ -3372,6 +3375,19 @@ static void CancellerDisabled(u32 *effect)
     }
 }
 
+static void CancellerGiphantCaptured(u32 *effect)
+{
+    if (GetActiveGimmick(gBattlerAttacker) != GIMMICK_Z_MOVE && gBattleStruct->giphantSealedMoves[GetBattlerSide(gBattlerAttacker)] == gCurrentMove && gBattleStruct->giphantSealedMoves[GetBattlerSide(gBattlerAttacker)] != MOVE_NONE)
+    {
+        gProtectStructs[gBattlerAttacker].usedDisabledMove = TRUE;
+        gBattleScripting.battler = gBattlerAttacker;
+        CancelMultiTurnMoves(gBattlerAttacker);
+        gBattlescriptCurrInstr = BattleScript_MoveUsedIsDisabled;
+        gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
+        *effect = 1;
+    }
+}
+
 static void CancellerHealBlocked(u32 *effect)
 {
     if (GetActiveGimmick(gBattlerAttacker) != GIMMICK_Z_MOVE && gStatuses3[gBattlerAttacker] & STATUS3_HEAL_BLOCK && IsHealBlockPreventingMove(gBattlerAttacker, gCurrentMove))
@@ -3852,6 +3868,7 @@ static const MoveSuccessOrderCancellers sMoveSuccessOrderCancellers[] =
     [CANCELLER_MULTIHIT_MOVES] = CancellerMultihitMoves,
     [CANCELLER_Z_MOVES] = CancellerZMoves,
     [CANCELLER_MULTI_TARGET_MOVES] = CancellerMultiTargetMoves,
+    [CANCELLER_GIPHANT_CAPTURED] = CancellerGiphantCaptured,
 };
 
 u32 AtkCanceller_MoveSuccessOrder(void)

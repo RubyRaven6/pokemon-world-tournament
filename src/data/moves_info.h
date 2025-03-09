@@ -21123,6 +21123,24 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .magicCoatAffected = TRUE,
         .battleAnimScript = gBattleAnimMove_Block,
     },
+  
+  // Viola
+    [MOVE_GIPHANT_CAPTURE] =
+    {
+        .name = COMPOUND_STRING("Giphant Capture"),
+        .description = COMPOUND_STRING(
+            "Seals the last move the\n"
+            "target used."),
+        .effect = EFFECT_GIPHANT_CAPTURE,
+        .power = 0,
+        .type = TYPE_BUG,
+        .accuracy = 100,
+        .pp = 1,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .battleAnimScript = gBattleAnimMove_GiphantCapture,
+    },
 
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
