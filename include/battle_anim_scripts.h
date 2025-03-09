@@ -1014,5 +1014,7 @@ extern const u8 gBattleAnimSpecial_SubstituteToMon[];
 extern const u8 gBattleAnimSpecial_MonToSubstitute[];
 extern const u8 gBattleAnimSpecial_CriticalCaptureBallThrow[];
 
+// Ruby animations
+extern const u8 gBattleAnimMove_GiphantCapture[];
 
 #endif // GUARD_BATTLE_ANIM_SCRIPTS_H

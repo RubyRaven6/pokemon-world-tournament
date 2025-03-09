@@ -18704,3 +18704,30 @@ void BS_RestoreSavedMove(void)
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
+void BS_DoGiphantCapture(void)
+{
+    NATIVE_ARGS(const u8 *failInstr);
+    u32 lastMove = gLastMoves[gBattlerTarget];
+    bool32 validMove = FALSE;
+    for (u32 i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (gBattleMons[gBattlerTarget].moves[i] == lastMove)
+            validMove = TRUE;
+    }
+    if (validMove)
+    {
+        u32 currChar = 0;
+        while (gMovesInfo[lastMove].name[currChar] != EOS)
+        {
+            gBattleTextBuff1[currChar] = gMovesInfo[lastMove].name[currChar];
+            currChar++;
+        }
+        gBattleTextBuff1[currChar] = EOS;
+        gBattleStruct->giphantSealedMoves[GetBattlerSide(gBattlerTarget)] = lastMove;
+        gBattlescriptCurrInstr = cmd->nextInstr;
+    }
+    else
+    {
+        gBattlescriptCurrInstr = cmd->failInstr;
+    }
+}
