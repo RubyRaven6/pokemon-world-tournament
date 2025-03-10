@@ -18,8 +18,6 @@
 
 TEST("Move names fit on Pokemon Summary Screen")
 {
-    KNOWN_FAILING;
-
     u32 i;
     const u32 fontId = FONT_NARROWER, widthPx = 72;
     u32 move = MOVE_NONE;
@@ -33,8 +31,6 @@ TEST("Move names fit on Pokemon Summary Screen")
 
 TEST("Move names fit on Battle Screen")
 {
-    KNOWN_FAILING;
-
     u32 i;
     const u32 fontId = FONT_NARROWER, widthPx = 64;
     u32 move = MOVE_NONE;
@@ -47,8 +43,6 @@ TEST("Move names fit on Battle Screen")
 
 TEST("Move names fit on Contest Screen")
 {
-    KNOWN_FAILING;
-
     u32 i;
     const u32 fontId = FONT_NARROWER, widthPx = 59;
     u32 move = MOVE_NONE;
@@ -72,8 +66,6 @@ TEST("Move names fit on Contest Screen")
 
 TEST("Move names fit on TMs & HMs Bag Screen")
 {
-    KNOWN_FAILING;
-
     u32 i;
     const u32 fontId = FONT_NARROWER, widthPx = 61; 
     u32 move = MOVE_NONE;
@@ -85,9 +77,7 @@ TEST("Move names fit on TMs & HMs Bag Screen")
 }
 
 TEST("Move names fit on Move Relearner Screen")
-{
-    KNOWN_FAILING;
-    
+{    
     u32 i;
     const u32 fontId = FONT_NARROWER, widthPx = 72;
     u32 move = MOVE_NONE;
@@ -99,9 +89,7 @@ TEST("Move names fit on Move Relearner Screen")
 }
 
 TEST("Move descriptions fit on Pokemon Summary Screen")
-{
-    KNOWN_FAILING;
-    
+{    
     u32 i;
     const u32 fontId = FONT_NORMAL, widthPx = 152;
     u32 move = MOVE_NONE;

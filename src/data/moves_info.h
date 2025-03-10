@@ -21086,8 +21086,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Grasspiercer"),
         .description = COMPOUND_STRING(
-            "High critical hit chance. May\n"
-            "paralyze, badly poison or drowse."),
+            "High crit ratio. May badly\n"
+            "poison, paralyze, or drowse."),
         .effect = EFFECT_HIT,
         .power = 80,
         .type = TYPE_GRASS,
