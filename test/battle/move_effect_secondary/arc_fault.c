@@ -1,17 +1,6 @@
 #include "global.h"
 #include "test/battle.h"
 
-ASSUMPTIONS
-{
-    ASSUME(MoveHasAdditionalEffect(MOVE_ARC_FAULT, MOVE_EFFECT_ELECTRIC_TERRAIN) == TRUE);
-}
-
-SINGLE_BATTLE_TEST("Arc Fault sets electric terrain")
-{
-    GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
-    } WHEN {
-        TURN { MOVE(player, MOVE_ARC_FAULT); }
-    }
-}
+TO_DO_BATTLE_TEST("Arc fault hits");
+TO_DO_BATTLE_TEST("Arc fault sets up electric terrain");
+TO_DO_BATTLE_TEST("Arc fault fails in singles against a ground type");
