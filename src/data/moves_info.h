@@ -21007,6 +21007,124 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_MalignantChain,
     },
 
+    
+    //GYM LEADERS SPECIALS
+    
+    //Brock
+    [MOVE_ROCK_HEART] =
+    {
+        .name = COMPOUND_STRING("Rock Heart"),
+        .description = COMPOUND_STRING(
+            "A hardened heart which\n"
+            "may infatuate the target."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_ROCK,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_INFATUATED,
+            .chance = 30,
+            .sheerForceBoost = SHEER_FORCE_BOOST,
+        }),
+        .battleAnimScript = gBattleAnimMove_RockBlast,
+    },
+
+    //Misty
+    [MOVE_RIPTIDE] =
+    {
+        .name = COMPOUND_STRING("Riptide"),
+        .description = COMPOUND_STRING(
+            "Rapidly splits water.\n"
+            "Ups the user's Speed."),
+        .effect = EFFECT_HIT,
+        .power = 75,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SPD_PLUS_2,
+            .self = TRUE,
+            .chance = 100,
+            .sheerForceBoost = SHEER_FORCE_BOOST,
+        }),
+        .battleAnimScript = gBattleAnimMove_Waterfall,
+    },
+
+    //Lt. Surge
+    [MOVE_ARC_FAULT] =
+    {
+        .name = COMPOUND_STRING("Arc Fault"),
+        .description = COMPOUND_STRING(
+            "Inflicts severe damage but\n"
+            "makes the user faint."),
+        .effect = EFFECT_EXPLOSION,
+        .power = 200,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_ELECTRIC_TERRAIN,
+            .chance = 100,
+            .sheerForceBoost = SHEER_FORCE_NO_BOOST,
+        }),
+        .parentalBondBanned = TRUE,
+        .battleAnimScript = gBattleAnimMove_Explosion,
+    },
+    
+    //Erika
+    [MOVE_GRASSPIERCER] =
+    {
+        .name = COMPOUND_STRING("Grasspiercer"),
+        .description = COMPOUND_STRING(
+            "High crit ratio. May badly\n"
+            "poison, paralyze, or drowse."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_GRASSPIERCER,
+            .chance = 50,
+            .sheerForceBoost = SHEER_FORCE_BOOST,
+        }),
+        .battleAnimScript = gBattleAnimMove_VineWhip,
+    },
+
+    //Sabrina
+    [MOVE_PSYCHE_LOCK] =
+    {
+        .name = COMPOUND_STRING("Psyche Lock"),
+        .description = COMPOUND_STRING(
+            "Mentally blocks the foe\n"
+            "and prevents all escape."),
+        .effect = EFFECT_PSYCHE_LOCK,
+        .power = 0,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 0,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .magicCoatAffected = TRUE,
+        .battleAnimScript = gBattleAnimMove_Block,
+    },
+  
+  // Viola
     [MOVE_GIPHANT_CAPTURE] =
     {
         .name = COMPOUND_STRING("Giphant Capture"),

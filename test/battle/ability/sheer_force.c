@@ -391,6 +391,7 @@ static inline bool32 IgnoreMoveForSheerForceBoost(u32 move)
         case MOVE_UPPER_HAND:    //  Bugged?
         case MOVE_GLITZY_GLOW:   //  Light Screen Move Effect seems to be bugged
         case MOVE_PAYBACK:
+        case MOVE_ARC_FAULT:
             return TRUE;
     }
     return FALSE;
@@ -605,6 +606,9 @@ static inline bool32 IsMoveSheerForceBoosted(u32 move)
         case MOVE_ZING_ZAP:
         case MOVE_ELECTRO_SHOT:
         case MOVE_PSYCHIC_NOISE:
+        case MOVE_ROCK_HEART:
+        case MOVE_RIPTIDE:
+        case MOVE_GRASSPIERCER:
             return TRUE;
     }
     return FALSE;

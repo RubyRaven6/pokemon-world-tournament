@@ -77,7 +77,7 @@ TEST("Move names fit on TMs & HMs Bag Screen")
 }
 
 TEST("Move names fit on Move Relearner Screen")
-{
+{    
     u32 i;
     const u32 fontId = FONT_NARROWER, widthPx = 72;
     u32 move = MOVE_NONE;
@@ -89,7 +89,7 @@ TEST("Move names fit on Move Relearner Screen")
 }
 
 TEST("Move descriptions fit on Pokemon Summary Screen")
-{
+{    
     u32 i;
     const u32 fontId = FONT_NORMAL, widthPx = 152;
     u32 move = MOVE_NONE;
