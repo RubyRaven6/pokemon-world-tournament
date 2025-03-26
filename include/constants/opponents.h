@@ -3,7 +3,31 @@
 
 #include "constants/battle_partner.h"
 
-#define TRAINER_NONE                          0
+#define TRAINER_NONE                        0
+
+#define TRAINER_KANTO_BROCK                 1
+#define TRAINER_KANTO_MISTY                 2
+#define TRAINER_KANTO_LTSURGE               3
+#define TRAINER_KANTO_ERIKA                 4
+#define TRAINER_KANTO_SABRINA               5
+#define TRAINER_KANTO_KOGAJANINE            6
+#define TRAINER_KANTO_BLAINE                7
+#define TRAINER_KANTO_GIOVANNI              8
+#define TRAINER_JOHTO_FALKNER               9
+#define TRAINER_JOHTO_BUGSY                 10
+#define TRAINER_JOHTO_MORTY                 11
+#define TRAINER_JOHTO_WHITNEY               12
+#define TRAINER_JOHTO_CHUCK                 13
+#define TRAINER_JOHTO_JASMINE               14
+#define TRAINER_JOHTO_PRYCE                 15
+#define TRAINER_JOHTO_CLAIR                 16
+
+
+#define TRAINERS_COUNT                      17
+#define MAX_TRAINERS_COUNT                  864
+#define TRAINER_PARTNER(partner)            (MAX_TRAINERS_COUNT + partner)
+
+// VANILLA TRAINERS
 #define TRAINER_SAWYER_1                      1
 #define TRAINER_GRUNT_AQUA_HIDEOUT_1          2
 #define TRAINER_GRUNT_AQUA_HIDEOUT_2          3
@@ -863,8 +887,8 @@
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      855
-#define MAX_TRAINERS_COUNT                  864
-#define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
+// #define TRAINERS_COUNT                      855
+// #define MAX_TRAINERS_COUNT                  864
+// #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H
