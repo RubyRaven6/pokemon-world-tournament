@@ -733,12 +733,14 @@
 #define STRINGID_PKMNGIGANTAMAXED                     731
 #define STRINGID_TIMETODYNAMAX                        732
 #define STRINGID_TIMETOGIGANTAMAX                     733
+#define STRINGID_QUESTIONFORFEITBATTLE                734
+#define STRINGID_FORFEITBATTLEGAVEMONEY               735
 
 //  Ruby moves
-#define STRINGID_GIPHANT_CAPTURE_FAIL                 734
-#define STRINGID_GIPHANT_CAPTURE_SUCCESS              735
+#define STRINGID_GIPHANT_CAPTURE_FAIL                 736
+#define STRINGID_GIPHANT_CAPTURE_SUCCESS              737
 
-#define BATTLESTRINGS_COUNT                           736
+#define BATTLESTRINGS_COUNT                           738
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
