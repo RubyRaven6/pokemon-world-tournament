@@ -77,6 +77,16 @@ const struct PoolRules gPoolRulesetsList[] = {
         .tagMaxMembers[POOL_TAG_EXPLOITER] = POOL_MEMBER_COUNT_UNLIMITED,
         .tagRequired[POOL_TAG_EXPLOITER] = TRUE,
     },
+    [POOL_RULESET_SUPPORT_SINGLES] = {
+        .speciesClause = TRUE,
+        .excludeForms = TRUE,
+        .itemClause = B_POOL_RULE_ITEM_CLAUSE,
+        .itemClauseExclusions = B_POOL_RULES_USE_ITEM_EXCLUSIONS,
+        .tagMaxMembers[POOL_TAG_LEAD] = 1,
+        .tagMaxMembers[POOL_TAG_ACE] = 1,
+        .tagMaxMembers[POOL_TAG_SUPPORT] = 1,
+        .tagRequired[POOL_TAG_SUPPORT] = TRUE,
+    },
     [POOL_RULESET_VIOLA] = {
         .speciesClause = TRUE,
         .excludeForms = TRUE,
