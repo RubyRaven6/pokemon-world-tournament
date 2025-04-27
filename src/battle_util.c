@@ -5497,8 +5497,6 @@ bool32 CanBattlerEscape(u32 battler) // no ability check
 {
     if (gBattleStruct->commanderActive[battler] != SPECIES_NONE)
         return FALSE;
-    else if (gStatuses4[battler] & STATUS4_PSYCHE_LOCK)
-        return FALSE;
     else if (GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_SHED_SHELL)
         return TRUE;
     else if (B_GHOSTS_ESCAPE >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GHOST))
