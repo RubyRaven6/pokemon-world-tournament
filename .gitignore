@@ -47,3 +47,4 @@ tools/poryscript
 *.fastSmol
 *.smolTM
 __pycache__
+log.txt
