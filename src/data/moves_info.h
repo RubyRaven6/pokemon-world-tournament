@@ -21142,25 +21142,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         }),
         .battleAnimScript = gBattleAnimMove_VineWhip,
     },
-
-    //Sabrina
-    [MOVE_PSYCHE_LOCK] =
-    {
-        .name = COMPOUND_STRING("Psyche Lock"),
-        .description = COMPOUND_STRING(
-            "Mentally blocks the foe\n"
-            "and prevents all escape."),
-        .effect = EFFECT_PSYCHE_LOCK,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 5,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .magicCoatAffected = TRUE,
-        .battleAnimScript = gBattleAnimMove_Block,
-    },
   
   // Viola
     [MOVE_GIPHANT_CAPTURE] =

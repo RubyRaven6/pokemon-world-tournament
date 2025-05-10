@@ -161,7 +161,6 @@ BattleScript_EffectShedTail::
 	attackstring
 	ppreduce
 	waitstate
-	jumpifstatus4 BS_ATTACKER, STATUS4_PSYCHE_LOCK, BattleScript_ButItFailed
 	jumpifstatus2 BS_ATTACKER, STATUS2_SUBSTITUTE, BattleScript_AlreadyHasSubstitute
 	jumpifbattletype BATTLE_TYPE_ARENA, BattleScript_ButItFailed
 	jumpifcantswitch SWITCH_IGNORE_ESCAPE_PREVENTION | BS_ATTACKER, BattleScript_ButItFailed
@@ -309,16 +308,19 @@ BattleScript_CheckPrimalWeather:
 	jumpifhalfword CMP_COMMON_BITS, gBattleWeather, B_WEATHER_STRONG_WINDS, BattleScript_MysteriousAirCurrentBlowsOn
 	return
 
-BattleScript_MoveSwitchPursuit:
+BattleScript_MoveSwitchPursuitEnd:
+	call BattleScript_MoveSwitchPursuitRet
+	end
+
+BattleScript_MoveSwitchPursuitRet:
 	jumpifbattletype BATTLE_TYPE_ARENA, BattleScript_MoveSwitchEnd
 	jumpifcantswitch SWITCH_IGNORE_ESCAPE_PREVENTION | BS_ATTACKER, BattleScript_MoveSwitchEnd
 	printstring STRINGID_PKMNWENTBACK
 	waitmessage B_WAIT_TIME_SHORT
 	jumpifnopursuitswitchdmg BattleScript_MoveSwitchOpenPartyScreen
-	end
+	return
 
 BattleScript_MoveSwitch:
-	jumpifstatus4 BS_ATTACKER, STATUS4_PSYCHE_LOCK, BattleScript_ButItFailed
 	jumpifbattletype BATTLE_TYPE_ARENA, BattleScript_MoveSwitchEnd
 	jumpifcantswitch SWITCH_IGNORE_ESCAPE_PREVENTION | BS_ATTACKER, BattleScript_MoveSwitchEnd
 	printstring STRINGID_PKMNWENTBACK
@@ -1325,7 +1327,6 @@ BattleScript_EffectPartingShot::
 	attackcanceler
 	attackstring
 	ppreduce
-	jumpifstatus4 BS_ATTACKER, STATUS4_PSYCHE_LOCK, BattleScript_ButItFailed
 	jumpifstat BS_TARGET, CMP_GREATER_THAN, STAT_ATK, MIN_STAT_STAGE, BattleScript_EffectPartingShotTryAtk
 	jumpifstat BS_TARGET, CMP_EQUAL, STAT_SPATK, MIN_STAT_STAGE, BattleScript_CantLowerMultipleStats
 BattleScript_EffectPartingShotTryAtk:
@@ -1347,7 +1348,7 @@ BattleScript_EffectPartingShotTrySpAtk:
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_EffectPartingShotSwitch:
 	moveendall
-	goto BattleScript_MoveSwitchPursuit
+	goto BattleScript_MoveSwitchPursuitEnd
 
 BattleScript_EffectPowder::
 	attackcanceler
@@ -2771,22 +2772,12 @@ BattleScript_EffectHealBlock::
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectHitEscape::
-	call BattleScript_EffectHit_Ret
-	jumpifmovehadnoeffect BattleScript_MoveEnd
-	tryfaintmon BS_TARGET
-	moveendto MOVEEND_ATTACKER_VISIBLE
-	moveendfrom MOVEEND_TARGET_VISIBLE
-	jumpifbattleend BattleScript_HitEscapeEnd
-	jumpifstatus4 BS_ATTACKER, STATUS4_PSYCHE_LOCK, BattleScript_ButItFailed
-	jumpifbyte CMP_NOT_EQUAL, gBattleOutcome, 0, BattleScript_HitEscapeEnd
-	jumpifemergencyexited BS_TARGET, BattleScript_HitEscapeEnd
 	jumpiffainted BS_TARGET, FALSE, BattleScript_HitEscapeSwitch
 	setbyte sGIVEEXP_STATE, 0
 	getexp BS_TARGET
 BattleScript_HitEscapeSwitch:
-	goto BattleScript_MoveSwitchPursuit
-BattleScript_HitEscapeEnd:
-	end
+	call BattleScript_MoveSwitchPursuitRet
+	return
 
 BattleScript_EffectPlaceholder::
 	attackcanceler
@@ -4058,19 +4049,6 @@ BattleScript_EffectMeanLook::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
-BattleScript_EffectPsycheLock::
-	attackcanceler
-	attackstring
-	ppreduce
-	accuracycheck BattleScript_ButItFailed, NO_ACC_CALC_CHECK_LOCK_ON
-	jumpifstatus4 BS_TARGET, STATUS4_PSYCHE_LOCK, BattleScript_ButItFailed
-	attackanimation
-	waitanimation
-	seteffectprimary MOVE_EFFECT_PSYCHE_LOCK
-	printstring STRINGID_TARGETCANTESCAPENOW
-	waitmessage B_WAIT_TIME_LONG
-	goto BattleScript_MoveEnd	
-
 BattleScript_EffectNightmare::
 	attackcanceler
 	attackstring
@@ -4351,7 +4329,6 @@ BattleScript_EffectBatonPass::
 	attackcanceler
 	attackstring
 	ppreduce
-	jumpifstatus4 BS_ATTACKER, STATUS4_PSYCHE_LOCK, BattleScript_ButItFailed
 	jumpifbattletype BATTLE_TYPE_ARENA, BattleScript_ButItFailed
 	jumpifcantswitch SWITCH_IGNORE_ESCAPE_PREVENTION | BS_ATTACKER, BattleScript_ButItFailed
 	attackanimation

@@ -172,10 +172,10 @@
 #define STATUS3_GASTRO_ACID             (1 << 16)
 #define STATUS3_EMBARGO                 (1 << 17)
 #define STATUS3_UNDERWATER              (1 << 18)
-#define STATUS3_INTIMIDATE_POKES        (1 << 19)
-#define STATUS3_TRACE                   (1 << 20)
+#define STATUS3_UNUSED_19               (1 << 19)
+#define STATUS3_UNUSED_20               (1 << 20)
 #define STATUS3_SMACKED_DOWN            (1 << 21)
-#define STATUS3_ME_FIRST                (1 << 22)
+#define STATUS3_UNUSED_22               (1 << 22)
 #define STATUS3_TELEKINESIS             (1 << 23)
 #define STATUS3_PHANTOM_FORCE           (1 << 24)
 #define STATUS3_MIRACLE_EYED            (1 << 25)
@@ -195,7 +195,6 @@
 #define STATUS4_SALT_CURE               (1 << 4)
 #define STATUS4_SYRUP_BOMB              (1 << 5)
 #define STATUS4_GLAIVE_RUSH             (1 << 6)
-#define STATUS4_PSYCHE_LOCK             (1 << 7)
 
 #define HITMARKER_UNUSED_1              (1 << 4)
 #define HITMARKER_IGNORE_BIDE           (1 << 5)
@@ -219,7 +218,7 @@
 #define HITMARKER_ALLOW_NO_PP           (1 << 23)
 #define HITMARKER_GRUDGE                (1 << 24)
 #define HITMARKER_OBEYS                 (1 << 25)
-#define HITMARKER_NEVER_SET             (1 << 26) // Cleared as part of a large group. Never set or checked
+#define HITMARKER_UNUSED_5              (1 << 26)
 #define HITMARKER_CHARGING              (1 << 27)
 #define HITMARKER_FAINTED(battler)      (1u << (battler + 28))
 #define HITMARKER_FAINTED2(battler)     HITMARKER_FAINTED(battler)
@@ -455,7 +454,6 @@ enum MoveEffects
     MOVE_EFFECT_FIXED_POWER,
     MOVE_EFFECT_INFATUATED,
     MOVE_EFFECT_GRASSPIERCER,
-    MOVE_EFFECT_PSYCHE_LOCK,
     NUM_MOVE_EFFECTS
 };
 
