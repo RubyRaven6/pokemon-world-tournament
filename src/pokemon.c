@@ -19,6 +19,7 @@
 #include "field_player_avatar.h"
 #include "field_specials.h"
 #include "field_weather.h"
+#include "follower_npc.h"
 #include "graphics.h"
 #include "item.h"
 #include "caps.h"
@@ -3464,7 +3465,8 @@ u8 GetMonsStateToDoubles_2(void)
     s32 aliveCount = 0;
     s32 i;
 
-    if (OW_DOUBLE_APPROACH_WITH_ONE_MON)
+    if (OW_DOUBLE_APPROACH_WITH_ONE_MON
+     || FollowerNPCIsBattlePartner())
         return PLAYER_HAS_TWO_USABLE_MONS;
 
     for (i = 0; i < PARTY_SIZE; i++)
@@ -4568,32 +4570,42 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
                 currentCondition = TRUE;
             break;
         case IF_MIN_BEAUTY:
+        {
             u32 beauty = GetMonData(mon, MON_DATA_BEAUTY, 0);
             if (beauty >= params[i].arg1)
                 currentCondition = TRUE;
             break;
+        }
         case IF_MIN_COOLNESS:
+        {
             u32 coolness = GetMonData(mon, MON_DATA_COOL, 0);
             if (coolness >= params[i].arg1)
                 currentCondition = TRUE;
             break;
+        }
         case IF_MIN_SMARTNESS: 
         // remember that even though it's called "Smart/Smartness" here, 
         // from gen 6 and up it's known as "Clever/Cleverness."
+        {
             u32 smartness = GetMonData(mon, MON_DATA_SMART, 0);
             if (smartness >= params[i].arg1)
                 currentCondition = TRUE;
             break;
+        }
         case IF_MIN_TOUGHNESS:
+        {
             u32 toughness = GetMonData(mon, MON_DATA_TOUGH, 0);
             if (toughness >= params[i].arg1)
                 currentCondition = TRUE;
             break;
+        }
         case IF_MIN_CUTENESS:
+        {
             u32 cuteness = GetMonData(mon, MON_DATA_CUTE, 0);
             if (cuteness >= params[i].arg1)
                 currentCondition = TRUE;
             break;
+        }
         // Gen 4
         case IF_SPECIES_IN_PARTY:
             for (j = 0; j < PARTY_SIZE; j++)
@@ -6615,7 +6627,23 @@ u32 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *boxMon, enum FormChanges
                 case FORM_CHANGE_ITEM_HOLD:
                     if ((heldItem == formChanges[i].param1 || formChanges[i].param1 == ITEM_NONE)
                      && (ability == formChanges[i].param2 || formChanges[i].param2 == ABILITY_NONE))
-                        targetSpecies = formChanges[i].targetSpecies;
+                    {
+                        // This is to prevent reverting to base form when giving the item to the corresponding form.
+                        // Eg. Giving a Zap Plate to an Electric Arceus without an item (most likely to happen when using givemon)
+                        bool32 currentItemForm = FALSE;
+                        for (int j = 0; formChanges[j].method != FORM_CHANGE_TERMINATOR; j++)
+                        {
+                            if (species == formChanges[j].targetSpecies
+                                && formChanges[j].param1 == heldItem
+                                && formChanges[j].param1 != ITEM_NONE)
+                            {
+                                currentItemForm = TRUE;
+                                break;
+                            }
+                        }
+                        if (!currentItemForm)
+                            targetSpecies = formChanges[i].targetSpecies;
+                    }
                     break;
                 case FORM_CHANGE_ITEM_USE:
                     if (arg == formChanges[i].param1)
@@ -6657,7 +6685,7 @@ u32 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *boxMon, enum FormChanges
                         targetSpecies = formChanges[i].targetSpecies;
                     break;
                 case FORM_CHANGE_END_BATTLE_TERRAIN:
-                    if (gBattleTerrain == formChanges[i].param1)
+                    if (gBattleEnvironment == formChanges[i].param1)
                         targetSpecies = formChanges[i].targetSpecies;
                     break;
                 case FORM_CHANGE_WITHDRAW:
