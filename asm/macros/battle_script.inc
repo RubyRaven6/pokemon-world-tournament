@@ -193,13 +193,6 @@
 	.4byte \jumpInstr
 	.endm
 
-    .macro jumpifstatus4 battler:req, flags:req, jumpInstr:req
-    callnative BS_JumpIfStatus4
-    .byte \battler
-    .4byte \flags
-    .4byte \jumpInstr
-    .endm
-
 	.macro jumpbasedontype battler:req, type:req, jumpIfType:req, jumpInstr:req
 	.byte 0x22
 	.byte \battler
@@ -1511,12 +1504,6 @@
 
 	.macro jumpifshelltrap battler:req, jumpInstr:req
 	callnative BS_JumpIfShellTrap
-	.byte \battler
-	.4byte \jumpInstr
-	.endm
-
-	.macro jumpifemergencyexited battler:req, jumpInstr:req
-	callnative BS_JumpIfEmergencyExited
 	.byte \battler
 	.4byte \jumpInstr
 	.endm
