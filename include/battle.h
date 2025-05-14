@@ -789,6 +789,7 @@ struct BattleStruct
     u8 trainerSlideSpriteIds[MAX_BATTLERS_COUNT];
     u16 opponentMonCanTera:6;
     u16 opponentMonCanDynamax:6;
+    u16 giphantSealedMoves[NUM_BATTLE_SIDES];
     u16 padding:4;
 };
 
