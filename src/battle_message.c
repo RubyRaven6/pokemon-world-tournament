@@ -901,7 +901,8 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_FORFEITBATTLEGAVEMONEY]               = COMPOUND_STRING("You gave ¥{B_BUFF1} to the winner…{PAUSE_UNTIL_PRESS}"),
     [STRINGID_GIPHANT_CAPTURE_FAIL]                 = COMPOUND_STRING("But Giphant Capture couldn't seal any move!"),
     [STRINGID_GIPHANT_CAPTURE_SUCCESS]              = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} sealed {B_BUFF1} for {B_DEF_TEAM2} team!"),
-
+    [STRINGID_POWERCONSTRUCTPRESENCEOFMANY]         = COMPOUND_STRING("You sense the presence of many!"),
+    [STRINGID_POWERCONSTRUCTTRANSFORM]              = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} transformed into its Complete Forme!"),
 };
 
 const u16 gTrainerUsedItemStringIds[] =
@@ -3190,7 +3191,7 @@ static void IllusionNickHack(u32 battler, u32 partyId, u8 *dst)
 
         id = GetIllusionMonPartyId(gEnemyParty, mon, partnerMon);
     }
-    
+
     if (id != PARTY_SIZE)
         GetMonData(&gEnemyParty[id], MON_DATA_NICKNAME, dst);
     else
