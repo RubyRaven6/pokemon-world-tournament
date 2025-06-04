@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-      - upcoming
+      - pwt-upcoming
   pull_request:
 
 jobs:
