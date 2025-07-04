@@ -4419,6 +4419,14 @@ void SetMoveEffect(bool32 primary, bool32 certain)
         }
         break;
     }
+    case MOVE_EFFECT_GRASSPIERCER:
+        if (!gBattleMons[gEffectBattler].status1)
+        {
+            static const u8 sGrasspiercerEffects[] = { MOVE_EFFECT_TOXIC, MOVE_EFFECT_PARALYSIS, MOVE_EFFECT_SLEEP };
+            gBattleScripting.moveEffect = RandomElement(RNG_GRASSPIERCER, sGrasspiercerEffects);
+            SetMoveEffect(primary, certain);
+        }
+        break;
     case MOVE_EFFECT_REMOVE_STATUS:
     {
         u32 argStatus = GetMoveEffectArg_Status(gCurrentMove);
