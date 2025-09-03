@@ -21148,7 +21148,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_INFATUATED,
             .chance = 30,
-            .sheerForceBoost = SHEER_FORCE_BOOST,
         }),
         .battleAnimScript = gBattleAnimMove_RockBlast,
     },
@@ -21172,7 +21171,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .moveEffect = MOVE_EFFECT_SPD_PLUS_2,
             .self = TRUE,
             .chance = 100,
-            .sheerForceBoost = SHEER_FORCE_BOOST,
         }),
         .battleAnimScript = gBattleAnimMove_Waterfall,
     },
@@ -21195,7 +21193,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_ELECTRIC_TERRAIN,
             .chance = 100,
-            .sheerForceBoost = SHEER_FORCE_NO_BOOST,
+            .sheerForceOverride = TRUE,
         }),
         .parentalBondBanned = TRUE,
         .battleAnimScript = gBattleAnimMove_Explosion,
@@ -21220,7 +21218,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_GRASSPIERCER,
             .chance = 50,
-            .sheerForceBoost = SHEER_FORCE_BOOST,
         }),
         .battleAnimScript = gBattleAnimMove_VineWhip,
     },
