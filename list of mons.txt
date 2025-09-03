@@ -382,6 +382,8 @@
 {{lop/base|0647|Keldeo|91|72|90|129|90|108}}
 {{lop/base|0648|Meloetta|100|77|77|128|128|90|Aria Forme}}
 {{lop/base|0649|Genesect|71|120|95|120|95|99}}
+
+== GEN SIX == 
 {{lop/base|0652|Chesnaught|88|107|122|74|75|64}}
 {{lop/base|0655|Delphox|75|69|72|114|100|104}}
 {{lop/base|0658|Greninja|72|95|67|103|71|122}}
@@ -425,6 +427,8 @@
 {{lop/base|0719|Diancie|50|100|150|100|150|50}}
 {{lop/base|0720|Hoopa|80|110|60|150|130|70|Hoopa Confined}}
 {{lop/base|0721|Volcanion|80|110|120|130|90|70}}
+
+== GEN SEVEN ==
 {{lop/base|0724|Decidueye|78|107|75|100|100|70}}
 {{lop/base|0724|form=-Hisui|Decidueye|88|112|80|95|95|60|Hisuian Decidueye}}
 {{lop/base|0727|Incineroar|95|115|90|80|90|60}}
@@ -484,6 +488,8 @@
 {{lop/base|0806|Blacephalon|53|127|53|151|79|107}}
 {{lop/base|0807|Zeraora|88|112|75|102|80|143}}
 {{lop/base|0809|Melmetal|135|143|143|80|65|34}}
+
+== GEN EIGHT == 
 {{lop/base|0812|Rillaboom|100|125|90|60|70|85}}
 {{lop/base|0815|Cinderace|80|116|75|65|75|119}}
 {{lop/base|0818|Inteleon|70|85|65|125|65|120}}
@@ -547,6 +553,8 @@
 {{lop/base|0903|Sneasler|80|130|60|40|80|120}}
 {{lop/base|0904|Overqwil|85|115|95|65|65|85}}
 {{lop/base|0905|Enamorus|74|115|70|135|80|106|Incarnate Forme}}
+
+== GEN NINE ==
 {{lop/base|0908|Meowscarada|76|110|70|81|70|123}}
 {{lop/base|0911|Skeledirge|104|75|100|110|75|66}}
 {{lop/base|0914|Quaquaval|85|120|80|85|75|85}}
