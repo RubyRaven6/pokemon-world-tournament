@@ -109,27 +109,27 @@ LilycoveCity_ContestLobby_EventScript_ChooseContestRank::
 	end
 
 LilycoveCity_ContestLobby_EventScript_EnterNormalRank::
-	setvar VAR_CONTEST_RANK, CONTEST_RANK_NORMAL
+	setvar VAR_GYM_LEADER_2, CONTEST_RANK_NORMAL
 	goto LilycoveCity_ContestLobby_EventScript_ChooseContestType
 	end
 
 LilycoveCity_ContestLobby_EventScript_EnterSuperRank::
-	setvar VAR_CONTEST_RANK, CONTEST_RANK_SUPER
+	setvar VAR_GYM_LEADER_2, CONTEST_RANK_SUPER
 	goto LilycoveCity_ContestLobby_EventScript_ChooseContestType
 	end
 
 LilycoveCity_ContestLobby_EventScript_EnterHyperRank::
-	setvar VAR_CONTEST_RANK, CONTEST_RANK_HYPER
+	setvar VAR_GYM_LEADER_2, CONTEST_RANK_HYPER
 	goto LilycoveCity_ContestLobby_EventScript_ChooseContestType
 	end
 
 LilycoveCity_ContestLobby_EventScript_EnterMasterRank::
-	setvar VAR_CONTEST_RANK, CONTEST_RANK_MASTER
+	setvar VAR_GYM_LEADER_2, CONTEST_RANK_MASTER
 	goto LilycoveCity_ContestLobby_EventScript_ChooseContestType
 	end
 
 @ The multichoice selection IDs are equal to the CATEGORY values
-@ So rather than list the cases they just copy VAR_RESULT for a valid selection into VAR_CONTEST_CATEGORY
+@ So rather than list the cases they just copy VAR_RESULT for a valid selection into VAR_GYM_LEADER_1
 LilycoveCity_ContestLobby_EventScript_ChooseContestType::
 	message LilycoveCity_ContestLobby_Text_EnterWhichContest1
 	waitmessage
@@ -137,7 +137,7 @@ LilycoveCity_ContestLobby_EventScript_ChooseContestType::
 	switch VAR_RESULT
 	case 5, LilycoveCity_ContestLobby_EventScript_CancelEnterContest
 	case MULTI_B_PRESSED, LilycoveCity_ContestLobby_EventScript_CancelEnterContest
-	copyvar VAR_CONTEST_CATEGORY, VAR_RESULT
+	copyvar VAR_GYM_LEADER_1, VAR_RESULT
 	goto LilycoveCity_ContestLobby_EventScript_ChooseContestMon
 	end
 
@@ -206,7 +206,7 @@ ContestHall_EventScript_DoContest::
 	return
 
 ContestHall_EventScript_GetContestRankStringId::
-	switch VAR_CONTEST_RANK
+	switch VAR_GYM_LEADER_2
 	case CONTEST_RANK_NORMAL, ContestHall_EventScript_GetNormalStringId
 	case CONTEST_RANK_SUPER, ContestHall_EventScript_GetSuperStringId
 	case CONTEST_RANK_HYPER, ContestHall_EventScript_GetHyperStringId
@@ -229,9 +229,9 @@ ContestHall_EventScript_GetMasterStringId::
 	setvar VAR_0x8009, STDSTRING_MASTER
 	return
 
-@ This whole switch is equivalent to copyvar VAR_0x8008, VAR_CONTEST_CATEGORY
+@ This whole switch is equivalent to copyvar VAR_0x8008, VAR_GYM_LEADER_1
 ContestHall_EventScript_GetContestCategory::
-	switch VAR_CONTEST_CATEGORY
+	switch VAR_GYM_LEADER_1
 	case CONTEST_CATEGORY_COOL, ContestHall_EventScript_GetCategoryCool
 	case CONTEST_CATEGORY_BEAUTY, ContestHall_EventScript_GetCategoryBeauty
 	case CONTEST_CATEGORY_CUTE, ContestHall_EventScript_GetCategoryCute
@@ -1036,7 +1036,7 @@ ContestHall_EventScript_CheckPlayerWon::
 	return
 
 ContestHall_EventScript_CheckRankIsMaster::
-	goto_if_eq VAR_CONTEST_RANK, CONTEST_RANK_MASTER, ContestHall_EventScript_DontSkipPrize
+	goto_if_eq VAR_GYM_LEADER_2, CONTEST_RANK_MASTER, ContestHall_EventScript_DontSkipPrize
 	setflag FLAG_TEMP_2
 	return
 
@@ -1118,7 +1118,7 @@ ContestHall_EventScript_GiveContestPrizes::
 	call_if_eq VAR_CONTEST_TYPE, CONTEST_TYPE_NPC_SUPER, ContestHall_EventScript_SetSketchFlag
 	specialvar VAR_RESULT, HasMonWonThisContestBefore
 	goto_if_eq VAR_RESULT, FALSE, ContestHall_EventScript_ReceiveContestRibbon
-	goto_if_eq VAR_CONTEST_RANK, CONTEST_RANK_MASTER, ContestHall_EventScript_GiveLuxuryBall
+	goto_if_eq VAR_GYM_LEADER_2, CONTEST_RANK_MASTER, ContestHall_EventScript_GiveLuxuryBall
 	lockall
 	msgbox ContestHall_Text_CongratsPleaseCompeteAgain, MSGBOX_DEFAULT
 	releaseall

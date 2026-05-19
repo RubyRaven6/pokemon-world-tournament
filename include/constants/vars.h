@@ -298,11 +298,13 @@
 #define VAR_RESULT                    0x800D
 #define VAR_ITEM_ID                   0x800E
 #define VAR_LAST_TALKED               0x800F
-#define VAR_CONTEST_RANK              0x8010
-#define VAR_CONTEST_CATEGORY          0x8011
-#define VAR_MON_BOX_ID                0x8012
-#define VAR_MON_BOX_POS               0x8013
-#define VAR_UNUSED_0x8014             0x8014
+#define VAR_MON_BOX_ID                0x8010
+#define VAR_MON_BOX_POS               0x8011
+//ChooseRandomGym Leader Vars
+#define VAR_GYM_LEADER_1              0x8012
+#define VAR_GYM_LEADER_2              0x8013
+#define VAR_GYM_LEADER_3              0x8014
+//End of ChooseRandomGym
 #define VAR_TRAINER_BATTLE_OPPONENT_A 0x8015 // Alias of TRAINER_BATTLE_PARAM.opponentA
 
 #define SPECIAL_VARS_END              0x8015
