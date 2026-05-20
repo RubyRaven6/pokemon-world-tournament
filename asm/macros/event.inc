@@ -2889,3 +2889,9 @@
 	callnative Script_goto_pwt_battle_script, requests_effects=1
 	.2byte \var
 	.endm
+
+	.macro debugprint str:req, numOrVar=65535
+	callnative ScrCmd_debugprint
+	.4byte \str
+	.2byte \numOrVar
+	.endm
