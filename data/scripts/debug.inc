@@ -201,20 +201,10 @@ Debug_EventScript_Text_DefensiveIVs:
 	.string "HP IVs: {STR_VAR_1}, DEF IVs: {STR_VAR_2}, SPDEF IVs: {STR_VAR_3}$"
 
 Debug_EventScript_Script_1::
-	choosegeneration 1
-	callnative ChooseRandomGymLeader
 	release
 	end
 
 Debug_EventScript_Script_2::
-    setflag TRAINER_LEADER_BROCK + TRAINER_FLAGS_START
-    setflag TRAINER_LEADER_MISTY + TRAINER_FLAGS_START
-    setflag TRAINER_LEADER_LT_SURGE + TRAINER_FLAGS_START
-    setflag TRAINER_LEADER_ERIKA + TRAINER_FLAGS_START
-    setflag TRAINER_LEADER_SABRINA + TRAINER_FLAGS_START
-    setflag TRAINER_LEADER_KOGA_AND_JANINE + TRAINER_FLAGS_START
-    setflag TRAINER_LEADER_BLAINE + TRAINER_FLAGS_START
-    setflag TRAINER_LEADER_GIOVANNI + TRAINER_FLAGS_START
 	release
 	end
 
