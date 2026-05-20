@@ -50,27 +50,33 @@ GenerationSelector_5:
 
 PickerEventObject::
 # 29 "data/maps/TestingGrounds/scripts.pory"
-	callnative ChooseRandomGymLeader
+	lock
 # 30 "data/maps/TestingGrounds/scripts.pory"
+	callnative ChooseRandomGymLeader
+# 31 "data/maps/TestingGrounds/scripts.pory"
 	msgbox PickerEventObject_Text_0
+# 32 "data/maps/TestingGrounds/scripts.pory"
+	closemessage
+# 33 "data/maps/TestingGrounds/scripts.pory"
+	release
 	return
 
 
 PWT_Battler1::
-# 34 "data/maps/TestingGrounds/scripts.pory"
+# 37 "data/maps/TestingGrounds/scripts.pory"
 	goto_pwt_script VAR_GYM_LEADER_1
 	return
 
 
 PWT_Battler2::
-# 38 "data/maps/TestingGrounds/scripts.pory"
+# 41 "data/maps/TestingGrounds/scripts.pory"
 	goto_pwt_script VAR_GYM_LEADER_2
 	return
 
 
 PWT_Battler3::
-# 42 "data/maps/TestingGrounds/scripts.pory"
-	goto_pwt_script VAR_GYM_LEADER_1
+# 45 "data/maps/TestingGrounds/scripts.pory"
+	goto_pwt_script VAR_GYM_LEADER_3
 	return
 
 
@@ -108,5 +114,5 @@ GenerationSelector_Text_7:
 	.string "{STR_VAR_1}.$"
 
 PickerEventObject_Text_0:
-# 30 "data/maps/TestingGrounds/scripts.pory"
+# 31 "data/maps/TestingGrounds/scripts.pory"
 	.string "Random gym leaders chosen.$"

@@ -88,13 +88,14 @@ void ChooseRandomGymLeader(void) {
         }
     }
     
-    do { leader1 = RandomUniform(RNG_NONE, 0, sGymLeaderRosters[gen].roster[leader1] - 1); } while (leader1 == leader3);
+    do { leader1 = RandomUniform(RNG_NONE, 0, sGymLeaderRosters[gen].rosterCount - 1); } while (leader1 == leader3);
 
-    do { leader2 = RandomUniform(RNG_NONE, 0, sGymLeaderRosters[gen].roster[leader2] - 1); } while (leader2 == leader3 || leader2 == leader1);
+    do { leader2 = RandomUniform(RNG_NONE, 0, sGymLeaderRosters[gen].rosterCount - 1); } while (leader2 == leader3 || leader2 == leader1);
 
     VarSet(VAR_GYM_LEADER_1, sGymLeaderRosters[gen].roster[leader1]);
     VarSet(VAR_GYM_LEADER_2, sGymLeaderRosters[gen].roster[leader2]);
     VarSet(VAR_GYM_LEADER_3, sGymLeaderRosters[gen].roster[leader3]);
+
 };
 
 void Script_goto_pwt_battle_script(struct ScriptContext *ctx)
@@ -103,5 +104,6 @@ void Script_goto_pwt_battle_script(struct ScriptContext *ctx)
 
     Script_RequestEffects(SCREFF_V1);
 
+    DebugPrintf("trainerId: %u", trainerId);
     ScriptJump(ctx, sPWTBattleScripts[trainerId]);
 }

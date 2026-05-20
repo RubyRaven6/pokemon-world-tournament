@@ -26,8 +26,11 @@ script GenerationSelector {
 }
 
 script PickerEventObject {
+    lock
     callnative(ChooseRandomGymLeader)
     msgbox(format("Random gym leaders chosen."))
+    closemessage
+    release
 }
 
 script PWT_Battler1 {
@@ -39,5 +42,5 @@ script PWT_Battler2 {
 }
 
 script PWT_Battler3 {
-    goto_pwt_script(VAR_GYM_LEADER_1)
+    goto_pwt_script(VAR_GYM_LEADER_3)
 }
