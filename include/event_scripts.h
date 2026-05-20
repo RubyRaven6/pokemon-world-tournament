@@ -787,4 +787,13 @@ extern const u8 CableClub_EventScript_ShowBattleRecords_Frlg[];
 extern const u8 EventScript_Indigo_UltimateGoal[];
 extern const u8 EventScript_Indigo_HighestAuthority[];
 
+extern const u8 EventScript_PWTBattleBrock[];
+extern const u8 EventScript_PWTBattleMisty[];
+extern const u8 EventScript_PWTBattleLtSurge[];
+extern const u8 EventScript_PWTBattleErika[];
+extern const u8 EventScript_PWTBattleKogaJanine[];
+extern const u8 EventScript_PWTBattleSabrina[];
+extern const u8 EventScript_PWTBattleBlaine[];
+extern const u8 EventScript_PWTBattleGiovanni[];
+
 #endif // GUARD_EVENT_SCRIPTS_H

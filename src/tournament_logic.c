@@ -1,16 +1,10 @@
 #include "global.h"
 #include "battle.h"
 #include "event_data.h"
+#include "event_scripts.h"
 #include "tournament_logic.h"
 #include "constants/flags.h"
 #include "constants/opponents.h"
-
-/* 
-
-- Chooses three gym leaders from an array
-- The third gym leader chosen has to be definitively be one that has not been defeated yet
-
-*/
 
 static const u32 sKantoGymLeaderRoster[] = {
     TRAINER_LEADER_BROCK,
@@ -45,16 +39,25 @@ static const u32 sHoennGymLeaderRoster[] = {
     TRAINER_LEADER_JUAN,
 };
 
-static const u32 *const sGymLeaderRosters[] = {
-    sKantoGymLeaderRoster,
-    sJohtoGymLeaderRoster,
-    sHoennGymLeaderRoster
+static const struct RosterStruct {
+  const u32 *roster;
+  u32 rosterCount;
+} sGymLeaderRosters[] = {
+    [1] = { sKantoGymLeaderRoster, ARRAY_COUNT(sKantoGymLeaderRoster) },
+    [2] = { sJohtoGymLeaderRoster, ARRAY_COUNT(sJohtoGymLeaderRoster) },
+    [3] = { sHoennGymLeaderRoster, ARRAY_COUNT(sHoennGymLeaderRoster) }
 };
 
-static const u32 sGymLeaderArrayCounts[] = {
-    ARRAY_COUNT(sKantoGymLeaderRoster),
-    ARRAY_COUNT(sJohtoGymLeaderRoster),
-    ARRAY_COUNT(sHoennGymLeaderRoster)
+static const u8 *sPWTBattleScripts[] =
+{
+    [TRAINER_LEADER_BROCK]           = EventScript_PWTBattleBrock,
+    [TRAINER_LEADER_MISTY]           = EventScript_PWTBattleMisty,
+    [TRAINER_LEADER_LT_SURGE]        = EventScript_PWTBattleLtSurge,
+    [TRAINER_LEADER_ERIKA]           = EventScript_PWTBattleErika,
+    [TRAINER_LEADER_KOGA_AND_JANINE] = EventScript_PWTBattleKogaJanine,
+    [TRAINER_LEADER_SABRINA]         = EventScript_PWTBattleSabrina,
+    [TRAINER_LEADER_BLAINE]          = EventScript_PWTBattleBlaine,
+    [TRAINER_LEADER_GIOVANNI]        = EventScript_PWTBattleGiovanni,
 };
 
 void ChooseRandomGymLeader(void) {
@@ -64,17 +67,17 @@ void ChooseRandomGymLeader(void) {
     u32 leader2 = 0;
     u32 leader3 = 0;
 
-    for (u32 i = 0; i < sGymLeaderArrayCounts[gen]; i++)
+    for (u32 i = 0; i < sGymLeaderRosters[gen].rosterCount; i++)
     {
-        if(!FlagGet(sGymLeaderRosters[gen][i] + TRAINER_FLAGS_START))
+        if(!FlagGet(sGymLeaderRosters[gen].roster[i] + TRAINER_FLAGS_START))
             countUndefeated++;
     }
     
     u32 n = RandomUniform(RNG_NONE, 0, countUndefeated - 1);
 
-    for (u32 i = 0; i < sGymLeaderArrayCounts[gen]; i++)
+    for (u32 i = 0; i < sGymLeaderRosters[gen].rosterCount; i++)
     {
-        if (!FlagGet(sGymLeaderRosters[gen][i] + TRAINER_FLAGS_START))
+        if (!FlagGet(sGymLeaderRosters[gen].roster[i] + TRAINER_FLAGS_START))
         {
             if (n == 0)
             {
@@ -85,15 +88,20 @@ void ChooseRandomGymLeader(void) {
         }
     }
     
-    do { leader1 = RandomUniform(RNG_NONE, 0, sGymLeaderArrayCounts[gen] - 1); } while (leader1 == leader3);
+    do { leader1 = RandomUniform(RNG_NONE, 0, sGymLeaderRosters[gen].roster[leader1] - 1); } while (leader1 == leader3);
 
-    do { leader2 = RandomUniform(RNG_NONE, 0, sGymLeaderArrayCounts[gen] - 1); } while (leader2 == leader3 || leader2 == leader1);
+    do { leader2 = RandomUniform(RNG_NONE, 0, sGymLeaderRosters[gen].roster[leader2] - 1); } while (leader2 == leader3 || leader2 == leader1);
 
-    DebugPrintf("leader1: %u", leader1);
-    DebugPrintf("leader2: %u", leader2);
-    DebugPrintf("leader3: %u", leader3);
-
-    VarSet(VAR_GYM_LEADER_1, sGymLeaderRosters[gen][leader1]);
-    VarSet(VAR_GYM_LEADER_2, sGymLeaderRosters[gen][leader2]);
-    VarSet(VAR_GYM_LEADER_3, sGymLeaderRosters[gen][leader3]);
+    VarSet(VAR_GYM_LEADER_1, sGymLeaderRosters[gen].roster[leader1]);
+    VarSet(VAR_GYM_LEADER_2, sGymLeaderRosters[gen].roster[leader2]);
+    VarSet(VAR_GYM_LEADER_3, sGymLeaderRosters[gen].roster[leader3]);
 };
+
+void Script_goto_pwt_battle_script(struct ScriptContext *ctx)
+{
+    u16 trainerId = VarGet(ScriptReadHalfword(ctx));
+
+    Script_RequestEffects(SCREFF_V1);
+
+    ScriptJump(ctx, sPWTBattleScripts[trainerId]);
+}

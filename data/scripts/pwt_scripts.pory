@@ -1,0 +1,34 @@
+script EventScript_PWTBattleBrock{
+    trainerbattle_single(TRAINER_LEADER_BROCK, format("My Pokémon are rock hard!"), format("Seems like I've gone soft…"))
+    end
+}
+
+script EventScript_PWTBattleMisty{
+    trainerbattle_single(TRAINER_LEADER_MISTY, format("Time to make a splash!"), format("I can't believe I wiped out!"))
+    end
+}
+
+script EventScript_PWTBattleLtSurge{
+    trainerbattle_single(TRAINER_LEADER_LT_SURGE, format("This is where it ends!"), format("It can't end here for me!"))
+    end
+}
+script EventScript_PWTBattleErika{
+    trainerbattle_single(TRAINER_LEADER_ERIKA, format("This is where it ends!"), format("It can't end here for me!"))
+    end
+}
+script EventScript_PWTBattleKogaJanine{
+    trainerbattle_single(TRAINER_LEADER_KOGA_AND_JANINE, format("This is where it ends!"), format("It can't end here for me!"))
+    end
+}
+script EventScript_PWTBattleSabrina{
+    trainerbattle_single(TRAINER_LEADER_SABRINA, format("This is where it ends!"), format("It can't end here for me!"))
+    end
+}
+script EventScript_PWTBattleBlaine{
+    trainerbattle_single(TRAINER_LEADER_BLAINE, format("This is where it ends!"), format("It can't end here for me!"))
+    end
+}
+script EventScript_PWTBattleGiovanni{
+    trainerbattle_single(TRAINER_LEADER_GIOVANNI, format("This is where it ends!"), format("It can't end here for me!"))
+    end
+}

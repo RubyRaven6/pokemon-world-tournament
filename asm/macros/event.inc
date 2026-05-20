@@ -2883,3 +2883,9 @@
 	.macro choosegeneration gen:req
 	setvar VAR_GENERATION_CTL, \gen
 	.endm
+
+	@ Jumps to a Gym leader's script
+	.macro goto_pwt_script var:req
+	callnative Script_goto_pwt_battle_script, requests_effects=1
+	.2byte \var
+	.endm

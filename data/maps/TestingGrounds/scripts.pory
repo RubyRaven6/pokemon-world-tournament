@@ -3,23 +3,26 @@ mapscripts TestingGrounds_MapScripts {
 }
 
 script GenerationSelector {
-    dynmultichoice(0,0,FALSE,4,0,DYN_MULTICHOICE_CB_NONE, "Gen 1", "Gen 2", "Gen 3")
+    lock
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Generation 1", "Generation 2", "Generation 3")
+
     switch(var(VAR_RESULT)){
-        case 0: //Gen 1
+        case 0:
             choosegeneration(1)
             bufferstring(STR_VAR_1, "1")
-            break
-        case 1: //Gen 2
+        case 1:
             choosegeneration(2)
             bufferstring(STR_VAR_1, "2")
-            break
-        case 2: //Gen 3
+        case 2:
             choosegeneration(3)
             bufferstring(STR_VAR_1, "3")
-            break
+        default:
+            bufferstring(STR_VAR_1, "0")
     }
+
     msgbox(format("You've chosen Generation {STR_VAR_1}."))
-    end
+    closemessage
+    release
 }
 
 script PickerEventObject {
@@ -28,11 +31,13 @@ script PickerEventObject {
 }
 
 script PWT_Battler1 {
-    
+    goto_pwt_script(VAR_GYM_LEADER_1)
 }
 
 script PWT_Battler2 {
+    goto_pwt_script(VAR_GYM_LEADER_2)
 }
 
 script PWT_Battler3 {
+    goto_pwt_script(VAR_GYM_LEADER_1)
 }
