@@ -89,6 +89,10 @@ void ChooseRandomGymLeader(void) {
 
     do { leader2 = RandomUniform(RNG_NONE, 0, sGymLeaderArrayCounts[gen] - 1); } while (leader2 == leader3 || leader2 == leader1);
 
+    DebugPrintf("leader1: %u", leader1);
+    DebugPrintf("leader2: %u", leader2);
+    DebugPrintf("leader3: %u", leader3);
+
     VarSet(VAR_GYM_LEADER_1, sGymLeaderRosters[gen][leader1]);
     VarSet(VAR_GYM_LEADER_2, sGymLeaderRosters[gen][leader2]);
     VarSet(VAR_GYM_LEADER_3, sGymLeaderRosters[gen][leader3]);

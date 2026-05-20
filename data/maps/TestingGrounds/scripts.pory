@@ -1,0 +1,38 @@
+mapscripts TestingGrounds_MapScripts {
+
+}
+
+script GenerationSelector {
+    dynmultichoice(0,0,FALSE,4,0,DYN_MULTICHOICE_CB_NONE, "Gen 1", "Gen 2", "Gen 3")
+    switch(var(VAR_RESULT)){
+        case 0: //Gen 1
+            choosegeneration(1)
+            bufferstring(STR_VAR_1, "1")
+            break
+        case 1: //Gen 2
+            choosegeneration(2)
+            bufferstring(STR_VAR_1, "2")
+            break
+        case 2: //Gen 3
+            choosegeneration(3)
+            bufferstring(STR_VAR_1, "3")
+            break
+    }
+    msgbox(format("You've chosen Generation {STR_VAR_1}."))
+    end
+}
+
+script PickerEventObject {
+    callnative(ChooseRandomGymLeader)
+    msgbox(format("Random gym leaders chosen."))
+}
+
+script PWT_Battler1 {
+    
+}
+
+script PWT_Battler2 {
+}
+
+script PWT_Battler3 {
+}
