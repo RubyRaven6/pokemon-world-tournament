@@ -5,18 +5,6 @@
 #include "constants/opponents_frlg.h"
 
 #define TRAINER_NONE                          0
-#define TRAINER_SAWYER_1                      1
-#define TRAINER_GRUNT_AQUA_HIDEOUT_1          2
-#define TRAINER_GRUNT_AQUA_HIDEOUT_2          3
-#define TRAINER_GRUNT_AQUA_HIDEOUT_3          4
-#define TRAINER_GRUNT_AQUA_HIDEOUT_4          5
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_1       6
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_2       7
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_3       8
-#define TRAINER_GABRIELLE_1                   9
-#define TRAINER_GRUNT_PETALBURG_WOODS        10
-#define TRAINER_MARCEL                       11
-#define TRAINER_ALBERTO                      12
 #define TRAINER_ED                           13
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_4      14
 #define TRAINER_DECLAN                       15
@@ -31,8 +19,6 @@
 #define TRAINER_GRUNT_MT_PYRE_2              24
 #define TRAINER_GRUNT_MT_PYRE_3              25
 #define TRAINER_GRUNT_WEATHER_INST_4         26
-#define TRAINER_GRUNT_AQUA_HIDEOUT_5         27
-#define TRAINER_GRUNT_AQUA_HIDEOUT_6         28
 #define TRAINER_FREDRICK                     29
 #define TRAINER_MATT                         30
 #define TRAINER_ZANDER                       31
@@ -196,8 +182,6 @@
 #define TRAINER_DAISUKE                     189
 #define TRAINER_ATSUSHI                     190
 #define TRAINER_KIRK                        191
-#define TRAINER_GRUNT_AQUA_HIDEOUT_7        192
-#define TRAINER_GRUNT_AQUA_HIDEOUT_8        193
 #define TRAINER_SHAWN                       194
 #define TRAINER_FERNANDO_1                  195
 #define TRAINER_DALTON_1                    196
@@ -269,14 +253,6 @@
 #define TRAINER_PHOEBE                      262
 #define TRAINER_GLACIA                      263
 #define TRAINER_DRAKE                       264
-#define TRAINER_ROXANNE_1                   265
-#define TRAINER_BRAWLY_1                    266
-#define TRAINER_WATTSON_1                   267
-#define TRAINER_FLANNERY_1                  268
-#define TRAINER_NORMAN_1                    269
-#define TRAINER_WINONA_1                    270
-#define TRAINER_TATE_AND_LIZA_1             271
-#define TRAINER_JUAN_1                      272
 #define TRAINER_JERRY_1                     273
 #define TRAINER_TED                         274
 #define TRAINER_PAUL                        275
@@ -859,6 +835,37 @@
 #define TRAINER_LEAF                        852
 #define TRAINER_BRENDAN_PLACEHOLDER         853
 #define TRAINER_MAY_PLACEHOLDER             854
+
+/* KANTO LEADERS */
+#define TRAINER_LEADER_BROCK            2
+#define TRAINER_LEADER_MISTY            3
+#define TRAINER_LEADER_LT_SURGE         4
+#define TRAINER_LEADER_ERIKA            5
+#define TRAINER_LEADER_SABRINA          27
+#define TRAINER_LEADER_KOGA_AND_JANINE  28
+#define TRAINER_LEADER_BLAINE           192
+#define TRAINER_LEADER_GIOVANNI         193
+
+/*JOHTO LEADERS*/
+#define TRAINER_LEADER_FALKNER          1
+#define TRAINER_LEADER_BUGSY            6
+#define TRAINER_LEADER_WHITNEY          7
+#define TRAINER_LEADER_MORTY            8
+#define TRAINER_LEADER_CHUCK            9
+#define TRAINER_LEADER_JASMINE          10
+#define TRAINER_LEADER_PRYCE            11
+#define TRAINER_LEADER_CLAIR            12
+
+/*HOENN LEADERS*/
+#define TRAINER_LEADER_ROXANNE          265
+#define TRAINER_LEADER_BRAWLY           266
+#define TRAINER_LEADER_WATTSON          267
+#define TRAINER_LEADER_FLANNERY         268
+#define TRAINER_LEADER_NORMAN           269
+#define TRAINER_LEADER_WINONA           270
+#define TRAINER_LEADER_TATE_AND_LIZA    271
+#define TRAINER_LEADER_JUAN             272
+
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled

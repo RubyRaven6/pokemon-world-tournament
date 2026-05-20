@@ -12,62 +12,84 @@
 
 */
 
-#define KANTO_LEADERS_COUNT 8
+static const u32 sKantoGymLeaderRoster[] = {
+    TRAINER_LEADER_BROCK,
+    TRAINER_LEADER_MISTY,
+    TRAINER_LEADER_LT_SURGE,
+    TRAINER_LEADER_ERIKA,
+    TRAINER_LEADER_SABRINA,
+    TRAINER_LEADER_KOGA_AND_JANINE,
+    TRAINER_LEADER_BLAINE,
+    TRAINER_LEADER_GIOVANNI,
+};
 
-const u32 sKantoGymLeaderRoster[KANTO_LEADERS_COUNT] = {
-    TRAINER_GRUNT_AQUA_HIDEOUT_1,
-    TRAINER_GRUNT_AQUA_HIDEOUT_2,
-    TRAINER_GRUNT_AQUA_HIDEOUT_3,
-    TRAINER_GRUNT_AQUA_HIDEOUT_4,
-    TRAINER_GRUNT_AQUA_HIDEOUT_5,
-    TRAINER_GRUNT_AQUA_HIDEOUT_6,
-    TRAINER_GRUNT_AQUA_HIDEOUT_7,
-    TRAINER_GRUNT_AQUA_HIDEOUT_8,
+static const u32 sJohtoGymLeaderRoster[] = {
+    TRAINER_LEADER_FALKNER,
+    TRAINER_LEADER_BUGSY,
+    TRAINER_LEADER_WHITNEY,
+    TRAINER_LEADER_MORTY,
+    TRAINER_LEADER_CHUCK,
+    TRAINER_LEADER_JASMINE,
+    TRAINER_LEADER_PRYCE,
+    TRAINER_LEADER_CLAIR,
+};
+
+static const u32 sHoennGymLeaderRoster[] = {
+    TRAINER_LEADER_ROXANNE,
+    TRAINER_LEADER_BRAWLY,
+    TRAINER_LEADER_WATTSON,
+    TRAINER_LEADER_FLANNERY,
+    TRAINER_LEADER_NORMAN,
+    TRAINER_LEADER_WINONA,
+    TRAINER_LEADER_TATE_AND_LIZA,
+    TRAINER_LEADER_JUAN,
+};
+
+static const u32 *const sGymLeaderRosters[] = {
+    sKantoGymLeaderRoster,
+    sJohtoGymLeaderRoster,
+    sHoennGymLeaderRoster
+};
+
+static const u32 sGymLeaderArrayCounts[] = {
+    ARRAY_COUNT(sKantoGymLeaderRoster),
+    ARRAY_COUNT(sJohtoGymLeaderRoster),
+    ARRAY_COUNT(sHoennGymLeaderRoster)
 };
 
 void ChooseRandomGymLeader(void) {
     u32 countUndefeated = 0;
-    u32 i1 = 0;
-    u32 i2 = 0;
-    u32 i3 = 0;
+    u32 gen = VarGet(VAR_GENERATION_CTL);
+    u32 leader1 = 0;
+    u32 leader2 = 0;
+    u32 leader3 = 0;
 
-    for (u32 i = 0; i < ARRAY_COUNT(sKantoGymLeaderRoster); i++)
+    for (u32 i = 0; i < sGymLeaderArrayCounts[gen]; i++)
     {
-        if(!FlagGet(sKantoGymLeaderRoster[i] + TRAINER_FLAGS_START))
+        if(!FlagGet(sGymLeaderRosters[gen][i] + TRAINER_FLAGS_START))
             countUndefeated++;
     }
-
-    DebugPrintf("countUndefeated: %u", countUndefeated);
     
     u32 n = RandomUniform(RNG_NONE, 0, countUndefeated - 1);
 
-    DebugPrintf("1st n: %u",n);
-
-    for (u32 i = 0; i < ARRAY_COUNT(sKantoGymLeaderRoster); i++)
+    for (u32 i = 0; i < sGymLeaderArrayCounts[gen]; i++)
     {
-        if (!FlagGet(sKantoGymLeaderRoster[i] + TRAINER_FLAGS_START))
+        if (!FlagGet(sGymLeaderRosters[gen][i] + TRAINER_FLAGS_START))
         {
             if (n == 0)
             {
-                i3 = i;
+                leader3 = i;
                 break;
             }
             n--;
         }
     }
     
-    DebugPrintf("after loop n: %u",n);
+    do { leader1 = RandomUniform(RNG_NONE, 0, sGymLeaderArrayCounts[gen] - 1); } while (leader1 == leader3);
 
-    do { i1 = RandomUniform(RNG_NONE, 0, ARRAY_COUNT(sKantoGymLeaderRoster) - 1); } while (i1 == i3);
+    do { leader2 = RandomUniform(RNG_NONE, 0, sGymLeaderArrayCounts[gen] - 1); } while (leader2 == leader3 || leader2 == leader1);
 
-    do { i2 = RandomUniform(RNG_NONE, 0, ARRAY_COUNT(sKantoGymLeaderRoster) - 1); } while (i2 == i3 || i2 == i1);
-
-    DebugPrintf("i1: %u",i1);
-    DebugPrintf("i2: %u",i2);
-    DebugPrintf("i3: %u",i3);
-
-    VarSet(VAR_GYM_LEADER_1, sKantoGymLeaderRoster[i1]);
-    VarSet(VAR_GYM_LEADER_2, sKantoGymLeaderRoster[i2]);
-    VarSet(VAR_GYM_LEADER_3, sKantoGymLeaderRoster[i3]);
-
-}
+    VarSet(VAR_GYM_LEADER_1, sGymLeaderRosters[gen][leader1]);
+    VarSet(VAR_GYM_LEADER_2, sGymLeaderRosters[gen][leader2]);
+    VarSet(VAR_GYM_LEADER_3, sGymLeaderRosters[gen][leader3]);
+};

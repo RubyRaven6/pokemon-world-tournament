@@ -81,7 +81,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 
-=== TRAINER_SAWYER_1 ===
+=== TRAINER_LEADER_FALKNER ===
 Name: SAWYER
 Class: Hiker
 Pic: Hiker
@@ -94,7 +94,7 @@ Geodude
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_1 ===
+=== TRAINER_LEADER_BROCK ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -107,7 +107,7 @@ Poochyena
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
+=== TRAINER_LEADER_MISTY ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -124,7 +124,7 @@ Carvanha
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_3 ===
+=== TRAINER_LEADER_LT_SURGE ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -137,7 +137,7 @@ Zubat
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_4 ===
+=== TRAINER_LEADER_ERIKA ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -150,7 +150,7 @@ Carvanha
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_SEAFLOOR_CAVERN_1 ===
+=== TRAINER_LEADER_BUGSY ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -163,7 +163,7 @@ Poochyena
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_SEAFLOOR_CAVERN_2 ===
+=== TRAINER_LEADER_WHITNEY ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -176,7 +176,7 @@ Carvanha
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_SEAFLOOR_CAVERN_3 ===
+=== TRAINER_LEADER_MORTY ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -189,7 +189,7 @@ Zubat
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GABRIELLE_1 ===
+=== TRAINER_LEADER_CHUCK ===
 Name: GABRIELLE
 Class: Pkmn Breeder
 Pic: Pokemon Breeder F
@@ -222,7 +222,7 @@ Taillow
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_PETALBURG_WOODS ===
+=== TRAINER_LEADER_JASMINE ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -235,7 +235,7 @@ Poochyena
 Level: 9
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_MARCEL ===
+=== TRAINER_LEADER_PRYCE ===
 Name: MARCEL
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -253,7 +253,7 @@ Shiftry
 Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_ALBERTO ===
+=== TRAINER_LEADER_CLAIR ===
 Name: ALBERTO
 Class: Bird Keeper
 Pic: Bird Keeper
@@ -480,7 +480,7 @@ Carvanha
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_5 ===
+=== TRAINER_LEADER_SABRINA ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt F
@@ -493,7 +493,7 @@ Carvanha
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_6 ===
+=== TRAINER_LEADER_KOGA_AND_JANINE ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt F
@@ -3378,7 +3378,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Shock Wave
 - Screech
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_7 ===
+=== TRAINER_LEADER_BLAINE ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt F
@@ -3395,7 +3395,7 @@ Zubat
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_8 ===
+=== TRAINER_LEADER_GIOVANNI ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -4788,7 +4788,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Slide
 - Crunch
 
-=== TRAINER_ROXANNE_1 ===
+=== TRAINER_LEADER_ROXANNE ===
 Name: ROXANNE
 Class: Leader
 Pic: Leader Roxanne
@@ -4822,7 +4822,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Tackle
 - Rock Tomb
 
-=== TRAINER_BRAWLY_1 ===
+=== TRAINER_LEADER_BRAWLY ===
 Name: BRAWLY
 Class: Leader
 Pic: Leader Brawly
@@ -4856,7 +4856,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Reversal
 - Bulk Up
 
-=== TRAINER_WATTSON_1 ===
+=== TRAINER_LEADER_WATTSON ===
 Name: WATTSON
 Class: Leader
 Pic: Leader Wattson
@@ -4898,7 +4898,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Shock Wave
 - Howl
 
-=== TRAINER_FLANNERY_1 ===
+=== TRAINER_LEADER_FLANNERY ===
 Name: FLANNERY
 Class: Leader
 Pic: Leader Flannery
@@ -4940,7 +4940,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Body Slam
 - Attract
 
-=== TRAINER_NORMAN_1 ===
+=== TRAINER_LEADER_NORMAN ===
 Name: NORMAN
 Class: Leader
 Pic: Leader Norman
@@ -4982,7 +4982,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Facade
 - Feint Attack
 
-=== TRAINER_WINONA_1 ===
+=== TRAINER_LEADER_WINONA ===
 Name: WINONA
 Class: Leader
 Pic: Leader Winona
@@ -5032,7 +5032,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dragon Dance
 - Aerial Ace
 
-=== TRAINER_TATE_AND_LIZA_1 ===
+=== TRAINER_LEADER_TATE_AND_LIZA ===
 Name: TATE&LIZA
 Class: Leader
 Pic: Leader Tate And Liza
@@ -5074,7 +5074,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Psychic
 - Flamethrower
 
-=== TRAINER_JUAN_1 ===
+=== TRAINER_LEADER_JUAN ===
 Name: JUAN
 Class: Leader
 Pic: Leader Juan

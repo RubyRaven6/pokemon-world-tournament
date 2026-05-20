@@ -5022,7 +5022,7 @@ Nidoqueen
 Level: 41
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
-=== TRAINER_LEADER_GIOVANNI ===
+=== TRAINER_LEADER_GIOVANNI_FRLG ===
 Name: GIOVANNI
 Class: Leader Frlg
 Pic: Leader Giovanni Frlg
@@ -7034,7 +7034,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Outrage
 - Wing Attack
 
-=== TRAINER_LEADER_BROCK ===
+=== TRAINER_LEADER_BROCK_FRLG ===
 Name: BROCK
 Class: Leader Frlg
 Pic: Leader Brock Frlg
@@ -7056,7 +7056,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bind
 - Rock Tomb
 
-=== TRAINER_LEADER_MISTY ===
+=== TRAINER_LEADER_MISTY_FRLG ===
 Name: MISTY
 Class: Leader Frlg
 Pic: Leader Misty Frlg
@@ -7082,7 +7082,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Rapid Spin
 - Water Pulse
 
-=== TRAINER_LEADER_LT_SURGE ===
+=== TRAINER_LEADER_LT_SURGE_FRLG ===
 Name: LT. SURGE
 Class: Leader Frlg
 Pic: Leader Lt Surge Frlg
@@ -7116,7 +7116,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Double Team
 - Shock Wave
 
-=== TRAINER_LEADER_ERIKA ===
+=== TRAINER_LEADER_ERIKA_FRLG ===
 Name: ERIKA
 Class: Leader Frlg
 Pic: Leader Erika Frlg
@@ -7192,7 +7192,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Smokescreen
 - Toxic
 
-=== TRAINER_LEADER_BLAINE ===
+=== TRAINER_LEADER_BLAINE_FRLG ===
 Name: BLAINE
 Class: Leader Frlg
 Pic: Leader Blaine Frlg
@@ -7234,7 +7234,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Take Down
 - Fire Blast
 
-=== TRAINER_LEADER_SABRINA ===
+=== TRAINER_LEADER_SABRINA_FRLG ===
 Name: SABRINA
 Class: Leader Frlg
 Pic: Leader Sabrina Frlg
