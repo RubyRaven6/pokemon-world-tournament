@@ -67,3 +67,4 @@ tools/poryscript/poryscript
 *.smolTM
 __pycache__
 .map_version
+*.scr
