@@ -84,26 +84,26 @@
 #define FLAG_HOENN_LEADER_JUAN          0x37 // Unused Flag
 
 /* SINNOH LEADERS */
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
+#define FLAG_SINNOH_LEADER_ROARK        0x38
+#define FLAG_SINNOH_LEADER_GARDENIA     0x39
+#define FLAG_SINNOH_LEADER_MAYLENE      0x3A
+#define FLAG_SINNOH_LEADER_CRASHERWAKE  0x3B
+#define FLAG_SINNOH_LEADER_FANTINA      0x3C
+#define FLAG_SINNOH_LEADER_BYRON        0x3D
+#define FLAG_SINNOH_LEADER_CANDICE      0x3E
+#define FLAG_SINNOH_LEADER_VOLKNER      0x3F
 
 /* UNOVA LEADERS */
-#define FLAG_UNUSED_0x040    0x40 // Unused Flag
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
+#define FLAG_UNOVA_LEADER_LENORA        0x40
+#define FLAG_UNOVA_LEADER_BURGH         0x41
+#define FLAG_UNOVA_LEADER_ELESA         0x42
+#define FLAG_UNOVA_LEADER_CLAY          0x43
+#define FLAG_UNOVA_LEADER_SKYLA         0x44
+#define FLAG_UNOVA_LEADER_BRYCEN        0x45
+#define FLAG_UNOVA_LEADER_DRAYDEN       0x46
+#define FLAG_UNOVA_LEADER_CHEREN        0x47
+#define FLAG_UNOVA_LEADER_ROXIE         0x48
+#define FLAG_UNOVA_LEADER_MARLON        0x49
 
 /* KALOS LEADERS */
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag
@@ -164,11 +164,11 @@
 #define FLAG_UNUSED_0x4BC    0x4BC // Unused Flag
 
 /*COMPLETED ROSTERS*/
-#define FLAG_COMPLETED_ROSTER_KANTO    0x4BD // Unused Flag
-#define FLAG_COMPLETED_ROSTER_JOHTO    0x4BE // Unused Flag
-#define FLAG_COMPLETED_ROSTER_HOENN    0x4BF // Unused Flag
-#define FLAG_UNUSED_0x4C0    0x4C0 // Unused Flag
-#define FLAG_UNUSED_0x4C1    0x4C1 // Unused Flag
+#define FLAG_COMPLETED_ROSTER_KANTO     0x4BD // Unused Flag
+#define FLAG_COMPLETED_ROSTER_JOHTO     0x4BE // Unused Flag
+#define FLAG_COMPLETED_ROSTER_HOENN     0x4BF // Unused Flag
+#define FLAG_COMPLETED_ROSTER_SINNOH    0x4C0 // Unused Flag
+#define FLAG_COMPLETED_ROSTER_UNOVA     0x4C1 // Unused Flag
 #define FLAG_UNUSED_0x4C2    0x4C2 // Unused Flag
 #define FLAG_UNUSED_0x4C3    0x4C3 // Unused Flag
 #define FLAG_UNUSED_0x4C4    0x4C4 // Unused Flag

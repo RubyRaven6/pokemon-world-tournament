@@ -228,23 +228,65 @@ Debug_EventScript_Script_2::
 	end
 
 
+Debug_EventScript_Script_3::
+	setflag FLAG_HOENN_LEADER_ROXANNE
+	setflag FLAG_HOENN_LEADER_BRAWLY
+	setflag FLAG_HOENN_LEADER_WATTSON
+	setflag FLAG_HOENN_LEADER_FLANNERY
+	setflag FLAG_HOENN_LEADER_NORMAN
+	setflag FLAG_HOENN_LEADER_WINONA
+	setflag FLAG_HOENN_LEADER_TATE_AND_LIZA
+	msgbox Debug_EventScript_Script_3_Text_0
+	closemessage
+	release
+	end
+
+
+Debug_EventScript_Script_4::
+	setflag FLAG_SINNOH_LEADER_ROARK
+	setflag FLAG_SINNOH_LEADER_GARDENIA
+	setflag FLAG_SINNOH_LEADER_MAYLENE
+	setflag FLAG_SINNOH_LEADER_CRASHERWAKE
+	setflag FLAG_SINNOH_LEADER_FANTINA
+	setflag FLAG_SINNOH_LEADER_BYRON
+	setflag FLAG_SINNOH_LEADER_CANDICE
+	msgbox Debug_EventScript_Script_4_Text_0
+	closemessage
+	release
+	end
+
+
+Debug_EventScript_Script_5::
+	setflag FLAG_UNOVA_LEADER_LENORA
+	setflag FLAG_UNOVA_LEADER_BURGH
+	setflag FLAG_UNOVA_LEADER_ELESA
+	setflag FLAG_UNOVA_LEADER_CLAY
+	setflag FLAG_UNOVA_LEADER_SKYLA
+	setflag FLAG_UNOVA_LEADER_BRYCEN
+	setflag FLAG_UNOVA_LEADER_DRAYDEN
+	setflag FLAG_UNOVA_LEADER_CHEREN
+	setflag FLAG_UNOVA_LEADER_ROXIE
+	msgbox Debug_EventScript_Script_5_Text_0
+	closemessage
+	release
+	end
+
+
 Debug_EventScript_Script_1_Text_0:
 	.string "All flags but Giovanni's has been set.\pThe third trainer should be Giovanni.$"
 
 Debug_EventScript_Script_2_Text_0:
 	.string "All flags but Clair's has been set.\pThe third trainer should be Clair.$"
 
-Debug_EventScript_Script_3::
-	release
-	end
+Debug_EventScript_Script_3_Text_0:
+	.string "All flags but Juan's has been set.\pThe third trainer should be Juan.$"
 
-Debug_EventScript_Script_4::
-	release
-	end
+Debug_EventScript_Script_4_Text_0:
+	.string "All flags but Volkner's has been set.\pThe third trainer should be Volkner.$"
 
-Debug_EventScript_Script_5::
-	release
-	end
+Debug_EventScript_Script_5_Text_0:
+	.string "All flags but Marlon's has been set.\pThe third trainer should be Marlon.$"
+
 
 Debug_EventScript_Script_6::
 	release

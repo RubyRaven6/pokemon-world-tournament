@@ -1,0 +1,42 @@
+script EventScript_PWTBattleRoark{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_ROARK){setflag(FLAG_SINNOH_LEADER_ROARK)}
+    trainerbattle_single(TRAINER_LEADER_ROARK, "TRAINER_LEADER_ROARK", "TRAINER_LEADER_ROARK lost")
+    end
+}
+
+script EventScript_PWTBattleGardenia{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_GARDENIA){setflag(FLAG_SINNOH_LEADER_GARDENIA)}
+    trainerbattle_single(TRAINER_LEADER_GARDENIA, "TRAINER_LEADER_GARDENIA", "TRAINER_LEADER_GARDENIA lost")
+    end
+}
+
+script EventScript_PWTBattleMaylene{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_MAYLENE){setflag(FLAG_SINNOH_LEADER_MAYLENE)}
+    trainerbattle_single(TRAINER_LEADER_MAYLENE, "TRAINER_LEADER_MAYLENE", "TRAINER_LEADER_MAYLENE lost")
+    end
+}
+script EventScript_PWTBattleCrasherWake{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_CRASHER_WAKE){setflag(FLAG_SINNOH_LEADER_CRASHERWAKE)}
+    trainerbattle_single(TRAINER_LEADER_CRASHER_WAKE, "TRAINER_LEADER_CRASHER_WAKE", "TRAINER_LEADER_CRASHER_WAKE lost")
+    end
+}
+script EventScript_PWTBattleFantina{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_FANTINA){setflag(FLAG_SINNOH_LEADER_FANTINA)}
+    trainerbattle_single(TRAINER_LEADER_FANTINA, "TRAINER_LEADER_FANTINA", "TRAINER_LEADER_FANTINA lost")
+    end
+}
+script EventScript_PWTBattleByron{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_BYRON){setflag(FLAG_SINNOH_LEADER_BYRON)}
+    trainerbattle_single(TRAINER_LEADER_BYRON, "TRAINER_LEADER_BRYCE", "TRAINER_LEADER_BRYCE lost")
+    end
+}
+script EventScript_PWTBattleCandice{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_CANDICE_NUTS){setflag(FLAG_SINNOH_LEADER_CANDICE)}
+    trainerbattle_single(TRAINER_LEADER_CANDICE_NUTS, "TRAINER_LEADER_CANDICE_NUTS", "TRAINER_LEADER_CANDICE_NUTS lost")
+    end
+}
+script EventScript_PWTBattleVolkner{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_VOLKNER){setflag(FLAG_SINNOH_LEADER_VOLKNER)}
+    trainerbattle_single(TRAINER_LEADER_VOLKNER, "TRAINER_LEADER_VOLKNER", "TRAINER_LEADER_VOLKNER lost")
+    end
+}

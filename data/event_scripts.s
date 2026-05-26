@@ -1741,6 +1741,9 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	.include "data/scripts/pwt_scripts/kanto.scr"
 	.include "data/scripts/pwt_scripts/johto.scr"
+	.include "data/scripts/pwt_scripts/hoenn.scr"
+	.include "data/scripts/pwt_scripts/sinnoh.scr"
+	.include "data/scripts/pwt_scripts/unova.scr"
 	
 	@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	@@ Maps

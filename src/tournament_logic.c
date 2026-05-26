@@ -72,11 +72,61 @@ static const u16 sHoennGymLeaderFlags[] = {
     FLAG_HOENN_LEADER_JUAN
 };
 
+static const u32 sSinnohGymLeaderRoster[] = {
+    TRAINER_LEADER_ROARK,
+    TRAINER_LEADER_GARDENIA,
+    TRAINER_LEADER_MAYLENE,
+    TRAINER_LEADER_CRASHER_WAKE,
+    TRAINER_LEADER_FANTINA,
+    TRAINER_LEADER_BYRON,
+    TRAINER_LEADER_CANDICE_NUTS,
+    TRAINER_LEADER_VOLKNER
+};
+
+static const u16 sSinnohGymLeaderFlags[] = {
+    FLAG_SINNOH_LEADER_ROARK,
+    FLAG_SINNOH_LEADER_GARDENIA,
+    FLAG_SINNOH_LEADER_MAYLENE,
+    FLAG_SINNOH_LEADER_CRASHERWAKE,
+    FLAG_SINNOH_LEADER_FANTINA,
+    FLAG_SINNOH_LEADER_BYRON,
+    FLAG_SINNOH_LEADER_CANDICE,
+    FLAG_SINNOH_LEADER_VOLKNER
+};
+
+static const u32 sUnovaGymLeaderRoster[] = {
+    TRAINER_LEADER_LENORA,
+    TRAINER_LEADER_BURGH,
+    TRAINER_LEADER_ELESA,
+    TRAINER_LEADER_CLAY,
+    TRAINER_LEADER_SKYLA,
+    TRAINER_LEADER_BRYCEN,
+    TRAINER_LEADER_DRAYDEN,
+    TRAINER_LEADER_CHEREN,
+    TRAINER_LEADER_ROXIE,
+    TRAINER_LEADER_MARLON
+};
+
+static const u16 sUnovaGymLeaderFlags[] = {
+    FLAG_UNOVA_LEADER_LENORA,
+    FLAG_UNOVA_LEADER_BURGH,
+    FLAG_UNOVA_LEADER_ELESA,
+    FLAG_UNOVA_LEADER_CLAY,
+    FLAG_UNOVA_LEADER_SKYLA,
+    FLAG_UNOVA_LEADER_BRYCEN,
+    FLAG_UNOVA_LEADER_DRAYDEN,
+    FLAG_UNOVA_LEADER_CHEREN,
+    FLAG_UNOVA_LEADER_ROXIE,
+    FLAG_UNOVA_LEADER_MARLON
+};
+
 static const u16 sRosterCompletionFlags[] = {
     0,
     FLAG_COMPLETED_ROSTER_KANTO,
     FLAG_COMPLETED_ROSTER_JOHTO,
-    FLAG_COMPLETED_ROSTER_HOENN
+    FLAG_COMPLETED_ROSTER_HOENN,
+    FLAG_COMPLETED_ROSTER_SINNOH,
+    FLAG_COMPLETED_ROSTER_UNOVA
 };
 
 static const struct RosterStruct {
@@ -86,7 +136,9 @@ static const struct RosterStruct {
 } sGymLeaderRosters[] = {
     [1] = { sKantoGymLeaderRoster, sKantoGymLeaderFlags, ARRAY_COUNT(sKantoGymLeaderRoster) },
     [2] = { sJohtoGymLeaderRoster, sJohtoGymLeaderFlags, ARRAY_COUNT(sJohtoGymLeaderRoster) },
-    [3] = { sHoennGymLeaderRoster, sHoennGymLeaderFlags, ARRAY_COUNT(sHoennGymLeaderRoster) }
+    [3] = { sHoennGymLeaderRoster, sHoennGymLeaderFlags, ARRAY_COUNT(sHoennGymLeaderRoster) },
+    [4] = { sSinnohGymLeaderRoster, sSinnohGymLeaderFlags, ARRAY_COUNT(sSinnohGymLeaderRoster) },
+    [5] = { sUnovaGymLeaderRoster, sUnovaGymLeaderFlags, ARRAY_COUNT(sUnovaGymLeaderRoster) }
 };
 
 static const u8 *sPWTBattleScripts[] =
@@ -110,6 +162,38 @@ static const u8 *sPWTBattleScripts[] =
     [TRAINER_LEADER_JASMINE]         = EventScript_PWTBattleJasmine,
     [TRAINER_LEADER_PRYCE]           = EventScript_PWTBattlePryce,
     [TRAINER_LEADER_CLAIR]           = EventScript_PWTBattleClair,
+
+    /*HOENN LEADERS*/
+    [TRAINER_LEADER_ROXANNE]         = EventScript_PWTBattleRoxanne,
+    [TRAINER_LEADER_BRAWLY]          = EventScript_PWTBattleBrawly,
+    [TRAINER_LEADER_WATTSON]         = EventScript_PWTBattleWattson,
+    [TRAINER_LEADER_FLANNERY]        = EventScript_PWTBattleFlannery,
+    [TRAINER_LEADER_NORMAN]          = EventScript_PWTBattleNorman,
+    [TRAINER_LEADER_WINONA]          = EventScript_PWTBattleWinona,
+    [TRAINER_LEADER_TATE_AND_LIZA]   = EventScript_PWTBattleTateAndLiza,
+    [TRAINER_LEADER_JUAN]            = EventScript_PWTBattleJuan,
+
+    /*SINNOH LEADERS*/
+    [TRAINER_LEADER_ROARK]           = EventScript_PWTBattleRoark,
+    [TRAINER_LEADER_GARDENIA]        = EventScript_PWTBattleGardenia,
+    [TRAINER_LEADER_MAYLENE]         = EventScript_PWTBattleMaylene,
+    [TRAINER_LEADER_CRASHER_WAKE]    = EventScript_PWTBattleCrasherWake,
+    [TRAINER_LEADER_FANTINA]         = EventScript_PWTBattleFantina,
+    [TRAINER_LEADER_BYRON]           = EventScript_PWTBattleByron,
+    [TRAINER_LEADER_CANDICE_NUTS]    = EventScript_PWTBattleCandice,
+    [TRAINER_LEADER_VOLKNER]         = EventScript_PWTBattleVolkner,
+
+    /*UNOVA LEADERS*/
+    [TRAINER_LEADER_LENORA]         = EventScript_PWTBattleLenora,
+    [TRAINER_LEADER_BURGH]          = EventScript_PWTBattleBurgh,
+    [TRAINER_LEADER_ELESA]          = EventScript_PWTBattleElesa,
+    [TRAINER_LEADER_CLAY]           = EventScript_PWTBattleClay,
+    [TRAINER_LEADER_SKYLA]          = EventScript_PWTBattleSkyla,
+    [TRAINER_LEADER_BRYCEN]         = EventScript_PWTBattleBrycen,
+    [TRAINER_LEADER_DRAYDEN]        = EventScript_PWTBattleDrayden,
+    [TRAINER_LEADER_CHEREN]         = EventScript_PWTBattleCheren,
+    [TRAINER_LEADER_ROXIE]          = EventScript_PWTBattleRoxie,
+    [TRAINER_LEADER_MARLON] = EventScript_PWTBattleMarlon,
 };
 
 void ChooseRandomGymLeader(void) {
