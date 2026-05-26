@@ -201,12 +201,38 @@ Debug_EventScript_Text_DefensiveIVs:
 	.string "HP IVs: {STR_VAR_1}, DEF IVs: {STR_VAR_2}, SPDEF IVs: {STR_VAR_3}$"
 
 Debug_EventScript_Script_1::
+	setflag FLAG_KANTO_LEADER_BROCK
+	setflag FLAG_KANTO_LEADER_MISTY
+	setflag FLAG_KANTO_LEADER_LT_SURGE
+	setflag FLAG_KANTO_LEADER_ERIKA
+	setflag FLAG_KANTO_LEADER_SABRINA
+	setflag FLAG_KANTO_LEADER_KOGA_JANINE
+	setflag FLAG_KANTO_LEADER_BLAINE
+	msgbox Debug_EventScript_Script_1_Text_0
+	closemessage
 	release
 	end
 
+
 Debug_EventScript_Script_2::
+	setflag FLAG_JOHTO_LEADER_FALKNER
+	setflag FLAG_JOHTO_LEADER_BUGSY
+	setflag FLAG_JOHTO_LEADER_WHITNEY
+	setflag FLAG_JOHTO_LEADER_MORTY
+	setflag FLAG_JOHTO_LEADER_CHUCK
+	setflag FLAG_JOHTO_LEADER_JASMINE
+	setflag FLAG_JOHTO_LEADER_PRYCE
+	msgbox Debug_EventScript_Script_2_Text_0
+	closemessage
 	release
 	end
+
+
+Debug_EventScript_Script_1_Text_0:
+	.string "All flags but Giovanni's has been set.\pThe third trainer should be Giovanni.$"
+
+Debug_EventScript_Script_2_Text_0:
+	.string "All flags but Clair's has been set.\pThe third trainer should be Clair.$"
 
 Debug_EventScript_Script_3::
 	release

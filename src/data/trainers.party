@@ -670,7 +670,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 /* END OF GYM LEADERS */
 
-=== TRAINER_ED ===
+=== TRAINER_LEADER_ROARK ===
 Name: ED
 Class: Collector
 Pic: Collector
@@ -687,7 +687,7 @@ Seviper
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_SEAFLOOR_CAVERN_4 ===
+=== TRAINER_LEADER_GARDENIA ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt F
@@ -700,7 +700,7 @@ Carvanha
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_DECLAN ===
+=== TRAINER_LEADER_MAYLENE ===
 Name: DECLAN
 Class: Swimmer M
 Pic: Swimmer M
@@ -713,7 +713,7 @@ Gyarados
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_RUSTURF_TUNNEL ===
+=== TRAINER_LEADER_CRASHER_WAKE ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -726,7 +726,7 @@ Poochyena
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_WEATHER_INST_1 ===
+=== TRAINER_LEADER_FANTINA ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -743,7 +743,7 @@ Poochyena
 Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_WEATHER_INST_2 ===
+=== TRAINER_LEADER_BYRON ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -760,7 +760,7 @@ Carvanha
 Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_WEATHER_INST_3 ===
+=== TRAINER_LEADER_CANDICE_NUTS ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -781,7 +781,7 @@ Carvanha
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_MUSEUM_1 ===
+=== TRAINER_LEADER_VOLKNER ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -794,7 +794,7 @@ Carvanha
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_MUSEUM_2 ===
+=== TRAINER_LEADER_LENORA ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -811,7 +811,7 @@ Carvanha
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_SPACE_CENTER_1 ===
+=== TRAINER_LEADER_BURGH ===
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
@@ -824,7 +824,7 @@ Numel
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_MT_PYRE_1 ===
+=== TRAINER_LEADER_ELESA ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -837,7 +837,7 @@ Zubat
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_MT_PYRE_2 ===
+=== TRAINER_LEADER_CLAY ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -850,7 +850,7 @@ Carvanha
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_MT_PYRE_3 ===
+=== TRAINER_LEADER_SKYLA ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -867,7 +867,7 @@ Carvanha
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_WEATHER_INST_4 ===
+=== TRAINER_LEADER_BRYCEN ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt F
@@ -880,7 +880,7 @@ Carvanha
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_FREDRICK ===
+=== TRAINER_LEADER_DRAYDEN ===
 Name: FREDRICK
 Class: Expert
 Pic: Expert M
@@ -897,7 +897,7 @@ Machoke
 Level: 30
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_MATT ===
+=== TRAINER_LEADER_CHEREN ===
 Name: MATT
 Class: Aqua Admin
 Pic: Aqua Admin M
@@ -915,7 +915,7 @@ Golbat
 Level: 34
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-=== TRAINER_ZANDER ===
+=== TRAINER_LEADER_ROXIE ===
 Name: ZANDER
 Class: Black Belt
 Pic: Black Belt
@@ -928,7 +928,7 @@ Hariyama
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_SHELLY_WEATHER_INSTITUTE ===
+=== TRAINER_LEADER_MARLON ===
 Name: SHELLY
 Class: Aqua Admin
 Pic: Aqua Admin F
