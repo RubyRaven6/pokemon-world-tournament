@@ -4,16 +4,19 @@ mapscripts TestingGrounds_MapScripts {
 
 script GenerationSelector {
     lock
-    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Generation 1", "Generation 2", "Generation 3")
+    dynmultipush("Generation 1", 1)
+    if(flag(FLAG_COMPLETED_ROSTER_KANTO)){dynmultipush("Generation 2", 2)}
+    if(flag(FLAG_COMPLETED_ROSTER_JOHTO)){dynmultipush("Generation 3", 3)}
+    dynmultistack(0, 0, FALSE, 3, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
 
     switch(var(VAR_RESULT)){
-        case 0:
+        case 1:
             choosegeneration(1)
             bufferstring(STR_VAR_1, "1")
-        case 1:
+        case 2:
             choosegeneration(2)
             bufferstring(STR_VAR_1, "2")
-        case 2:
+        case 3:
             choosegeneration(3)
             bufferstring(STR_VAR_1, "3")
         default:

@@ -796,4 +796,13 @@ extern const u8 EventScript_PWTBattleSabrina[];
 extern const u8 EventScript_PWTBattleBlaine[];
 extern const u8 EventScript_PWTBattleGiovanni[];
 
+extern const u8 EventScript_PWTBattleFalkner[];
+extern const u8 EventScript_PWTBattleBugsy[];
+extern const u8 EventScript_PWTBattleWhitney[];
+extern const u8 EventScript_PWTBattleMorty[];
+extern const u8 EventScript_PWTBattleChuck[];
+extern const u8 EventScript_PWTBattleJasmine[];
+extern const u8 EventScript_PWTBattlePryce[];
+extern const u8 EventScript_PWTBattleClair[];
+
 #endif // GUARD_EVENT_SCRIPTS_H

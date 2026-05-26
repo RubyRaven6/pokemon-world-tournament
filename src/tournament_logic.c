@@ -91,6 +91,7 @@ static const struct RosterStruct {
 
 static const u8 *sPWTBattleScripts[] =
 {
+    /* KANTO LEADERS */
     [TRAINER_LEADER_BROCK]           = EventScript_PWTBattleBrock,
     [TRAINER_LEADER_MISTY]           = EventScript_PWTBattleMisty,
     [TRAINER_LEADER_LT_SURGE]        = EventScript_PWTBattleLtSurge,
@@ -99,6 +100,16 @@ static const u8 *sPWTBattleScripts[] =
     [TRAINER_LEADER_SABRINA]         = EventScript_PWTBattleSabrina,
     [TRAINER_LEADER_BLAINE]          = EventScript_PWTBattleBlaine,
     [TRAINER_LEADER_GIOVANNI]        = EventScript_PWTBattleGiovanni,
+
+    /* JOHTO LEADERS */
+    [TRAINER_LEADER_FALKNER]         = EventScript_PWTBattleFalkner,
+    [TRAINER_LEADER_BUGSY]           = EventScript_PWTBattleBugsy,
+    [TRAINER_LEADER_WHITNEY]         = EventScript_PWTBattleWhitney,
+    [TRAINER_LEADER_MORTY]           = EventScript_PWTBattleMorty,
+    [TRAINER_LEADER_CHUCK]           = EventScript_PWTBattleChuck,
+    [TRAINER_LEADER_JASMINE]         = EventScript_PWTBattleJasmine,
+    [TRAINER_LEADER_PRYCE]           = EventScript_PWTBattlePryce,
+    [TRAINER_LEADER_CLAIR]           = EventScript_PWTBattleClair,
 };
 
 void ChooseRandomGymLeader(void) {

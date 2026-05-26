@@ -6,7 +6,7 @@ script EventScript_PWTBattleBrock{
 
 script EventScript_PWTBattleMisty{
     if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_MISTY){setflag(FLAG_KANTO_LEADER_MISTY)}
-    trainerbattle_single(TRAINER_LEADER_MISTY, "Hi, I'm Misty!\n It's time to make a splash!", "I can't believe I wiped out!")
+    trainerbattle_single(TRAINER_LEADER_MISTY, "Hi, I'm Misty!\nIt's time to make a splash!", "I can't believe I wiped out!")
     end
 }
 
