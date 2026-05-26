@@ -17,6 +17,17 @@ static const u32 sKantoGymLeaderRoster[] = {
     TRAINER_LEADER_GIOVANNI,
 };
 
+static const u16 sKantoGymLeaderFlags[] = {
+    FLAG_KANTO_LEADER_BROCK,
+    FLAG_KANTO_LEADER_MISTY,
+    FLAG_KANTO_LEADER_LT_SURGE,
+    FLAG_KANTO_LEADER_ERIKA,
+    FLAG_KANTO_LEADER_SABRINA,
+    FLAG_KANTO_LEADER_KOGA_JANINE,
+    FLAG_KANTO_LEADER_BLAINE,
+    FLAG_KANTO_LEADER_GIOVANNI
+};
+
 static const u32 sJohtoGymLeaderRoster[] = {
     TRAINER_LEADER_FALKNER,
     TRAINER_LEADER_BUGSY,
@@ -26,6 +37,17 @@ static const u32 sJohtoGymLeaderRoster[] = {
     TRAINER_LEADER_JASMINE,
     TRAINER_LEADER_PRYCE,
     TRAINER_LEADER_CLAIR,
+};
+
+static const u16 sJohtoGymLeaderFlags[] = {
+    FLAG_JOHTO_LEADER_FALKNER,
+    FLAG_JOHTO_LEADER_BUGSY,
+    FLAG_JOHTO_LEADER_WHITNEY,
+    FLAG_JOHTO_LEADER_MORTY,
+    FLAG_JOHTO_LEADER_CHUCK,
+    FLAG_JOHTO_LEADER_JASMINE,
+    FLAG_JOHTO_LEADER_PRYCE,
+    FLAG_JOHTO_LEADER_CLAIR
 };
 
 static const u32 sHoennGymLeaderRoster[] = {
@@ -39,13 +61,32 @@ static const u32 sHoennGymLeaderRoster[] = {
     TRAINER_LEADER_JUAN,
 };
 
+static const u16 sHoennGymLeaderFlags[] = {
+    FLAG_HOENN_LEADER_ROXANNE,
+    FLAG_HOENN_LEADER_BRAWLY,
+    FLAG_HOENN_LEADER_WATTSON,
+    FLAG_HOENN_LEADER_FLANNERY,
+    FLAG_HOENN_LEADER_NORMAN,
+    FLAG_HOENN_LEADER_WINONA,
+    FLAG_HOENN_LEADER_TATE_AND_LIZA,
+    FLAG_HOENN_LEADER_JUAN
+};
+
+static const u16 sRosterCompletionFlags[] = {
+    0,
+    FLAG_COMPLETED_ROSTER_KANTO,
+    FLAG_COMPLETED_ROSTER_JOHTO,
+    FLAG_COMPLETED_ROSTER_HOENN
+};
+
 static const struct RosterStruct {
   const u32 *roster;
+  const u16* leaderFlags;
   u32 rosterCount;
 } sGymLeaderRosters[] = {
-    [1] = { sKantoGymLeaderRoster, ARRAY_COUNT(sKantoGymLeaderRoster) },
-    [2] = { sJohtoGymLeaderRoster, ARRAY_COUNT(sJohtoGymLeaderRoster) },
-    [3] = { sHoennGymLeaderRoster, ARRAY_COUNT(sHoennGymLeaderRoster) }
+    [1] = { sKantoGymLeaderRoster, sKantoGymLeaderFlags, ARRAY_COUNT(sKantoGymLeaderRoster) },
+    [2] = { sJohtoGymLeaderRoster, sJohtoGymLeaderFlags, ARRAY_COUNT(sJohtoGymLeaderRoster) },
+    [3] = { sHoennGymLeaderRoster, sHoennGymLeaderFlags, ARRAY_COUNT(sHoennGymLeaderRoster) }
 };
 
 static const u8 *sPWTBattleScripts[] =
@@ -69,7 +110,7 @@ void ChooseRandomGymLeader(void) {
 
     for (u32 i = 0; i < sGymLeaderRosters[gen].rosterCount; i++)
     {
-        if(!FlagGet(sGymLeaderRosters[gen].roster[i] + TRAINER_FLAGS_START))
+        if(!FlagGet(sGymLeaderRosters[gen].leaderFlags[i]))
             countUndefeated++;
     }
     
@@ -77,7 +118,7 @@ void ChooseRandomGymLeader(void) {
 
     for (u32 i = 0; i < sGymLeaderRosters[gen].rosterCount; i++)
     {
-        if (!FlagGet(sGymLeaderRosters[gen].roster[i] + TRAINER_FLAGS_START))
+        if (!FlagGet(sGymLeaderRosters[gen].leaderFlags[i]))
         {
             if (n == 0)
             {
@@ -95,7 +136,6 @@ void ChooseRandomGymLeader(void) {
     VarSet(VAR_GYM_LEADER_1, sGymLeaderRosters[gen].roster[leader1]);
     VarSet(VAR_GYM_LEADER_2, sGymLeaderRosters[gen].roster[leader2]);
     VarSet(VAR_GYM_LEADER_3, sGymLeaderRosters[gen].roster[leader3]);
-
 };
 
 void Script_goto_pwt_battle_script(struct ScriptContext *ctx)
@@ -104,6 +144,21 @@ void Script_goto_pwt_battle_script(struct ScriptContext *ctx)
 
     Script_RequestEffects(SCREFF_V1);
 
-    DebugPrintf("trainerId: %u", trainerId);
     ScriptJump(ctx, sPWTBattleScripts[trainerId]);
+}
+
+void SetCompleteRosterFlag(void) {
+    u32 countUndefeated = 0;
+    u32 gen = VarGet(VAR_GENERATION_CTL);
+
+    for (u32 i = 0; i < sGymLeaderRosters[gen].rosterCount; i++)
+    {
+        if(FlagGet(sGymLeaderRosters[gen].leaderFlags[i]))
+            countUndefeated++;
+    }
+
+    DebugPrintf("countUndefeated: %u", countUndefeated);
+    DebugPrintf("sGymLeaderRosters[gen].rosterCount: %u", sGymLeaderRosters[gen].rosterCount);
+    if(countUndefeated == sGymLeaderRosters[gen].rosterCount)
+        FlagSet(sRosterCompletionFlags[gen]);
 }

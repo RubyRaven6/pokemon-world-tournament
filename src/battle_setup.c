@@ -55,6 +55,7 @@
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
 #include "fishing.h"
+#include "tournament_logic.h"
 
 enum TransitionType
 {
@@ -1488,7 +1489,8 @@ static void CB2_EndTrainerBattle(void)
         if (CurrentBattlePyramidLocation() == PYRAMID_LOCATION_NONE && !InTrainerHillChallenge())
         {
             RegisterTrainerInMatchCall();
-            SetBattledTrainersFlags();
+            //SetBattledTrainersFlags();
+            SetCompleteRosterFlag();
         }
     }
 }
