@@ -3374,8 +3374,10 @@ bool8 ScrCmd_debugprint(struct ScriptContext *ctx)
         }
     }
     #else 
+    num = VarGet(numOrVar);
     num++;
     num--;
+    str = NULL;
     #endif
     
     return FALSE;
