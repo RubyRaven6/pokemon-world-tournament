@@ -3354,31 +3354,24 @@ bool8 ScrCmd_getbraillestringwidth(struct ScriptContext * ctx)
     return FALSE;
 }
 
+#ifndef RELEASE
 bool8 ScrCmd_debugprint(struct ScriptContext *ctx)
 {
-    u16 num;
     const u8 *str = (const u8*)ScriptReadWord(ctx);
     u16 numOrVar = ScriptReadHalfword(ctx);
 
-    #ifndef RELEASE
     if (str != NULL)
     {
         if (numOrVar != 65535)
         {
-            num = VarGet(numOrVar);
-            DebugPrintfLevel(MGBA_LOG_WARN, "%S, %u", str, num);
+            DebugPrintfLevel(MGBA_LOG_WARN, "%S, %u", str, VarGet(numOrVar));
         }
         else
         {
             DebugPrintfLevel(MGBA_LOG_WARN, "%S", str);
         }
     }
-    #else 
-    num = VarGet(numOrVar);
-    num++;
-    num--;
-    str = NULL;
-    #endif
     
     return FALSE;
 }
+#endif

@@ -2890,8 +2890,10 @@
 	.2byte \var
 	.endm
 
+	.if RELEASE == FALSE
 	.macro debugprint str:req, numOrVar=65535
 	callnative ScrCmd_debugprint
 	.4byte \str
 	.2byte \numOrVar
 	.endm
+	.endif
