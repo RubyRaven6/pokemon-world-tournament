@@ -787,4 +787,51 @@ extern const u8 CableClub_EventScript_ShowBattleRecords_Frlg[];
 extern const u8 EventScript_Indigo_UltimateGoal[];
 extern const u8 EventScript_Indigo_HighestAuthority[];
 
+extern const u8 EventScript_PWTBattleBrock[];
+extern const u8 EventScript_PWTBattleMisty[];
+extern const u8 EventScript_PWTBattleLtSurge[];
+extern const u8 EventScript_PWTBattleErika[];
+extern const u8 EventScript_PWTBattleKogaJanine[];
+extern const u8 EventScript_PWTBattleSabrina[];
+extern const u8 EventScript_PWTBattleBlaine[];
+extern const u8 EventScript_PWTBattleGiovanni[];
+
+extern const u8 EventScript_PWTBattleFalkner[];
+extern const u8 EventScript_PWTBattleBugsy[];
+extern const u8 EventScript_PWTBattleWhitney[];
+extern const u8 EventScript_PWTBattleMorty[];
+extern const u8 EventScript_PWTBattleChuck[];
+extern const u8 EventScript_PWTBattleJasmine[];
+extern const u8 EventScript_PWTBattlePryce[];
+extern const u8 EventScript_PWTBattleClair[];
+
+extern const u8 EventScript_PWTBattleRoxanne[];
+extern const u8 EventScript_PWTBattleBrawly[];
+extern const u8 EventScript_PWTBattleWattson[];
+extern const u8 EventScript_PWTBattleFlannery[];
+extern const u8 EventScript_PWTBattleNorman[];
+extern const u8 EventScript_PWTBattleWinona[];
+extern const u8 EventScript_PWTBattleTateAndLiza[];
+extern const u8 EventScript_PWTBattleJuan[];
+
+extern const u8 EventScript_PWTBattleRoark[];
+extern const u8 EventScript_PWTBattleGardenia[];
+extern const u8 EventScript_PWTBattleMaylene[];
+extern const u8 EventScript_PWTBattleCrasherWake[];
+extern const u8 EventScript_PWTBattleFantina[];
+extern const u8 EventScript_PWTBattleByron[];
+extern const u8 EventScript_PWTBattleCandice[];
+extern const u8 EventScript_PWTBattleVolkner[];
+
+extern const u8 EventScript_PWTBattleLenora[];
+extern const u8 EventScript_PWTBattleBurgh[];
+extern const u8 EventScript_PWTBattleElesa[];
+extern const u8 EventScript_PWTBattleClay[];
+extern const u8 EventScript_PWTBattleSkyla[];
+extern const u8 EventScript_PWTBattleBrycen[];
+extern const u8 EventScript_PWTBattleDrayden[];
+extern const u8 EventScript_PWTBattleCheren[];
+extern const u8 EventScript_PWTBattleRoxie[];
+extern const u8 EventScript_PWTBattleMarlon[];
+
 #endif // GUARD_EVENT_SCRIPTS_H

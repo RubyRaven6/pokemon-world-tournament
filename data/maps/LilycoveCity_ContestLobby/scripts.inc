@@ -127,7 +127,7 @@ LilycoveCity_ContestLobby_EventScript_ShowTourists::
 	return
 
 LilycoveCity_ContestLobby_EventScript_SetPaintingFlag::
-	switch VAR_CONTEST_CATEGORY
+	switch VAR_GYM_LEADER_1
 	case CONTEST_CATEGORY_COOL, LilycoveCity_ContestLobby_EventScript_MadeCoolPainting
 	case CONTEST_CATEGORY_BEAUTY, LilycoveCity_ContestLobby_EventScript_MadeBeautyPainting
 	case CONTEST_CATEGORY_CUTE, LilycoveCity_ContestLobby_EventScript_MadeCutePainting
@@ -323,7 +323,7 @@ LilycoveCity_ContestLobby_EventScript_ContestReceptionist::
 	end
 
 LilycoveCity_ContestLobby_EventScript_SetContestType::
-	switch VAR_CONTEST_RANK
+	switch VAR_GYM_LEADER_2
 	case CONTEST_RANK_NORMAL, LilycoveCity_ContestLobby_EventScript_SetNormalContestType
 	case CONTEST_RANK_SUPER, LilycoveCity_ContestLobby_EventScript_SetSuperContestType
 	case CONTEST_RANK_HYPER, LilycoveCity_ContestLobby_EventScript_SetHyperContestType
@@ -356,14 +356,14 @@ LilycoveCity_ContestLobby_EventScript_SetDebug::
 #endif
 	additem ITEM_CONTEST_PASS
 	setvar VAR_0x800B, 8
-	setvar VAR_CONTEST_RANK, CONTEST_RANK_MASTER
+	setvar VAR_GYM_LEADER_2, CONTEST_RANK_MASTER
 	setvar VAR_LILYCOVE_CONTEST_LOBBY_STATE, 1
 	setflag FLAG_SYS_RIBBON_GET
 	end
 
 LilycoveCity_ContestLobby_EventScript_WarpToContestHall::
 	setflag FLAG_ENTERED_CONTEST
-	switch VAR_CONTEST_CATEGORY
+	switch VAR_GYM_LEADER_1
 	case CONTEST_CATEGORY_COOL, LilycoveCity_ContestLobby_EventScript_WarpToCoolContestHall
 	case CONTEST_CATEGORY_BEAUTY, LilycoveCity_ContestLobby_EventScript_WarpToBeautyContestHall
 	case CONTEST_CATEGORY_CUTE, LilycoveCity_ContestLobby_EventScript_WarpToCuteContestHall
@@ -663,7 +663,7 @@ LilycoveCity_ContestLobby_EventScript_ChooseLinkContestType::
 	switch VAR_RESULT
 	case CONTEST_CATEGORIES_COUNT, LilycoveCity_ContestLobby_EventScript_CancelLinkContest
 	case MULTI_B_PRESSED, LilycoveCity_ContestLobby_EventScript_CancelLinkContest
-	copyvar VAR_CONTEST_CATEGORY, VAR_RESULT
+	copyvar VAR_GYM_LEADER_1, VAR_RESULT
 	goto LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon
 	end
 
@@ -702,7 +702,7 @@ LilycoveCity_ContestLobby_EventScript_CancelLinkContest::
 
 LilycoveCity_ContestLobby_EventScript_ChooseLinkContestMon::
 	msgbox LilycoveCity_ContestLobby_Text_EnterWhichPokemon3, MSGBOX_DEFAULT
-	setvar VAR_CONTEST_RANK, 0
+	setvar VAR_GYM_LEADER_2, 0
 	choosecontestmon
 	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, LilycoveCity_ContestLobby_EventScript_CancelLinkContest
 	special TryEnterContestMon
@@ -806,16 +806,16 @@ LilycoveCity_ContestLobby_EventScript_StartLinkContest::
 	setvar VAR_CONTEST_HALL_STATE, 1
 	special SetLinkContestPlayerGfx
 	setvar VAR_CONTEST_TYPE, CONTEST_TYPE_LINK
-	setvar VAR_CONTEST_RANK, CONTEST_RANK_MASTER
+	setvar VAR_GYM_LEADER_2, CONTEST_RANK_MASTER
 	call LilycoveCity_ContestLobby_EventScript_WarpToContestHall
 	end
 
 LilycoveCity_ContestLobby_EventScript_SetLinkGroupType::
-	call_if_eq VAR_CONTEST_CATEGORY, CONTEST_CATEGORY_COOL, LilycoveCity_ContestLobby_EventScript_SetLinkGroupCoolContest
-	call_if_eq VAR_CONTEST_CATEGORY, CONTEST_CATEGORY_BEAUTY, LilycoveCity_ContestLobby_EventScript_SetLinkGroupBeautyContest
-	call_if_eq VAR_CONTEST_CATEGORY, CONTEST_CATEGORY_CUTE, LilycoveCity_ContestLobby_EventScript_SetLinkGroupCuteContest
-	call_if_eq VAR_CONTEST_CATEGORY, CONTEST_CATEGORY_SMART, LilycoveCity_ContestLobby_EventScript_SetLinkGroupSmartContest
-	call_if_eq VAR_CONTEST_CATEGORY, CONTEST_CATEGORY_TOUGH, LilycoveCity_ContestLobby_EventScript_SetLinkGroupToughContest
+	call_if_eq VAR_GYM_LEADER_1, CONTEST_CATEGORY_COOL, LilycoveCity_ContestLobby_EventScript_SetLinkGroupCoolContest
+	call_if_eq VAR_GYM_LEADER_1, CONTEST_CATEGORY_BEAUTY, LilycoveCity_ContestLobby_EventScript_SetLinkGroupBeautyContest
+	call_if_eq VAR_GYM_LEADER_1, CONTEST_CATEGORY_CUTE, LilycoveCity_ContestLobby_EventScript_SetLinkGroupCuteContest
+	call_if_eq VAR_GYM_LEADER_1, CONTEST_CATEGORY_SMART, LilycoveCity_ContestLobby_EventScript_SetLinkGroupSmartContest
+	call_if_eq VAR_GYM_LEADER_1, CONTEST_CATEGORY_TOUGH, LilycoveCity_ContestLobby_EventScript_SetLinkGroupToughContest
 	goto LilycoveCity_ContestLobby_EventScript_DecideLinkLeader
 	end
 

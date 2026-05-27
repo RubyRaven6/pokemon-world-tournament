@@ -2874,3 +2874,26 @@
 	getbraillestringwidth \text
 	call EventScript_BrailleCursorWaitButton
 	.endm
+
+@@@@@@@@@@@@@@
+@ PWT MACROS
+@@@@@@@@@@@@@@
+
+	@ Feeds a generation into a special var
+	.macro choosegeneration gen:req
+	setvar VAR_GENERATION_CTL, \gen
+	.endm
+
+	@ Jumps to a Gym leader's script
+	.macro goto_pwt_script var:req
+	callnative Script_goto_pwt_battle_script, requests_effects=1
+	.2byte \var
+	.endm
+
+	.if RELEASE == FALSE
+	.macro debugprint str:req, numOrVar=65535
+	callnative ScrCmd_debugprint
+	.4byte \str
+	.2byte \numOrVar
+	.endm
+	.endif

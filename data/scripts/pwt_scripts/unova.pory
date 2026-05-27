@@ -1,0 +1,54 @@
+script EventScript_PWTBattleLenora{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_LENORA){setflag(FLAG_UNOVA_LEADER_LENORA)}
+    trainerbattle_single(TRAINER_LEADER_LENORA, "TRAINER_LEADER_LENORA", "TRAINER_LEADER_LENORA lost")
+    end
+}
+
+script EventScript_PWTBattleBurgh{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_BURGH){setflag(FLAG_UNOVA_LEADER_BURGH)}
+    trainerbattle_single(TRAINER_LEADER_BURGH, "TRAINER_LEADER_BURGH", "TRAINER_LEADER_BURGH lost")
+    end
+}
+
+script EventScript_PWTBattleElesa{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_ELESA){setflag(FLAG_UNOVA_LEADER_ELESA)}
+    trainerbattle_single(TRAINER_LEADER_ELESA, "TRAINER_LEADER_ELESA", "TRAINER_LEADER_ELESA lost")
+    end
+}
+
+script EventScript_PWTBattleClay{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_CLAY){setflag(FLAG_UNOVA_LEADER_CLAY)}
+    trainerbattle_single(TRAINER_LEADER_CLAY, "TRAINER_LEADER_CLAY", "TRAINER_LEADER_CLAY lost")
+    end
+}
+
+script EventScript_PWTBattleSkyla{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_SKYLA){setflag(FLAG_UNOVA_LEADER_SKYLA)}
+    trainerbattle_single(TRAINER_LEADER_SKYLA, "TRAINER_LEADER_SKYLA", "TRAINER_LEADER_SKYLA lost")
+    end
+}
+script EventScript_PWTBattleBrycen{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_BRYCEN){setflag(FLAG_UNOVA_LEADER_BRYCEN)}
+    trainerbattle_single(TRAINER_LEADER_BRYCEN, "TRAINER_LEADER_BRYCEN", "TRAINER_LEADER_BRYCEN lost")
+    end
+}
+script EventScript_PWTBattleDrayden{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_DRAYDEN){setflag(FLAG_UNOVA_LEADER_DRAYDEN)}
+    trainerbattle_single(TRAINER_LEADER_DRAYDEN, "TRAINER_LEADER_DRAYDEN", "TRAINER_LEADER_DRAYDEN lost")
+    end
+}
+script EventScript_PWTBattleCheren{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_CHEREN){setflag(FLAG_UNOVA_LEADER_CHEREN)}
+    trainerbattle_single(TRAINER_LEADER_CHEREN, "TRAINER_LEADER_CHEREN", "TRAINER_LEADER_CHEREN lost")
+    end
+}
+script EventScript_PWTBattleRoxie{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_ROXIE){setflag(FLAG_UNOVA_LEADER_ROXIE)}
+    trainerbattle_single(TRAINER_LEADER_ROXIE, "TRAINER_LEADER_ROXIE", "TRAINER_LEADER_ROXIE lost")
+    end
+}
+script EventScript_PWTBattleMarlon{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_MARLON){setflag(FLAG_UNOVA_LEADER_MARLON)}
+    trainerbattle_single(TRAINER_LEADER_MARLON, "TRAINER_LEADER_MARLON", "TRAINER_LEADER_MARLON lost")
+    end
+}

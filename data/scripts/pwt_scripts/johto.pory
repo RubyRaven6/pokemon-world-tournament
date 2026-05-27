@@ -1,0 +1,42 @@
+script EventScript_PWTBattleFalkner{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_FALKNER){setflag(FLAG_JOHTO_LEADER_FALKNER)}
+    trainerbattle_single(TRAINER_LEADER_FALKNER, "TRAINER_LEADER_FALKNER", "TRAINER_LEADER_FALKNER lost")
+    end
+}
+
+script EventScript_PWTBattleBugsy{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_BUGSY){setflag(FLAG_JOHTO_LEADER_BUGSY)}
+    trainerbattle_single(TRAINER_LEADER_BUGSY, "TRAINER_LEADER_BUGSY", "TRAINER_LEADER_BUGSY lost")
+    end
+}
+
+script EventScript_PWTBattleWhitney{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_WHITNEY){setflag(FLAG_JOHTO_LEADER_WHITNEY)}
+    trainerbattle_single(TRAINER_LEADER_WHITNEY, "TRAINER_LEADER_WHITNEY", "TRAINER_LEADER_WHITNEY lost")
+    end
+}
+script EventScript_PWTBattleMorty{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_MORTY){setflag(FLAG_JOHTO_LEADER_MORTY)}
+    trainerbattle_single(TRAINER_LEADER_MORTY, "TRAINER_LEADER_MORTY", "TRAINER_LEADER_MORTY lost")
+    end
+}
+script EventScript_PWTBattleChuck{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_CHUCK){setflag(FLAG_JOHTO_LEADER_CHUCK)}
+    trainerbattle_single(TRAINER_LEADER_CHUCK, "TRAINER_LEADER_CHUCK", "TRAINER_LEADER_CHUCK lost")
+    end
+}
+script EventScript_PWTBattleJasmine{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_JASMINE){setflag(FLAG_JOHTO_LEADER_JASMINE)}
+    trainerbattle_single(TRAINER_LEADER_JASMINE, "TRAINER_LEADER_JASMINE", "TRAINER_LEADER_JASMINE lost")
+    end
+}
+script EventScript_PWTBattlePryce{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_PRYCE){setflag(FLAG_JOHTO_LEADER_PRYCE)}
+    trainerbattle_single(TRAINER_LEADER_PRYCE, "TRAINER_LEADER_PRYCE", "TRAINER_LEADER_PRYCE lost")
+    end
+}
+script EventScript_PWTBattleClair{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_CLAIR){setflag(FLAG_JOHTO_LEADER_CLAIR)}
+    trainerbattle_single(TRAINER_LEADER_CLAIR, "TRAINER_LEADER_CLAIR", "TRAINER_LEADER_CLAIR lost")
+    end
+}

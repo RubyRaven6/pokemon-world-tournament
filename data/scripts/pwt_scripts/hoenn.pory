@@ -1,0 +1,42 @@
+script EventScript_PWTBattleRoxanne{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_ROXANNE){setflag(FLAG_HOENN_LEADER_ROXANNE)}
+    trainerbattle_single(TRAINER_LEADER_ROXANNE, "TRAINER_LEADER_ROXANNE", "TRAINER_LEADER_ROXANNE lost")
+    end
+}
+
+script EventScript_PWTBattleBrawly{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_BRAWLY){setflag(FLAG_HOENN_LEADER_BRAWLY)}
+    trainerbattle_single(TRAINER_LEADER_BRAWLY, "TRAINER_LEADER_BRAWLY", "TRAINER_LEADER_BRAWLY lost")
+    end
+}
+
+script EventScript_PWTBattleWattson{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_WATTSON){setflag(FLAG_HOENN_LEADER_WATTSON)}
+    trainerbattle_single(TRAINER_LEADER_WATTSON, "TRAINER_LEADER_WATTSON", "TRAINER_LEADER_WATTSON lost")
+    end
+}
+script EventScript_PWTBattleFlannery{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_FLANNERY){setflag(FLAG_HOENN_LEADER_FLANNERY)}
+    trainerbattle_single(TRAINER_LEADER_FLANNERY, "TRAINER_LEADER_FLANNERY", "TRAINER_LEADER_FLANNERY lost")
+    end
+}
+script EventScript_PWTBattleNorman{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_NORMAN){setflag(FLAG_HOENN_LEADER_NORMAN)}
+    trainerbattle_single(TRAINER_LEADER_NORMAN, "TRAINER_LEADER_NORMAN", "TRAINER_LEADER_NORMAN lost")
+    end
+}
+script EventScript_PWTBattleWinona{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_WINONA){setflag(FLAG_HOENN_LEADER_WINONA)}
+    trainerbattle_single(TRAINER_LEADER_WINONA, "TRAINER_LEADER_WINONA", "TRAINER_LEADER_WINONA lost")
+    end
+}
+script EventScript_PWTBattleTateAndLiza{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_TATE_AND_LIZA){setflag(FLAG_HOENN_LEADER_TATE_AND_LIZA)}
+    trainerbattle_single(TRAINER_LEADER_TATE_AND_LIZA, "TRAINER_LEADER_TATE_AND_LIZA", "TRAINER_LEADER_TATE_AND_LIZA lost")
+    end
+}
+script EventScript_PWTBattleJuan{
+    if(var(VAR_GYM_LEADER_3) == TRAINER_LEADER_JUAN){setflag(FLAG_HOENN_LEADER_JUAN)}
+    trainerbattle_single(TRAINER_LEADER_JUAN, "TRAINER_LEADER_JUAN", "TRAINER_LEADER_JUAN lost")
+    end
+}
