@@ -3360,6 +3360,7 @@ bool8 ScrCmd_debugprint(struct ScriptContext *ctx)
     const u8 *str = (const u8*)ScriptReadWord(ctx);
     u16 numOrVar = ScriptReadHalfword(ctx);
 
+    #ifndef RELEASE
     if (str != NULL)
     {
         if (numOrVar != 65535)
@@ -3372,5 +3373,10 @@ bool8 ScrCmd_debugprint(struct ScriptContext *ctx)
             DebugPrintfLevel(MGBA_LOG_WARN, "%S", str);
         }
     }
+    #elif 
+    num++;
+    num--;
+    #endif
+    
     return FALSE;
 }
