@@ -190,6 +190,7 @@ static void HighlightSelectedMainMenuItem(u8, u8, s16);
 static void Task_HandleMainMenuInput(u8);
 static void Task_HandleMainMenuAPressed(u8);
 static void Task_HandleMainMenuBPressed(u8);
+static void Task_NewGameNoBirchSpeech(u8 taskId);
 static void Task_NewGameBirchSpeech_Init(u8);
 static void Task_DisplayMainMenuInvalidActionError(u8);
 static void AddBirchSpeechObjects(u8);
@@ -1090,7 +1091,7 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
 
             gPlttBufferUnfaded[0] = RGB_BLACK;
             gPlttBufferFaded[0] = RGB_BLACK;
-            gTasks[taskId].func = Task_NewGameBirchSpeech_Init;
+            gTasks[taskId].func = Task_NewGameNoBirchSpeech;
             break;
         case ACTION_CONTINUE:
             gPlttBufferUnfaded[0] = RGB_BLACK;
@@ -2134,6 +2135,19 @@ static void NewGameBirchSpeech_ShowGenderMenu(void)
 static s8 NewGameBirchSpeech_ProcessGenderMenuInput(void)
 {
     return Menu_ProcessInputNoWrap();
+}
+
+const u8 gText_DefaultPlayerName[] = _("Ruby");
+static void Task_NewGameNoBirchSpeech(u8 taskId)
+{
+    StringCopy(gSaveBlock2Ptr->playerName, gText_DefaultPlayerName);
+    gSaveBlock2Ptr->playerGender = FEMALE;
+
+    FreeAllWindowBuffers();
+    ResetAllPicSprites();
+
+    gTasks[taskId].data[0] = 0;
+    gTasks[taskId].func = Task_NewGameBirchSpeech_Cleanup;
 }
 
 void NewGameBirchSpeech_SetDefaultPlayerName(u8 nameId)
