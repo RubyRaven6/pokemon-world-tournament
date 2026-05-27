@@ -83,12 +83,7 @@ struct SpeciesItem
     enum Item item;
 };
 
-static u16 CalculateBoxMonChecksum(struct BoxPokemon *boxMon);
-static u16 CalculateBoxMonChecksumDecrypt(struct BoxPokemon *boxMon);
-static u16 CalculateBoxMonChecksumReencrypt(struct BoxPokemon *boxMon);
 static union PokemonSubstruct *GetSubstruct(struct BoxPokemon *boxMon, u32 personality, enum SubstructType substructType);
-static void EncryptBoxMon(struct BoxPokemon *boxMon);
-static void DecryptBoxMon(struct BoxPokemon *boxMon);
 static void Task_PlayMapChosenOrBattleBGM(u8 taskId);
 void TrySpecialOverworldEvo();
 
@@ -1373,7 +1368,6 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u32 personal
 {
     u8 speciesName[POKEMON_NAME_LENGTH + 1];
     u32 value;
-    u16 checksum;
     bool32 isShiny;
 
     ZeroBoxMonData(boxMon);
@@ -1432,9 +1426,6 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u32 personal
     SetBoxMonData(boxMon, MON_DATA_PERSONALITY, &personality);
     SetBoxMonData(boxMon, MON_DATA_OT_ID, &value);
 
-    checksum = CalculateBoxMonChecksum(boxMon);
-    SetBoxMonData(boxMon, MON_DATA_CHECKSUM, &checksum);
-    EncryptBoxMon(boxMon);
     SetBoxMonData(boxMon, MON_DATA_IS_SHINY, &isShiny);
     StringCopy(speciesName, GetSpeciesName(species));
     SetBoxMonData(boxMon, MON_DATA_NICKNAME, speciesName);
@@ -1759,42 +1750,6 @@ void CreateEnemyEventMon(void)
         heldItem[1] = itemId >> 8;
         SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, heldItem);
     }
-}
-
-static u16 CalculateBoxMonChecksum(struct BoxPokemon *boxMon)
-{
-    u32 checksum = 0;
-
-    for (u32 i = 0; i < ARRAY_COUNT(boxMon->secure.raw); i++)
-        checksum += boxMon->secure.raw[i] + (boxMon->secure.raw[i] >> 16);
-
-    return checksum;
-}
-
-static u16 CalculateBoxMonChecksumDecrypt(struct BoxPokemon *boxMon)
-{
-    u32 checksum = 0;
-
-    for (u32 i = 0; i < ARRAY_COUNT(boxMon->secure.raw); i++)
-    {
-        boxMon->secure.raw[i] ^= (boxMon->otId ^ boxMon->personality);
-        checksum += boxMon->secure.raw[i] + (boxMon->secure.raw[i] >> 16);
-    }
-
-    return checksum;
-}
-
-static u16 CalculateBoxMonChecksumReencrypt(struct BoxPokemon *boxMon)
-{
-    u32 checksum = 0;
-
-    for (u32 i = 0; i < ARRAY_COUNT(boxMon->secure.raw); i++)
-    {
-        checksum += boxMon->secure.raw[i] + (boxMon->secure.raw[i] >> 16);
-        boxMon->secure.raw[i] ^= (boxMon->otId ^ boxMon->personality);
-    }
-
-    return checksum;
 }
 
 void CalculateMonStats(struct Pokemon *mon)
@@ -2359,24 +2314,6 @@ void SetMultiuseSpriteTemplateToTrainerFront(enum TrainerPicID trainerPicId, enu
     gMultiuseSpriteTemplate.anims = gAnims_Trainer;
 }
 
-static void EncryptBoxMon(struct BoxPokemon *boxMon)
-{
-    for (u32 i = 0; i < ARRAY_COUNT(boxMon->secure.raw); i++)
-    {
-        boxMon->secure.raw[i] ^= boxMon->personality;
-        boxMon->secure.raw[i] ^= boxMon->otId;
-    }
-}
-
-static void DecryptBoxMon(struct BoxPokemon *boxMon)
-{
-    for (u32 i = 0; i < ARRAY_COUNT(boxMon->secure.raw); i++)
-    {
-        boxMon->secure.raw[i] ^= boxMon->otId;
-        boxMon->secure.raw[i] ^= boxMon->personality;
-    }
-}
-
 static const u8 sSubstructOffsets[4][24] =
 {
     [SUBSTRUCT_TYPE_0] = {0, 0, 0, 0, 0, 0, 1, 1, 2, 3, 2, 3, 1, 1, 2, 3, 2, 3, 1, 1, 2, 3, 2, 3},
@@ -2476,15 +2413,15 @@ static ALWAYS_INLINE struct PokemonSubstruct3 *GetSubstruct3(struct BoxPokemon *
 
 static bool32 IsBadEgg(struct BoxPokemon *boxMon)
 {
+    struct PokemonSubstruct0 *substruct0 = GetSubstruct0(boxMon);
+
     if (boxMon->isBadEgg)
         return TRUE;
 
-    if (CalculateBoxMonChecksum(boxMon) != boxMon->checksum)
+    if (substruct0->species >= NUM_SPECIES
+     || substruct0->heldItem >= ITEMS_COUNT)
     {
         boxMon->isBadEgg = TRUE;
-        boxMon->isEgg = TRUE;
-        GetSubstruct3(boxMon)->isEgg = TRUE;
-
         return TRUE;
     }
 
@@ -2508,7 +2445,6 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
     // Any field greater than MON_DATA_ENCRYPT_SEPARATOR is encrypted and must be treated as such
     if (field > MON_DATA_ENCRYPT_SEPARATOR)
     {
-        DecryptBoxMon(boxMon);
 
         switch (field)
         {
@@ -2945,9 +2881,6 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         case MON_DATA_MARKINGS:
             retVal = boxMon->markings;
             break;
-        case MON_DATA_CHECKSUM:
-            retVal = boxMon->checksum;
-            break;
         case MON_DATA_IS_SHINY:
         {
             u32 shinyValue = GET_SHINY_VALUE(boxMon->otId, boxMon->personality);
@@ -2967,9 +2900,6 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             break;
         }
     }
-
-    if (field > MON_DATA_ENCRYPT_SEPARATOR)
-        EncryptBoxMon(boxMon);
 
     return retVal;
 }
@@ -3060,14 +2990,6 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
 
     if (field > MON_DATA_ENCRYPT_SEPARATOR)
     {
-        if (CalculateBoxMonChecksumDecrypt(boxMon) != boxMon->checksum)
-        {
-            boxMon->isBadEgg = TRUE;
-            boxMon->isEgg = TRUE;
-            GetSubstruct3(boxMon)->isEgg = TRUE;
-            EncryptBoxMon(boxMon);
-            return;
-        }
 
         switch (field)
         {
@@ -3375,9 +3297,6 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         case MON_DATA_MARKINGS:
             SET8(boxMon->markings);
             break;
-        case MON_DATA_CHECKSUM:
-            SET16(boxMon->checksum);
-            break;
         case MON_DATA_IS_SHINY:
         {
             u32 shinyValue = GET_SHINY_VALUE(boxMon->otId, boxMon->personality);
@@ -3399,9 +3318,6 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         }
     }
-
-    if (field > MON_DATA_ENCRYPT_SEPARATOR)
-        boxMon->checksum = CalculateBoxMonChecksumReencrypt(boxMon);
 }
 
 void CopyMon(void *dest, void *src, size_t size)
@@ -7172,13 +7088,11 @@ void UpdateMonPersonality(struct BoxPokemon *boxMon, u32 personality)
     new2 = &(GetSubstruct(boxMon, personality, SUBSTRUCT_TYPE_2)->type2);
     new3 = &(GetSubstruct(boxMon, personality, SUBSTRUCT_TYPE_3)->type3);
 
-    DecryptBoxMon(&old);
     boxMon->personality = personality;
     *new0 = *old0;
     *new1 = *old1;
     *new2 = *old2;
     *new3 = *old3;
-    boxMon->checksum = CalculateBoxMonChecksumReencrypt(boxMon);
 
     SetBoxMonData(boxMon, MON_DATA_IS_SHINY, &isShiny);
     SetBoxMonData(boxMon, MON_DATA_HIDDEN_NATURE, &hiddenNature);
