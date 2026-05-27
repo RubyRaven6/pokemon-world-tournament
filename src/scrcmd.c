@@ -3373,7 +3373,7 @@ bool8 ScrCmd_debugprint(struct ScriptContext *ctx)
             DebugPrintfLevel(MGBA_LOG_WARN, "%S", str);
         }
     }
-    #elif 
+    #else 
     num++;
     num--;
     #endif
