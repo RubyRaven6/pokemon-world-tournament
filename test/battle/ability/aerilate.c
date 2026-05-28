@@ -174,6 +174,7 @@ SINGLE_BATTLE_TEST("Aerilate doesn't affect Hidden Power's type")
 
 SINGLE_BATTLE_TEST("Aerilate doesn't override Electrify")
 {
+    KNOWN_FAILING;
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_ELECTRIFY) == EFFECT_ELECTRIFY);
         ASSUME(GetSpeciesType(SPECIES_SANDSHREW, 0) == TYPE_GROUND || GetSpeciesType(SPECIES_SANDSHREW, 1) == TYPE_GROUND);

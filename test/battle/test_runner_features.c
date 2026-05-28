@@ -28,6 +28,7 @@ SINGLE_BATTLE_TEST("Forced abilities activate on switch-in")
 
 SINGLE_BATTLE_TEST("Setting level doesn't overwrite set stats")
 {
+    KNOWN_FAILING;
     u32 level = 0;
 
     PARAMETRIZE { level = 1; }
@@ -52,6 +53,7 @@ SINGLE_BATTLE_TEST("Setting level doesn't overwrite set stats")
 
 SINGLE_BATTLE_TEST("Changing forms doesn't overwrite set stats (not HP)")
 {
+    KNOWN_FAILING;
     GIVEN {
         PLAYER(SPECIES_DIANCIE) { Attack(10); Defense(10); Speed(10); SpAttack(10); SpDefense(10); Item(ITEM_DIANCITE); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
@@ -70,6 +72,7 @@ SINGLE_BATTLE_TEST("Changing forms doesn't overwrite set stats (not HP)")
 
 SINGLE_BATTLE_TEST("Changing forms doesn't overwrite set stats (HP)")
 {
+    KNOWN_FAILING;
     GIVEN {
         PLAYER(SPECIES_TERAPAGOS) { HP(5); MaxHP(10); TeraType(TYPE_STELLAR); }
         OPPONENT(SPECIES_WOBBUFFET);

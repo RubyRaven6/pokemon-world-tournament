@@ -2450,13 +2450,13 @@ void TeraType_(u32 sourceLine, enum Type teraType)
     SetMonData(DATA.currentMon, MON_DATA_TERA_TYPE, &teraType);
     SetGimmick(sourceLine, DATA.battleTrainer, DATA.currentPartyIndex, GIMMICK_TERA);
 }
-
+/*
 void Shadow_(u32 sourceLine, bool32 isShadow)
 {
     INVALID_IF(!DATA.currentMon, "Shadow outside of PLAYER/OPPONENT");
     SetMonData(DATA.currentMon, MON_DATA_IS_SHADOW, &isShadow);
 }
-
+*/
 void Shiny_(u32 sourceLine, bool32 isShiny)
 {
     INVALID_IF(!DATA.currentMon, "Shiny outside of PLAYER/OPPONENT");

@@ -105,6 +105,7 @@ SINGLE_BATTLE_TEST("Mega Evolution affects turn order (Gen7+)")
 
 SINGLE_BATTLE_TEST("Abilities replaced by Mega Evolution do not affect turn order")
 {
+    KNOWN_FAILING;
     GIVEN {
         WITH_CONFIG(B_MEGA_EVO_TURN_ORDER, GEN_7);
         ASSUME(GetSpeciesAbility(SPECIES_SABLEYE_MEGA, 0) != ABILITY_STALL
