@@ -2314,31 +2314,31 @@ void BufferContestTrainerAndMonNames(void)
 // Unused
 void DoesContestCategoryHaveMuseumPainting(void)
 {
-    int contestWinner;
-    switch (gSpecialVar_ContestCategory)
-    {
-    case CONTEST_CATEGORY_COOL:
-        contestWinner = CONTEST_WINNER_MUSEUM_COOL - 1;
-        break;
-    case CONTEST_CATEGORY_BEAUTY:
-        contestWinner = CONTEST_WINNER_MUSEUM_BEAUTY - 1;
-        break;
-    case CONTEST_CATEGORY_CUTE:
-        contestWinner = CONTEST_WINNER_MUSEUM_CUTE - 1;
-        break;
-    case CONTEST_CATEGORY_SMART:
-        contestWinner = CONTEST_WINNER_MUSEUM_SMART - 1;
-        break;
-    case CONTEST_CATEGORY_TOUGH:
-    default:
-        contestWinner = CONTEST_WINNER_MUSEUM_TOUGH - 1;
-        break;
-    }
+    // int contestWinner;
+    // switch (gSpecialVar_ContestCategory)
+    // {
+    // case CONTEST_CATEGORY_COOL:
+    //     contestWinner = CONTEST_WINNER_MUSEUM_COOL - 1;
+    //     break;
+    // case CONTEST_CATEGORY_BEAUTY:
+    //     contestWinner = CONTEST_WINNER_MUSEUM_BEAUTY - 1;
+    //     break;
+    // case CONTEST_CATEGORY_CUTE:
+    //     contestWinner = CONTEST_WINNER_MUSEUM_CUTE - 1;
+    //     break;
+    // case CONTEST_CATEGORY_SMART:
+    //     contestWinner = CONTEST_WINNER_MUSEUM_SMART - 1;
+    //     break;
+    // case CONTEST_CATEGORY_TOUGH:
+    // default:
+    //     contestWinner = CONTEST_WINNER_MUSEUM_TOUGH - 1;
+    //     break;
+    // }
 
-    if (gSaveBlock1Ptr->contestWinners[contestWinner].species == SPECIES_NONE)
+    // if (gSaveBlock1Ptr->contestWinners[contestWinner].species == SPECIES_NONE)
+    //     gSpecialVar_0x8004 = FALSE;
+    // else
         gSpecialVar_0x8004 = FALSE;
-    else
-        gSpecialVar_0x8004 = TRUE;
 }
 
 void SaveMuseumContestPainting(void)
@@ -2362,8 +2362,9 @@ void ShouldReadyContestArtist(void)
 
 u8 CountPlayerMuseumPaintings(void)
 {
-    int i;
     u8 count = 0;
+    /*
+    int i;
 
     for (i = 0; i < NUM_CONTEST_WINNERS - MUSEUM_CONTEST_WINNERS_START; i++)
     {
@@ -2371,6 +2372,7 @@ u8 CountPlayerMuseumPaintings(void)
             count++;
     }
 
+    */
     return count;
 }
 

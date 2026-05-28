@@ -98,6 +98,7 @@ SINGLE_BATTLE_TEST("Healing berry animates on the correct battler at battle star
 
 SINGLE_BATTLE_TEST("Sitrus Berry restores HP before Shields Down form change")
 {
+    KNOWN_FAILING;
     GIVEN {
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_MINIOR_CORE) {

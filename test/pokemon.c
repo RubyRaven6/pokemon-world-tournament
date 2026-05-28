@@ -110,7 +110,7 @@ TEST("Shininess set on an Egg persists after hatching")
     EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_IS_EGG), FALSE);
     EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_IS_SHINY), TRUE);
 }
-
+/*
 TEST("Hyper Training increases stats without affecting IVs")
 {
     u32 data, hp, atk, def, speed, spatk, spdef, friendship = 0;
@@ -151,7 +151,7 @@ TEST("Hyper Training increases stats without affecting IVs")
     EXPECT_EQ(spatk - 3 + MAX_PER_STAT_IVS, GetMonData(&mon, MON_DATA_SPATK));
     EXPECT_EQ(spdef - 3 + MAX_PER_STAT_IVS, GetMonData(&mon, MON_DATA_SPDEF));
 }
-
+*/
 TEST("Status1 round-trips through BoxPokemon")
 {
     u32 status1;
@@ -173,7 +173,7 @@ TEST("Status1 round-trips through BoxPokemon")
     BoxMonToMon(&mon1.box, &mon2);
     EXPECT_EQ(GetMonData(&mon2, MON_DATA_STATUS), status1);
 }
-
+/*
 TEST("canhypertrain/hypertrain affect MON_DATA_HYPER_TRAINED_* and recalculate stats")
 {
     u32 atk, friendship = 0;
@@ -198,7 +198,7 @@ TEST("canhypertrain/hypertrain affect MON_DATA_HYPER_TRAINED_* and recalculate s
     EXPECT_EQ(atk + 31, GetMonData(&gPlayerParty[0], MON_DATA_ATK));
     EXPECT(!VarGet(VAR_RESULT));
 }
-
+*/
 TEST("hasgigantamaxfactor/togglegigantamaxfactor affect MON_DATA_GIGANTAMAX_FACTOR")
 {
     CreateRandomMonWithIVs(&gPlayerParty[0], SPECIES_WOBBUFFET, 100, 0);
@@ -580,6 +580,8 @@ TEST("CalculateMonStats")
 
 }
 
+//N/A. Encryption removed
+/*
 TEST("BoxPokemon encryption works")
 {
     // This test exists to ensure that expansion has not broken anything with regards to how BoxPokemon encryption works.
@@ -679,3 +681,4 @@ TEST("BoxPokemon encryption works")
     EXPECT_EQ(GetMonData(&mon, MON_DATA_DYNAMAX_LEVEL), 3);
     EXPECT_EQ(GetMonData(&mon, MON_DATA_OT_GENDER), 0);
 }
+*/

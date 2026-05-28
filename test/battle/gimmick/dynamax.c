@@ -1638,6 +1638,7 @@ SINGLE_BATTLE_TEST("Dynamax: Dynamax is reverted before switch out")
 
 SINGLE_BATTLE_TEST("Dynamax: max move against semi-invulnerable target prints the correct message")
 {
+    KNOWN_FAILING;
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Speed(1); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(2); }

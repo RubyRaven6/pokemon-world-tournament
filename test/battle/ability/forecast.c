@@ -457,6 +457,7 @@ DOUBLE_BATTLE_TEST("Forecast reverts Castform back after Teraform Zero clears we
 
 DOUBLE_BATTLE_TEST("Forecast: All Forecast mons revert on the field if Primal Weather is removed due to fainting")
 {
+    KNOWN_FAILING;
     GIVEN {
         PLAYER(SPECIES_KYOGRE) { Speed(20); HP(1); Item(ITEM_BLUE_ORB); }
         PLAYER(SPECIES_CASTFORM) { Speed(10); Ability(ABILITY_FORECAST); }

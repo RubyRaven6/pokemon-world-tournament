@@ -1,5 +1,6 @@
 EventScript_PC::
 	lockall
+	call CheckIfPokemonFlagSet
 	setvar VAR_0x8004, PC_LOCATION_OTHER
 	special DoPCTurnOnEffect
 	playse SE_PC_ON
@@ -71,3 +72,11 @@ EventScript_AccessPokemonBoxLink::
 	special ShowPokemonStorageSystemPC
 	goto EventScript_TurnOffPC
 	end
+
+CheckIfPokemonFlagSet::
+	goto_if_unset FLAG_SYS_POKEMON_GET, CheckIfPokemonFlagSet_1
+	return
+
+CheckIfPokemonFlagSet_1:
+	setflag FLAG_SYS_POKEMON_GET
+	return
