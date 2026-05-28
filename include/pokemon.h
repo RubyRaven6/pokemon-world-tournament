@@ -187,15 +187,16 @@ struct PokemonSubstruct3
     u8 pp3:7; // 127 PP. | 23 total, 7 in byte
     u8 victoryRibbon:1;  // 24 total, 8 in byte | Given at the Battle Tower's Level 100 challenge by winning a set of seven battles that extends the current streak to 56 or more.
     //byte boundary
-    u8 pp4:7; // 127 PP.
-    u8 padding3:1;
-    u32 hpIV:5; //
+    u8 pp4:7; // 127 PP. // 31 total, 7 in byte
+    u8 padding3:1; //32 total, 8 in byte
+    //word boundary
+    u32 hpIV:5; 
     u32 attackIV:5;
     u32 defenseIV:5;
     u32 speedIV:5;
     u32 spAttackIV:5;
-    u32 spDefenseIV:5;
-    u32 abilityNum:2;
+    u32 spDefenseIV:5; //5 * 6 = 30 used total
+    u32 abilityNum:2; //32 used total
 };
 
 // Number of bytes in the largest Pokémon substruct.
@@ -697,6 +698,7 @@ void ZeroPlayerPartyMons(void);
 void ZeroEnemyPartyMons(void);
 u32 GetMonPersonality(u16 species, u8 gender, u8 nature, u8 unownLetter);
 void CreateMon(struct Pokemon *mon, u16 species, u8 level, u32 personality, struct OriginalTrainerId);
+void CreateMonParameterized(struct Pokemon *mon, u16 species, u16 *evs, u16 *ivs, bool8 gmaxFactor, enum Type teraType, u8 dmaxLevel);
 void CreateRandomMon(struct Pokemon *mon, u16 species, u8 level);
 void CreateRandomMonWithIVs(struct Pokemon *mon, u16 species, u8 level, u8 fixedIv);
 void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u32 personality, struct OriginalTrainerId);

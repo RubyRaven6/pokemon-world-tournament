@@ -4,10 +4,16 @@
 #include "constants/species.h"
 
 /*KANTO FULLY EVOLVED MONS*/
-const u32 KantoFullyEvolved[] = {
+const u32 gKantoFullyEvolved[] = {
+    /*
+    The first three starters are given to the player first through givemon macro, 
+    and then the rest are put into the box. This prevents small graphical glitch 
+    where player has no pokemon and a question mark icon appears in the pc
+
     SPECIES_VENUSAUR,
     SPECIES_CHARIZARD,
     SPECIES_BLASTOISE,
+    */
     SPECIES_BUTTERFREE,
     SPECIES_BEEDRILL,
     SPECIES_PIDGEOT,
@@ -67,12 +73,61 @@ const u32 KantoFullyEvolved[] = {
     SPECIES_KABUTOPS,
     SPECIES_AERODACTYL,
     SPECIES_SNORLAX,
-    SPECIES_ARTICUNO,
-    SPECIES_ZAPDOS,
-    SPECIES_MOLTRES,
-    SPECIES_DRAGONITE,
-    SPECIES_MEWTWO,
-    SPECIES_MEW
+};
+
+const u32 gJohtoFullyEvolved[] = {
+        SPECIES_MEGANIUM,
+    SPECIES_TYPHLOSION,
+    SPECIES_FERALIGATR,
+    SPECIES_FURRET,
+    SPECIES_NOCTOWL,
+    SPECIES_LEDIAN,
+    SPECIES_ARIADOS,
+    SPECIES_CROBAT,
+    SPECIES_LANTURN,
+    SPECIES_XATU,
+    SPECIES_AMPHAROS,
+    SPECIES_BELLOSSOM,
+    SPECIES_AZUMARILL,
+    SPECIES_SUDOWOODO,
+    SPECIES_POLITOED,
+    SPECIES_JUMPLUFF,
+    SPECIES_SUNFLORA,
+    SPECIES_QUAGSIRE,
+    SPECIES_ESPEON,
+    SPECIES_UMBREON,
+    SPECIES_SLOWKING,
+    SPECIES_UNOWN,
+    SPECIES_WOBBUFFET,
+    SPECIES_FORRETRESS,
+    SPECIES_STEELIX,
+    SPECIES_GRANBULL,
+    SPECIES_QWILFISH,
+    SPECIES_SCIZOR,
+    SPECIES_SHUCKLE,
+    SPECIES_HERACROSS,
+    SPECIES_MAGCARGO,
+    SPECIES_CORSOLA,
+    SPECIES_OCTILLERY,
+    SPECIES_DELIBIRD,
+    SPECIES_MANTINE,
+    SPECIES_SKARMORY,
+    SPECIES_HOUNDOOM,
+    SPECIES_KINGDRA,
+    SPECIES_DONPHAN,
+    SPECIES_SMEARGLE,
+    SPECIES_HITMONTOP,
+    SPECIES_MILTANK,
+    SPECIES_BLISSEY,
+    SPECIES_TYRANITAR
+};
+
+static const struct MonArrayStruct {
+  const u32 *monArray;
+  u32 monArrayCount;
+} gFullyEvolvedArrays[] = {
+    [1] = { gKantoFullyEvolved, ARRAY_COUNT(gKantoFullyEvolved) },
+    [2] = { gJohtoFullyEvolved, ARRAY_COUNT(gJohtoFullyEvolved) }
 };
 
 #endif //GUARD_CONSTANTS_FULLY_EVOLVED_MONS_H

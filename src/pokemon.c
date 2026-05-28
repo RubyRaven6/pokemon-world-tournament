@@ -62,6 +62,8 @@
 #include "constants/cries.h"
 #include "constants/event_objects.h"
 #include "constants/form_change_types.h"
+#include "constants/flags.h"
+#include "constants/fully_evolved_arrays.h"
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/layouts.h"
@@ -7071,6 +7073,51 @@ void ChangePokemonNicknameWithCallback(void (*callback)(void))
     DoNamingScreen(NAMING_SCREEN_NICKNAME, gStringVar2, GetBoxMonData(boxMon, MON_DATA_SPECIES), GetBoxMonGender(boxMon), GetBoxMonData(boxMon, MON_DATA_PERSONALITY), callback);
 }
 
-// static void GivePlayerUnlockedPokemon(void){
+/*
+static const struct MonArrayStruct{
+  const u32 *monArray;
+  u32 monArrayCount;
+} gFullyEvolvedArrays[] = {
+    [1] = { gKantoFullyEvolved, ARRAY_COUNT(gKantoFullyEvolved) }
+    ...
+};
 
-// }
+array for reference
+*/ 
+
+void GivePlayerUnlockedPokemon(void)
+{
+    struct Pokemon mon;
+    u32 gen = 0;
+    u32 i;
+
+    static const u32 sUnlockedPokemonGenerations[] =
+    {
+        //if the corresponding flag is not set, it is set to that generation
+        FLAG_COMPLETED_ROSTER_KANTO,
+        FLAG_COMPLETED_ROSTER_JOHTO,
+        FLAG_COMPLETED_ROSTER_HOENN,
+        FLAG_COMPLETED_ROSTER_SINNOH,
+        FLAG_COMPLETED_ROSTER_UNOVA,
+    };
+
+    gen = 1;
+    for (i = 0; i < ARRAY_COUNT(sUnlockedPokemonGenerations); i++)
+    {
+        if (FlagGet(sUnlockedPokemonGenerations[i]))
+            gen += 1;
+        else
+            break;
+    }
+
+    DebugPrintf("gen: %u", gen);
+    for (i = 0; i < gFullyEvolvedArrays[gen].monArrayCount; i++)
+    {
+        u32 personality = Random32();
+        CreateMon(&mon, gFullyEvolvedArrays[gen].monArray[i], 100, personality, OTID_STRUCT_PLAYER_ID);
+        SetBoxMonIVs(&mon.box, MAX_IV_MASK);
+        CalculateMonStats(&mon);
+        GiveMonInitialMoveset(&mon);
+        CopyMonToPC(&mon);
+    }
+}
