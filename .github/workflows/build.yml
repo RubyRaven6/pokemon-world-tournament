@@ -10,6 +10,10 @@ on:
       branches:
         - master
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   GAME_REVISION: 0
   GAME_LANGUAGE: ENGLISH
