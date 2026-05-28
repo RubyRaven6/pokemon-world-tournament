@@ -289,10 +289,17 @@ Debug_EventScript_Script_5_Text_0:
 
 
 Debug_EventScript_Script_6::
+	givemon SPECIES_VENUSAUR, 100, hpIv=31, atkIv=31, defIv=31, speedIv=31, spAtkIv=31, spDefIv=31
+	givemon SPECIES_BLASTOISE, 100, hpIv=31, atkIv=31, defIv=31, speedIv=31, spAtkIv=31, spDefIv=31
+	givemon SPECIES_CHARIZARD, 100, hpIv=31, atkIv=31, defIv=31, speedIv=31, spAtkIv=31, spDefIv=31
+	callnative GivePlayerUnlockedPokemon
+	setflag FLAG_COMPLETED_ROSTER_KANTO
 	release
 	end
 
 Debug_EventScript_Script_7::
+	callnative GivePlayerUnlockedPokemon
+	setflag FLAG_COMPLETED_ROSTER_JOHTO
 	release
 	end
 
