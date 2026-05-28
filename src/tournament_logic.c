@@ -243,17 +243,15 @@ void Script_goto_pwt_battle_script(struct ScriptContext *ctx)
 }
 
 void SetCompleteRosterFlag(void) {
-    u32 countUndefeated = 0;
+    u32 countDefeated = 0;
     u32 gen = VarGet(VAR_GENERATION_CTL);
 
     for (u32 i = 0; i < sGymLeaderRosters[gen].rosterCount; i++)
     {
         if(FlagGet(sGymLeaderRosters[gen].leaderFlags[i]))
-            countUndefeated++;
+            countDefeated++;
     }
 
-    DebugPrintf("countUndefeated: %u", countUndefeated);
-    DebugPrintf("sGymLeaderRosters[gen].rosterCount: %u", sGymLeaderRosters[gen].rosterCount);
-    if(countUndefeated == sGymLeaderRosters[gen].rosterCount)
+    if(countDefeated == sGymLeaderRosters[gen].rosterCount)
         FlagSet(sRosterCompletionFlags[gen]);
 }
