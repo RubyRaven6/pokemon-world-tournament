@@ -737,16 +737,17 @@ static void CreatePCMultichoice(void)
         windowId = CreateWindowFromRect(0, 0, width, 8);
         SetStandardWindowBorderStyle(windowId, FALSE);
         AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_HallOfFame, x, 33, TEXT_SKIP_DRAW, NULL);
-        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_LogOff, x, 49, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(windowId, FONT_NORMAL, sPCNameStrings[PCSTR_LOG_OFF], x, 49, TEXT_SKIP_DRAW, NULL);
     }
     else
     {
         numChoices = 3;
-        windowId = CreateWindowFromRect(0, 0, width, 6);
+        windowId = CreateWindowFromRect(0, 0, width, 6); //left, top, width, and height in tiles(? its 2 per option)
         SetStandardWindowBorderStyle(windowId, FALSE);
-        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_LogOff, x, 33, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(windowId, FONT_NORMAL, sPCNameStrings[PCSTR_LOG_OFF], x, 33, TEXT_SKIP_DRAW, NULL);
     }
 
+    /*
     // Change PC name if player has met Lanette
     if (FlagGet(FLAG_SYS_PC_LANETTE))
     {
@@ -757,11 +758,13 @@ static void CreatePCMultichoice(void)
     }
     else
     {
-        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_SomeonesPC, x, 1, TEXT_SKIP_DRAW, NULL);
     }
+    */
 
-    StringExpandPlaceholders(gStringVar4, gText_PlayersPC);
-    PrintPlayerNameOnWindow(windowId, gStringVar4, x, 17);
+    // StringExpandPlaceholders(gStringVar4, gText_PlayersPC);
+    // PrintPlayerNameOnWindow(windowId, gStringVar4, x, 17);
+    AddTextPrinterParameterized(windowId, FONT_NORMAL, sPCNameStrings[PCSTR_PKMN_STORAGE], x, 1, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(windowId, FONT_NORMAL, sPCNameStrings[PCSTR_PKMN_GYM_LEADERS], x, 17, TEXT_SKIP_DRAW, NULL);
     InitMenuInUpperLeftCornerNormal(windowId, numChoices, 0);
     CopyWindowToVram(windowId, COPYWIN_FULL);
     InitMultichoiceCheckWrap(FALSE, numChoices, windowId, MULTI_PC);

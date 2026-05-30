@@ -10,28 +10,38 @@ script EventScript_PC {
 	end
 }
 
+script EventScript_AccessPC {
+	switch (var(VAR_RESULT))
+	{
+		case 0: 
+			goto(EventScript_AccessPokemonStorage)
+		case 1: 
+			goto(EventScript_AccessLeaderRoster)
+		case 2: 
+			goto(EventScript_AccessHallOfFame)
+		case 3: 
+			goto(EventScript_TurnOffPC)
+		case MULTI_B_PRESSED: 
+			goto(EventScript_TurnOffPC)
+	}
+	end
+}
+
+script EventScript_AccessLeaderRoster {
+	playse (SE_PC_LOGIN)
+	msgbox (format("Special for Leader Roster goes here colon D"), MSGBOX_DEFAULT)
+	closemessage
+	// special (PlayerPC)
+	// goto (EventScript_PCMainMenu)
+	end
+}
+
 raw`
 EventScript_PCMainMenu::
 	message gText_WhichPCShouldBeAccessed
 	waitmessage
 	special ScriptMenu_CreatePCMultichoice
 	goto EventScript_AccessPC
-	end
-
-EventScript_AccessPC::
-	switch VAR_RESULT
-	case 0, EventScript_AccessPokemonStorage
-	case 1, EventScript_AccessPlayersPC
-	case 2, EventScript_AccessHallOfFame
-	case 3, EventScript_TurnOffPC
-	case MULTI_B_PRESSED, EventScript_TurnOffPC
-	end
-
-EventScript_AccessPlayersPC::
-	playse SE_PC_LOGIN
-	msgbox gText_AccessedPlayersPC, MSGBOX_DEFAULT
-	special PlayerPC
-	goto EventScript_PCMainMenu
 	end
 
 EventScript_AccessPokemonStorage::

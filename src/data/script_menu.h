@@ -1349,12 +1349,18 @@ static const u8 sLinkServicesMultichoiceIds[] =
     MULTI_WIRELESS_ALL_SERVICES
 };
 
-static const u8 *const sPCNameStrings[] =
+enum sPCNameStringEnum {
+    PCSTR_PKMN_STORAGE,
+    PCSTR_PKMN_GYM_LEADERS,
+    PCSTR_LOG_OFF,
+    PCSTR_COUNT,
+};
+
+static const u8 *const sPCNameStrings[PCSTR_COUNT] =
 {
-    gText_SomeonesPC,
-    gText_LanettesPC,
-    gText_PlayersPC,
-    gText_LogOff,
+    COMPOUND_STRING("PKMN Storage"),
+    COMPOUND_STRING("Leader Roster"),
+    COMPOUND_STRING("Log off"),
 };
 
 static const u8 *const sLilycoveSSTidalDestinations[SSTIDAL_SELECTION_COUNT] =
