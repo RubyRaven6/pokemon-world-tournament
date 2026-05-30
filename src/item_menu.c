@@ -3028,3 +3028,15 @@ static s32 CompareItemsByIndex(enum Pocket pocketId, struct ItemSlot item1, stru
 
     return 0; // Cannot have multiple stacks of indexed items
 }
+
+void ResetPartyItems(void)
+{
+    u32 i;
+    
+    for(i = 0; i < CalculatePlayerPartyCount(); i++)
+    {
+        struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][i];
+        TryTakeMonItem(mon);
+    }
+
+}

@@ -2119,14 +2119,17 @@ static void GiveItemToMon(struct Pokemon *mon, enum Item item)
     TryItemHoldFormChange(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], gPartyMenu.slotId, B_TRAINER_PLAYER);
 }
 
-static u8 TryTakeMonItem(struct Pokemon *mon)
+u8 TryTakeMonItem(struct Pokemon *mon)
 {
     enum Item item = GetMonData(mon, MON_DATA_HELD_ITEM);
 
     if (item == ITEM_NONE)
         return 0;
-    if (AddBagItem(item, 1) == FALSE)
+    /*
+        if (AddBagItem(item, 1) == FALSE)
         return 1;
+    */
+    //ensures no items are added to the bag. badabing bada bag
 
     item = ITEM_NONE;
     SetMonData(mon, MON_DATA_HELD_ITEM, &item);
@@ -7119,7 +7122,7 @@ static void GiveItemToSelectedMon(u8 taskId)
         item = gPartyMenu.bagItem;
         DisplayGaveHeldItemMessage(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], item, FALSE, 1);
         GiveItemToMon(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], item);
-        RemoveBagItem(item, 1);
+        // RemoveBagItem(item, 1);
         gTasks[taskId].func = Task_UpdateHeldItemSpriteAndClosePartyMenu;
     }
 }
